@@ -1,4 +1,3 @@
-"share in github
 set number
 set clipboard+=unnamedplus
 set hls
@@ -63,8 +62,8 @@ Plug 'voldikss/vim-browser-search'
 Plug 'justinmk/vim-sneak'
 Plug 'kyazdani42/nvim-tree.lua'
 "Setup nvim-cmp
-"Plug 'williamboman/mason.nvim'
-"Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'

@@ -1,3 +1,30 @@
+local g = vim.g
+-- Disable some builtin vim plugins
+local disabled_built_ins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "matchparen",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  g["loaded_" .. plugin] = 1
+end
+
 -- publicly shared in github
 -- toggleterm setup
 require("toggleterm").setup{}
@@ -263,16 +290,16 @@ sources = cmp.config.sources({
 
 -- lsp-server settings: mason, and mason-lspconfig
 -- So far, lint is working well without this packages, these are ommited.
--- require("mason").setup({
---      ui = {
---            icons = {
---                package_installed = "✓",
---                package_pending = "➜",
---                package_uninstalled = "✗"
---            }
---        }
---})
---require("mason-lspconfig").setup()
+require("mason").setup({
+      ui = {
+            icons = {
+                package_installed = "✓",
+                package_pending = "➜",
+                package_uninstalled = "✗"
+            }
+        }
+})
+require("mason-lspconfig").setup()
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
