@@ -25,13 +25,27 @@ for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
 
+-- vertical and horizontal line settings
+vim.opt.fillchars = {
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft  = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}
+
 -- publicly shared in github
 -- toggleterm setup
 require("toggleterm").setup{}
 --- lualineO
 -- theme: eg. papercolor_dark
 require('lualine').setup {
-    options = { theme = 'auto' }
+    options = {
+        theme = 'auto',
+        globalstatus = true,
+    },
     }
 
 --- gitsigns
@@ -200,7 +214,7 @@ cmp.setup {
                 spell = "[Spell]",
                 cmp_tabnine = "[TabNine]",
                 pandoc_references = "[Citation]",
-                skkeleton = "[Skk]"
+--                skkeleton = "[Skk]"
 --                cmp_pandoc = "[Pandoc]"
             })[entry.source.name]
             return vim_item
@@ -255,7 +269,7 @@ cmp.setup {
         {
             name = 'pandoc_references'
         },
-        { name = 'skkeleton' },
+--        { name = 'skkeleton' },
     },
 
 }
