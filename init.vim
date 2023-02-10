@@ -79,8 +79,9 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'vim-skk/skkeleton'
 "SKk
+Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
-Plug 'rinx/cmp-skkeleton'
+"Plug 'rinx/cmp-skkeleton'
 "REPL (a read-eval-print loop)
 "Plug 'jpalardy/vim-slime'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -95,6 +96,7 @@ Plug 'dhruvasagar/vim-table-mode'
 "Plug 'nvim-telescope/telescope-media-files.nvim' "I do not want to see pdf or
 "other images from nvim.
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'lambdalisue/readablefold.vim'
 call plug#end()
 
 "load lua/config.lua
@@ -107,6 +109,13 @@ inoremap jk <Esc>
 inoremap ｊｋ <Esc>
 nnoremap い i
 nnoremap ：ｗ :w
+
+"settings for folding
+set foldlevel=1
+set foldcolumn=0
+
+"Markdown folding
+let g:markdown_folding = 1
 
 "color scheme
 "ayu
@@ -144,8 +153,8 @@ nnoremap <A-l> <C-w>l
 
 " setting for split line
 
-set fillchars+=vert:\|
-hi vertsplit guifg=black cterm=NONE gui=NONE
+"set fillchars+=vert:\|
+hi vertsplit guifg=grey 
 
 " setting for automatic insert a matching brace
 inoremap { {}<Esc>ha
@@ -264,7 +273,9 @@ inoreabbrev <expr> __
 
 "toggleterm settings
 "and R
-nnoremap <leader>tg :ToggleTerm size=80 direction=vertical<CR>
-nnoremap <leader>rr :TermExec size=80 direction=vertical cmd="R"<CR>
+nnoremap <leader>tt :ToggleTerm size=75 direction=vertical<CR>
+nnoremap <leader>td :ToggleTerm size=25 direction=horizontal<CR>
+nnoremap <leader>rr :TermExec size=75 direction=vertical cmd="R"<CR>
+nnoremap <leader>rd :TermExec size=25 direction=horizontal cmd="R"<CR>
 nnoremap <leader>ff :ToggleTermSendCurrentLine 1<CR>
 vnoremap <leader>fa :ToggleTermSendVisualLines 1<CR>

@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~
+cd ~/.config/nvim/lua
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,8 +13,8 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/.config/nvim/init.vim
-badd +0 ~/.config/nvim/lua/config.lua
+badd +278 ~/.config/nvim/init.vim
+badd +239 ~/.config/nvim/lua/config.lua
 argglobal
 %argdel
 edit ~/.config/nvim/init.vim
@@ -34,26 +34,25 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
-exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 1resize ' . ((&columns * 141 + 141) / 283)
+exe 'vert 2resize ' . ((&columns * 141 + 141) / 283)
 argglobal
-balt ~/.config/nvim/init.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=1
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 30) / 60)
+let s:l = 278 - ((12 * winheight(0) + 34) / 68)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 278
+normal! 038|
 lcd ~/.config/nvim
 wincmd w
 argglobal
@@ -72,17 +71,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 30) / 60)
+let s:l = 239 - ((0 * winheight(0) + 34) / 68)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 239
+normal! 021|
 lcd ~/.config/nvim
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
-exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 1resize ' . ((&columns * 141 + 141) / 283)
+exe 'vert 2resize ' . ((&columns * 141 + 141) / 283)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -98,7 +96,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 let g:this_fzf_session =v:this_session
 unlet SessionLoad
