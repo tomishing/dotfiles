@@ -58,6 +58,7 @@ require('nvim-treesitter.configs').setup {
 }
 
 --- scrollbar settings for scrollbar and hlslens
+require('hlslens').setup()
 
 require('scrollbar').setup()
 --require('scrollbar.handlers.search').setup()
@@ -94,7 +95,7 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
   update_cwd = false,
   view = {
     width = 30,
-    height = 30,
+ --   height = 30,
     side = "left",
     preserve_window_proportions = false,
     number = false,
@@ -302,7 +303,7 @@ require("mason").setup({
 require("mason-lspconfig").setup()
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local nvim_lsp = require('lspconfig')
 local servers = {'r_language_server', 'pyright'}

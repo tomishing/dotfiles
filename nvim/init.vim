@@ -28,7 +28,7 @@ set autochdir
 " plugins
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'nathom/filetype.nvim'
+""Plug 'nathom/filetype.nvim'
 Plug 'iamcco/markdown-preview.nvim' 
 Plug 'rhysd/vim-grammarous' 
 Plug 'SirVer/ultisnips'
@@ -61,7 +61,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-browser-search'
 Plug 'justinmk/vim-sneak'
 Plug 'kyazdani42/nvim-tree.lua'
-"Setup nvim-cmp
+""""Setup nvim-cmp
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -77,9 +77,9 @@ Plug 'onsails/lspkind-nvim'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'jc-doyle/cmp-pandoc-references'
-Plug 'vim-skk/skkeleton'
 "SKk
 Plug 'vim-denops/denops.vim'
+Plug 'vim-skk/skkeleton'
 Plug 'rinx/cmp-skkeleton'
 "REPL (a read-eval-print loop)
 "Plug 'jpalardy/vim-slime'
