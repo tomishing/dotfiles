@@ -1,29 +1,29 @@
-set number
+"set number
 set clipboard+=unnamedplus
-set hls
-set ignorecase
-set incsearch
-set smartcase
-set smartindent
-set ruler
-set showmatch
-set list
+"set hls
+"set ignorecase
+"set incsearch
+"set smartcase
+"set smartindent
+"set ruler
+"set showmatch
+"set list
 set wrap linebreak nolist
-set autoindent
+"set autoindent
 set iskeyword+=-
-set cursorline
+"set cursorline
 " spell check
 " if you want to disable spell check, type :set nospell on command mode.
 " set spell "if you want to able this at default.
 "set spelllang=en_us,cjk
 "set spellsuggest=best,9
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set splitbelow
-set splitright
-set mouse=a
-set autochdir
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+"set splitbelow
+"set splitright
+"set mouse=a
+"set autochdir
 
 " plugins
 

@@ -1,5 +1,5 @@
 
-require("base")
+require("base-opt")
 
 -- publicly shared in github
 -- toggleterm setup
