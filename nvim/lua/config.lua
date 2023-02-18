@@ -1,40 +1,5 @@
-local g = vim.g
--- Disable some builtin vim plugins
-local disabled_built_ins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "matchparen",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-}
 
-for _, plugin in pairs(disabled_built_ins) do
-  g["loaded_" .. plugin] = 1
-end
-
--- vertical and horizontal line settings
-vim.opt.fillchars = {
-  horiz = '━',
-  horizup = '┻',
-  horizdown = '┳',
-  vert = '┃',
-  vertleft  = '┫',
-  vertright = '┣',
-  verthoriz = '╋',
-}
+require("base")
 
 -- publicly shared in github
 -- toggleterm setup
@@ -73,8 +38,8 @@ require('nvim-treesitter.configs').setup {
 
 --- scrollbar settings for scrollbar and hlslens
 require('hlslens').setup()
-
 require('scrollbar').setup()
+
 --require('scrollbar.handlers.search').setup()
 
 local kopts = {noremap = true, silent = true}
@@ -93,7 +58,6 @@ vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]]
 vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
 
 --- nvim-tree
-
 require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
 --  auto_close = false,
   auto_reload_on_write = true,
@@ -193,9 +157,6 @@ require('nvim-tree').setup { -- BEGIN_DEFAULT_OPTS
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
--- better autocompletion experience
-vim.o.completeopt = 'menu,menuone,noselect'
-
 cmp.setup {
 
     formatting = {
@@ -273,9 +234,6 @@ cmp.setup {
     },
 
 }
-
-vim.opt.spell = false
-vim.opt.spelllang = { 'en_us', 'cjk' }
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
