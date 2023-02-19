@@ -1,5 +1,5 @@
 "set number
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 "set hls
 "set ignorecase
 "set incsearch
@@ -8,9 +8,9 @@ set clipboard+=unnamedplus
 "set ruler
 "set showmatch
 "set list
-set wrap linebreak nolist
+"set wrap linebreak nolist
 "set autoindent
-set iskeyword+=-
+"set iskeyword+=-
 "set cursorline
 " spell check
 " if you want to disable spell check, type :set nospell on command mode.
@@ -111,20 +111,22 @@ nnoremap い i
 nnoremap ：ｗ :w
 
 "settings for folding
-set foldlevel=1
-set foldcolumn=0
+"set foldlevel=1
+"set foldcolumn=0
 
 "Markdown folding
 let g:markdown_folding = 1
 
 "color scheme
 "ayu
-set termguicolors     " enable true colors support
+"set termguicolors     " enable true colors support
 ""let ayucolor="mirage" " for mirage version of theme
 ""colorscheme ayu
 ""set background=dark
 ""colorscheme github
 colorscheme nordfox
+
+hi vertsplit guifg=grey 
 
 "settings for snippets
 let g:UltiSnipsDirectories=[$HOME,'/.config/nvim/UltiSnips']
@@ -151,10 +153,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" setting for split line
-
-"set fillchars+=vert:\|
-hi vertsplit guifg=grey 
 
 " setting for automatic insert a matching brace
 inoremap { {}<Esc>ha

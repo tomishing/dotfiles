@@ -1,6 +1,5 @@
-local g = vim.g
-
 -- Disable some builtin vim plugins
+local g = vim.g
 local disabled_built_ins = {
   "2html_plugin",
   "getscript",
@@ -26,33 +25,22 @@ for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
 
--- vertical and horizontal line settings
-vim.opt.fillchars = {
-  horiz = '━',
-  horizup = '┻',
-  horizdown = '┳',
-  vert = '┃',
-  vertleft  = '┫',
-  vertright = '┣',
-  verthoriz = '╋',
-}
-
--- settings 
--- vim.opt.spell = false
--- vim.opt.spelllang = { 'en_us', 'cjk' }
-
--- better autocompletion experience
--- vim.o.completeopt = 'menu,menuone,noselect'
+-- option settings
 
 local options = {
    autochdir = true,
    autoindent = true,
+   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
    expandtab = true,
+   foldcolumn = '1',
+   foldlevel = 1,
    hls = true,
    ignorecase = true,
    incsearch = true,
+   linebreak = true,
+   list = false,
    mouse = 'a',
    number = true,
    relativenumber = true,
@@ -66,8 +54,26 @@ local options = {
    splitbelow = true,
    splitright = true,
    tabstop = 4,
+   termguicolors = true,
+   wrap = true,
 }
 
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+
+-- vertical and horizontal line settings
+vim.opt.fillchars = {
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft  = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}
+
+
+--append
+vim.opt.iskeyword:append("-")
