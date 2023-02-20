@@ -30,7 +30,7 @@ end
 local options = {
    autochdir = true,
    autoindent = true,
-   clipboard = 'unnamedplus',
+--   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
    expandtab = true,
@@ -76,4 +76,5 @@ vim.opt.fillchars = {
 
 
 --append
-vim.opt.iskeyword:append("-")
+vim.opt.iskeyword:append({'-'})
+vim.opt.clipboard:append({'unnamedplus'})
