@@ -101,14 +101,15 @@ call plug#end()
 
 "load lua/config.lua
 lua require('config')
+lua require('keymap')
 
 "keybindings for switching to normal mode
-inoremap jk <Esc>
+"inoremap jk <Esc>
 
 "settings for Japanese input (with enter)
-inoremap ｊｋ <Esc>
-nnoremap い i
-nnoremap ：ｗ :w
+"inoremap ｊｋ <Esc>
+"nnoremap い i
+"nnoremap ：ｗ :w
 
 "settings for folding
 "set foldlevel=1
@@ -200,9 +201,9 @@ let g:browser_search_default_engine = 'dictionary.com'
 let g:sneak#label = 1
 
 "nvim-tree keybindings
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+"nnoremap <C-n> :NvimTreeToggle<CR>
+"nnoremap <leader>r :NvimTreeRefresh<CR>
+"nnoremap <leader>n :NvimTreeFindFile<CR>
 
 "eskk settings: SKK dictionary
 "let g:eskk#directory = "~/.config/skk"

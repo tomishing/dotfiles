@@ -62,7 +62,6 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-
 -- vertical and horizontal line settings
 vim.opt.fillchars = {
   horiz = '━',
@@ -74,7 +73,7 @@ vim.opt.fillchars = {
   verthoriz = '╋',
 }
 
-
 --append
 vim.opt.iskeyword:append({'-'})
 vim.opt.clipboard:append({'unnamedplus'})
+
