@@ -18,3 +18,7 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
 map('n', '<Leader>s', '<Plug>SearchNormal', { silent = true} )
 map('v', '<Leader>s', '<Plug>SearchVisual', { silent = true} )
 
+--fzf
+map('n', '<leader>bz', ':Buffers<CR>', opts)
+map('n', '<leader>fz', ':Files<CR>', opts)
+
