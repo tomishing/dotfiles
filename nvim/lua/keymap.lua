@@ -56,3 +56,19 @@ map('n', '<leader>rd', ':TermExec size=25 direction=horizontal cmd="R"<CR>', { n
 map('n', '<leader>ff', ':ToggleTermSendCurrentLine 1<CR>', { noremap = true })
 map('v', '<leader>fa', ':ToggleTermSendVisualLines 1<CR>', { noremap = true })
 
+-- hlsens 
+
+map('n', 'n',
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    opts)
+map('n', 'N',
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    opts)
+map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
+map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
+map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
+map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
+
+--highlight
+map('n', '<Leader>l', ':noh<CR>', opts)
+
