@@ -27,7 +27,7 @@ map('i', '{', '{}<esc>ha')
 map('i', '[', '[]<esc>ha')
 map('i', '(', '()<esc>ha')
 map('i', '"', '""<esc>ha')
-map('i', '<', '<><esc>ha')
+--map('i', '<', '<><esc>ha')
 
 --settings for skkeleton
 map('i', 'jz', '<Plug>(skkeleton-toggle)', { silent = true} )

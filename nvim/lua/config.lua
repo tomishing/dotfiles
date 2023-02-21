@@ -34,6 +34,7 @@ require('nvim-treesitter.configs').setup {
         "yaml",
         "vim",
         },
+    ignore_install = { "markdown"},
     auto_install = true,
     highlight = { enable = true, },
 }
