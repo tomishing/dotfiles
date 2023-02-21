@@ -22,3 +22,14 @@ map('v', '<Leader>s', '<Plug>SearchVisual', { silent = true} )
 map('n', '<leader>bz', ':Buffers<CR>', opts)
 map('n', '<leader>fz', ':Files<CR>', opts)
 
+--automatic insert a matching brace
+map('i', '{', '{}<esc>ha')
+map('i', '[', '[]<esc>ha')
+map('i', '(', '()<esc>ha')
+map('i', '"', '""<esc>ha')
+
+--settings for skkeleton
+map('i', 'jz', '<Plug>(skkeleton-toggle)', { silent = true} )
+map('c', 'jz', '<Plug>(skkeleton-toggle)', { silent = true} )
+
+

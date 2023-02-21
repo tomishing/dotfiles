@@ -157,10 +157,10 @@ nnoremap <A-l> <C-w>l
 
 
 " setting for automatic insert a matching brace
-inoremap { {}<Esc>ha
-inoremap [ []<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap " ""<Esc>ha
+""inoremap { {}<Esc>ha
+""inoremap [ []<Esc>ha
+""inoremap ( ()<Esc>ha
+""inoremap " ""<Esc>ha
 "inoremap ' ''<Esc>ha
 
 "disable folding in vim-pandoc
@@ -224,8 +224,8 @@ call skkeleton#register_kanatable('rom', {
 
 "imap <C-j> <Plug>(skkeleton-enable)
 "cmap <C-j> <Plug>(skkeleton-enable)
-imap jz <Plug>(skkeleton-toggle)
-cmap jz <Plug>(skkeleton-toggle)
+"imap jz <Plug>(skkeleton-toggle)
+"cmap jz <Plug>(skkeleton-toggle)
 
 "vim-slime settings
 "let g:slime_target = "neovim"
