@@ -26,7 +26,7 @@ local async = require('plenary.async')
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
         "r",
-        --	  "markdown",
+--        "markdown",
         "json",
         "python",
         "lua",
@@ -34,7 +34,7 @@ require('nvim-treesitter.configs').setup {
         "yaml",
         "vim",
         },
-    ignore_install = { "markdown"},
+--    ignore_install = { "markdown"},
     auto_install = true,
     highlight = { enable = true, },
 }

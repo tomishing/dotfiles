@@ -52,6 +52,9 @@ Plug 'petertriho/nvim-scrollbar'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'lambdalisue/readablefold.vim'
+"pandoc syntax for markdown
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 "load lua/config.lua
