@@ -139,21 +139,21 @@ let g:UltiSnipsEditSplit="vertical"
 let g:deoplete#enable_at_startup = 1
 
 " settings for terminal
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 autocmd TermOpen * startinsert
 
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+"tnoremap <A-h> <C-\><C-N><C-w>h
+"tnoremap <A-j> <C-\><C-N><C-w>j
+"tnoremap <A-k> <C-\><C-N><C-w>k
+"tnoremap <A-l> <C-\><C-N><C-w>l
+"inoremap <A-h> <C-\><C-N><C-w>h
+"inoremap <A-j> <C-\><C-N><C-w>j
+"inoremap <A-k> <C-\><C-N><C-w>k
+"inoremap <A-l> <C-\><C-N><C-w>l
+"nnoremap <A-h> <C-w>h
+"nnoremap <A-j> <C-w>j
+"nnoremap <A-k> <C-w>k
+"nnoremap <A-l> <C-w>l
 
 
 " setting for automatic insert a matching brace
@@ -273,9 +273,9 @@ inoreabbrev <expr> __
 
 "toggleterm settings
 "and R
-nnoremap <leader>tt :ToggleTerm size=75 direction=vertical<CR>
-nnoremap <leader>td :ToggleTerm size=25 direction=horizontal<CR>
-nnoremap <leader>rr :TermExec size=75 direction=vertical cmd="R"<CR>
-nnoremap <leader>rd :TermExec size=25 direction=horizontal cmd="R"<CR>
-nnoremap <leader>ff :ToggleTermSendCurrentLine 1<CR>
-vnoremap <leader>fa :ToggleTermSendVisualLines 1<CR>
+"nnoremap <leader>tt :ToggleTerm size=75 direction=vertical<CR>
+"nnoremap <leader>td :ToggleTerm size=25 direction=horizontal<CR>
+"nnoremap <leader>rr :TermExec size=75 direction=vertical cmd="R"<CR>
+"nnoremap <leader>rd :TermExec size=25 direction=horizontal cmd="R"<CR>
+"nnoremap <leader>ff :ToggleTermSendCurrentLine 1<CR>
+"vnoremap <leader>fa :ToggleTermSendVisualLines 1<CR>
