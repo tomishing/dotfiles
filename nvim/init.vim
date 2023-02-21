@@ -185,8 +185,8 @@ inoremap " ""<Esc>ha
 
 "setting for search over dictionary.com
 "\saw is going to look for a word under the cursor
-nmap <silent> <Leader>s <Plug>SearchNormal
-vmap <silent> <Leader>s <Plug>SearchVisual
+"nmap <silent> <Leader>s <Plug>SearchNormal
+"vmap <silent> <Leader>s <Plug>SearchVisual
 
 let g:browser_search_engines = {
 			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s'
