@@ -58,54 +58,55 @@ Plug 'lambdalisue/readablefold.vim'
 call plug#end()
 
 "load lua/config.lua
+lua require("base-opt")
 lua require('config')
 lua require('keymap')
 
 "Markdown folding
-let g:markdown_folding = 1
+"let g:markdown_folding = 1
 
 "color scheme
-colorscheme nordfox
-hi vertsplit guifg=grey 
+"colorscheme nordfox
+"hi vertsplit guifg=grey 
 
 "settings for snippets
-let g:UltiSnipsDirectories=[$HOME,'/.config/nvim/UltiSnips']
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-let g:deoplete#enable_at_startup = 1
+"let g:UltiSnipsDirectories=[$HOME,'/.config/nvim/UltiSnips']
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsEditSplit="vertical"
+"let g:deoplete#enable_at_startup = 1
 
 " settings for terminal
-autocmd TermOpen * startinsert
+"autocmd TermOpen * startinsert
 
 "setting for search over dictionary.com
 "\saw is going to look for a word under the cursor
 "nmap <silent> <Leader>s <Plug>SearchNormal
 "vmap <silent> <Leader>s <Plug>SearchVisual
 
-let g:browser_search_engines = {
-			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s'
-			\ }
-let g:browser_search_default_engine = 'dictionary.com'
+"let g:browser_search_engines = {
+"			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s'
+"			\ }
+"let g:browser_search_default_engine = 'dictionary.com'
 
 "vim-sneak
 "s with two words: search forward
 "S with two words: search backward
 "use cl instead of s
 "use cc instead of S
-let g:sneak#label = 1
+"let g:sneak#label = 1
 
 "skkeleton settings
-call skkeleton#config({ 'globalJisyo': '~/.config/skk/SKK-JISYO.L' })
-call skkeleton#config({ 'userJisyo': '~/.config/skk/user.dic' })
-call skkeleton#config({ 'eggLikeNewline':v:true })
+"call skkeleton#config({ 'globalJisyo': '~/.config/skk/SKK-JISYO.L' })
+"call skkeleton#config({ 'userJisyo': '~/.config/skk/user.dic' })
+"call skkeleton#config({ 'eggLikeNewline':v:true })
 "call skkeleton#config({ 'useSkkServer':v:true })
 
-call skkeleton#register_kanatable('rom', {
-      \ 'jj': 'escape',
-      \ 'z,': ['―'],
-      \ })
+"call skkeleton#register_kanatable('rom', {
+"      \ 'jj': 'escape',
+"      \ 'z,': ['―'],
+"      \ })
 
 "imap <C-j> <Plug>(skkeleton-enable)
 "cmap <C-j> <Plug>(skkeleton-enable)
@@ -113,5 +114,5 @@ call skkeleton#register_kanatable('rom', {
 "cmap jz <Plug>(skkeleton-toggle)
 
 "fzf_session setting
-let g:fzf_session_path = $HOME . '/.config/nvim/session'
+"let g:fzf_session_path = $HOME . '/.config/nvim/session'
 
