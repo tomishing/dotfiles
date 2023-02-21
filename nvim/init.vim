@@ -61,6 +61,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-browser-search'
 Plug 'justinmk/vim-sneak'
 Plug 'kyazdani42/nvim-tree.lua'
+"Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 """"Setup nvim-cmp
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'

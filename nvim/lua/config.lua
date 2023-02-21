@@ -24,16 +24,18 @@ local async = require('plenary.async')
 --- treesitter
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {
-	  "r",
---	  "markdown",
-	  "json",
-	  "python",
-	  "lua",
-	  "html",
-	  "yaml"
-	  },
-  highlight = { enable = true, },
+    ensure_installed = {
+        "r",
+        --	  "markdown",
+        "json",
+        "python",
+        "lua",
+        "html",
+        "yaml",
+        "vim",
+        },
+    auto_install = true,
+    highlight = { enable = true, },
 }
 
 --- scrollbar settings for scrollbar and hlslens
