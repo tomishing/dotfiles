@@ -11,8 +11,8 @@ return {
     -- font = wezterm.font("FirgeNerd Console", {weight="Regular", stretch="Normal"}),
 --    font = wezterm.font("Firge35Nerd", {weight="Regular", stretch="Normal"}),
     font = wezterm.font_with_fallback {
-        'FiraCode NF',
         'Firge35Nerd Console',
+        'FiraCode Nerd Font Mono',
     },
     font_size = 11,
     keys = {
