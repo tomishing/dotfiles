@@ -8,23 +8,36 @@ local api = vim.api
 g.markdown_folding = 1
 api.nvim_create_autocmd(
     { 'TermOpen' },
-    { pattern = '*',
-    command = 'startinsert',
-})
+    { pattern = '*', command = 'startinsert',}
+    )
 
 -- theme
-cmd.colorscheme "nordfox"
+cmd.colorscheme('nordfox')
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
 cmd([[hi vertsplit guifg=grey]])
 
 --serch engine
 --setting for search over dictionary.com
 -- \saw is going to look for a word under the cursor
-g.browser_search_engines = { 
-    dictcom = 'https://www.dictionary.com/browse/%s', }
-g.search_default_engine = { 'dictcom' }
-
+--g.browser_search_engines = { 
+--    dictcom = 'https://www.dictionary.com/browse/%s', 
+--    cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
+--}
+--g.browser_search_default_engine = { 'dictcom' }
+cmd([[
+let g:browser_search_engines = {
+			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s',
+			\ 'cambridge': 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s'}
+]])
+cmd([[
+    let g:browser_search_default_engine = 'cambridge'
+ ]])
+            
 -- vim-sneak
+--s with two words: search forward
+--S with two words: search backward
+--use cl instead of s
+--use cc instead of S
 g['sneak#label'] = 1
 
 -- fzf_session setting

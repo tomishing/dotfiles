@@ -86,9 +86,9 @@ lua require('keymap')
 "vmap <silent> <Leader>s <Plug>SearchVisual
 
 "let g:browser_search_engines = {
-"			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s'
-"			\ }
-"let g:browser_search_default_engine = 'dictionary.com'
+"			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s',
+"			\ 'cambridge': 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s'}
+"let g:browser_search_default_engine = 'cambridge'
 
 "vim-sneak
 "s with two words: search forward
