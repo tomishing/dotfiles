@@ -19,19 +19,11 @@ cmd([[hi vertsplit guifg=grey]])
 --serch engine
 --setting for search over dictionary.com
 -- \saw is going to look for a word under the cursor
---g.browser_search_engines = { 
---    dictcom = 'https://www.dictionary.com/browse/%s', 
---    cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
---}
---g.browser_search_default_engine = { 'dictcom' }
-cmd([[
-let g:browser_search_engines = {
-			\ 'dictionary.com': 'https://www.dictionary.com/browse/%s',
-			\ 'cambridge': 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s'}
-]])
-cmd([[
-    let g:browser_search_default_engine = 'cambridge'
- ]])
+g.browser_search_engines = { 
+    dictcom = 'https://www.dictionary.com/browse/%s', 
+    cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
+}
+g.browser_search_default_engine = 'cambridge'
             
 -- vim-sneak
 --s with two words: search forward
