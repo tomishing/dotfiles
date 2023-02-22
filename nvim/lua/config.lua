@@ -1,44 +1,53 @@
 -- publicly shared in github
+local g = vim.g
+local cmd = vim.cmd
+local fn = vim.fn
+local api = vim.api
+
 -- base 
-vim.g.markdown_folding = 1
-vim.api.nvim_create_autocmd(
+g.markdown_folding = 1
+api.nvim_create_autocmd(
     { 'TermOpen' },
     { pattern = '*',
     command = 'startinsert',
 })
 
 -- theme
-vim.cmd.colorscheme "nordfox"
+cmd.colorscheme "nordfox"
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
-vim.cmd([[hi vertsplit guifg=grey]])
+cmd([[hi vertsplit guifg=grey]])
 
 --serch engine
 --setting for search over dictionary.com
 -- \saw is going to look for a word under the cursor
-vim.g.browser_search_engines = { 
+g.browser_search_engines = { 
     dictcom = 'https://www.dictionary.com/browse/%s', }
-vim.g.search_default_engine = { 'dictcom' }
+g.search_default_engine = { 'dictcom' }
 
 -- vim-sneak
-vim.g['sneak#label'] = 1
+g['sneak#label'] = 1
 
 -- fzf_session setting
-vim.g.fzf_session_path = '/home/tomishing/.config/nvim/session'
+g.fzf_session_path = '/home/tomishing/.config/nvim/session'
 
 -- skkeleton
-vim.fn['skkeleton#config']({
+fn['skkeleton#config']({
     globalJisyo = '~/.config/skk/SKK-JISYO.L'
 })
-vim.fn['skkeleton#config']({
+fn['skkeleton#config']({
     userJisyo = '~/.config/skk/user.dic'
 })
-vim.cmd([[call skkeleton#config({ 'eggLikeNewline':v:true })]])
-vim.cmd([[
+cmd([[call skkeleton#config({ 'eggLikeNewline':v:true })]])
+cmd([[
 call skkeleton#register_kanatable('rom', {
       \ 'jj': 'escape',
       \ 'z,': ['―'],
       \ })
 ]])
+
+--UltiSnips
+g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
+g.UltiSnipsEditSplit = 'vertical'
 
 -- toggleterm setup
 require("toggleterm").setup{}
