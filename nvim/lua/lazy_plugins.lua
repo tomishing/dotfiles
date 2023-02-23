@@ -1,12 +1,10 @@
-local cmd = vim.cmd
-
 return {
     { -- colorschemes
         'EdenEast/nightfox.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            cmd.colorscheme('nordfox') 
+            vim.cmd.colorscheme('nordfox') 
         end,
     },
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, },
@@ -14,6 +12,7 @@ return {
     { 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate' }, },
     { -- fzf
         'junegunn/fzf',
+        event = 'VeryLazy',
         dependencies = { 
             'junegunn/fzf.vim',
             'dominickng/fzf-session.vim',
@@ -26,10 +25,10 @@ return {
             'Shougo/ddc.vim',
         },
     },
-    {  'SirVer/ultisnips', dependencies = { 'honza/vim-snippets' }, },
-    { 'iamcco/markdown-preview.nvim', },
-    { 'rhysd/vim-grammarous', },
-    { 'preservim/vim-wordy', },
+    { 'SirVer/ultisnips', dependencies = { 'honza/vim-snippets' }, },
+    { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
+    { 'rhysd/vim-grammarous', ft = 'markdown' },
+    { 'preservim/vim-wordy', ft = 'markdown' },
     { 'jeffkreeftmeijer/vim-numbertoggle', },
     { 'nvim-lua/plenary.nvim', },
     { 'lewis6991/gitsigns.nvim', },
@@ -40,6 +39,7 @@ return {
     { 'justinmk/vim-sneak', },
     { -- mason
         'williamboman/mason.nvim',
+        cmd = "Mason",
         dependencies = {
             'williamboman/mason-lspconfig.nvim',
             'neovim/nvim-lspconfig',
@@ -52,6 +52,7 @@ return {
     { 'lukas-reineke/indent-blankline.nvim', },
     {
         'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
