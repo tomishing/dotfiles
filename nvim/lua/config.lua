@@ -12,7 +12,7 @@ api.nvim_create_autocmd(
     )
 
 -- theme
-cmd.colorscheme('nordfox')
+-- cmd.colorscheme('nordfox')
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
 cmd([[hi vertsplit guifg=grey]])
 
@@ -79,16 +79,15 @@ local async = require('plenary.async')
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
         "r",
---        "markdown",
         "json",
         "python",
         "lua",
         "html",
         "yaml",
-        "vim",
+--        "vim",
         },
 --    ignore_install = { "markdown"},
-    auto_install = true,
+--    auto_install = true,
     highlight = { enable = true, },
 }
 
