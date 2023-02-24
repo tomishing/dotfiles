@@ -9,7 +9,7 @@ return {
 --    color_scheme = "Mariana", -- Afterglow, Ayu Mirage, MaterialDarker,
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     -- font = wezterm.font("FirgeNerd Console", {weight="Regular", stretch="Normal"}),
---    font = wezterm.font("Firge35Nerd", {weight="Regular", stretch="Normal"}),
+--    font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="ExtraLight", stretch="Normal"}),
     font = wezterm.font_with_fallback {
         'Firge35Nerd Console',
         'FiraCode Nerd Font Mono',
