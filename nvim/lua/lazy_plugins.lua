@@ -64,7 +64,8 @@ return {
             'onsails/lspkind-nvim',
             'hrsh7th/cmp-nvim-lua',
             'jc-doyle/cmp-pandoc-references',
+            { 'tzachar/cmp-tabnine', build = { './install.sh' }, },
         },
     },
-    { 'tzachar/cmp-tabnine', build = { './install.sh' }, },
+--    { 'tzachar/cmp-tabnine', build = { './install.sh' }, },
 }
