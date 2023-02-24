@@ -57,23 +57,23 @@ return {
             action=act.ActivateTabRelative(1)
         },
         {
-            key = 'LeftArrow',
-            mods = 'CTRL|SHIFT',
+            key = 'h',
+            mods = 'ALT',
             action = act.ActivatePaneDirection 'Left',
         },
         {
-            key = 'RightArrow',
-            mods = 'CTRL|SHIFT',
+            key = 'l',
+            mods = 'ALT',
             action = act.ActivatePaneDirection 'Right',
         },
         {
-            key = 'UpArrow',
-            mods = 'CTRL|SHIFT',
+            key = 'k',
+            mods = 'ALT',
             action = act.ActivatePaneDirection 'Up',
         },
         {
-            key = 'DownArrow',
-            mods = 'CTRL|SHIFT',
+            key = 'j',
+            mods = 'ALT',
             action = act.ActivatePaneDirection 'Down',
         },
         },
