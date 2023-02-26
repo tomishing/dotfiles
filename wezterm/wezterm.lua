@@ -52,22 +52,22 @@ return {
         },
         {
             key = 'h',
-            mods = 'ALT',
+            mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Left',
         },
         {
             key = 'l',
-            mods = 'ALT',
+            mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Right',
         },
         {
             key = 'k',
-            mods = 'ALT',
+            mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Up',
         },
         {
             key = 'j',
-            mods = 'ALT',
+            mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Down',
         },
         },
