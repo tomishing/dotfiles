@@ -33,9 +33,9 @@ return {
     { 'nvim-lua/plenary.nvim', },
     { 'lewis6991/gitsigns.nvim', },
     { 'tpope/vim-repeat', },
-    { 'tpope/vim-fugitive', },
+--    { 'tpope/vim-fugitive', },
     { 'psliwka/vim-smoothie', },
-    { 'voldikss/vim-browser-search', },
+    { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
     { 'justinmk/vim-sneak', },
     { -- mason
         'williamboman/mason.nvim',
