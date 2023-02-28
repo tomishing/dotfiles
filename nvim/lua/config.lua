@@ -25,12 +25,12 @@ g.browser_search_engines = {
 }
 g.browser_search_default_engine = 'cambridge'
             
--- vim-sneak
+-- leap.nvim 
 --s with two words: search forward
 --S with two words: search backward
 --use cl instead of s
 --use cc instead of S
-g['sneak#label'] = 1
+require('leap').add_default_mappings()
 
 --vim-repeat
 fn['repeat#set'](api.nvim_replace_termcodes('<Plug>MyWonderfulMap', true, false, true), vim.v.count)

@@ -32,14 +32,19 @@ return {
     { 'jeffkreeftmeijer/vim-numbertoggle', },
     { 'nvim-lua/plenary.nvim', },
     { 'lewis6991/gitsigns.nvim', },
-    { 'tpope/vim-repeat', },
---    { 'tpope/vim-fugitive', },
+    { -- leap
+        'ggandor/leap.nvim',
+        event = 'VeryLazy',
+        dependencies = { 
+            'tpope/vim-repeat', 
+        },
+    },
+    { 'tpope/vim-surround', event = 'InsertEnter', },
     { 'psliwka/vim-smoothie', },
     { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
-    { 'justinmk/vim-sneak', },
     { -- mason
         'williamboman/mason.nvim',
-        cmd = "Mason",
+        cmd = 'Mason',
         dependencies = {
             'williamboman/mason-lspconfig.nvim',
             'neovim/nvim-lspconfig',
@@ -52,7 +57,7 @@ return {
     { 'lukas-reineke/indent-blankline.nvim', },
     {
         'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
+        event = 'VeryLazy',
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
