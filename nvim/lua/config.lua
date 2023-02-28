@@ -32,6 +32,9 @@ g.browser_search_default_engine = 'cambridge'
 --use cc instead of S
 g['sneak#label'] = 1
 
+--vim-repeat
+fn['repeat#set'](api.nvim_replace_termcodes('<Plug>MyWonderfulMap', true, false, true), vim.v.count)
+
 -- fzf_session setting
 g.fzf_session_path = '/home/tomishing/.config/nvim/session'
 
@@ -331,7 +334,7 @@ end
 
 -- diagnostic settings
 vim.diagnostic.config {
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     underline = false,
     update_in_insert = true,
