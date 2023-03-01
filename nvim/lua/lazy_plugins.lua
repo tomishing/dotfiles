@@ -31,7 +31,7 @@ return {
     { 'preservim/vim-wordy', ft = 'markdown' },
     { 'jeffkreeftmeijer/vim-numbertoggle', },
     { 'nvim-lua/plenary.nvim', },
-    { 'lewis6991/gitsigns.nvim', },
+    { 'lewis6991/gitsigns.nvim', event = { "BufReadPre", "BufNewFile" }, },
     { -- leap
         'ggandor/leap.nvim',
         event = 'VeryLazy',
@@ -57,7 +57,7 @@ return {
     { 'lukas-reineke/indent-blankline.nvim', },
     {
         'hrsh7th/nvim-cmp',
-        event = 'VeryLazy',
+        event = 'InsertEnter',
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
