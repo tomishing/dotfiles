@@ -30,6 +30,7 @@ end
 local options = {
    autochdir = true,
    autoindent = true,
+   autowrite = true,
 --   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
