@@ -255,9 +255,9 @@ cmp.setup {
 
     sources = {
         { name = 'buffer' },
-        { name = 'nvim_lsp' }, 
+        { name = 'nvim_lsp' },
         { name = 'ultisnips' },
-        { name = 'nvim_lua' }, 
+        { name = 'nvim_lua' },
         {
             name = 'look',
             keyword_length = 2,
@@ -265,7 +265,7 @@ cmp.setup {
                 convert_case = true,
                 loud = true
             }
-        }, 
+        },
         { name = 'path' },
         { name = 'spell' },
 ---        { name = 'cmp_pandoc' },
@@ -321,16 +321,25 @@ require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local nvim_lsp = require('lspconfig')
-local servers = {'r_language_server', 'pyright'}
+local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', }
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
-        capabilities = capabilities
+        capabilities = capabilities,
     }
 end
--- require('lspconfig')['r_language_server', 'pyright'].setup {
--- capabilities = capabilities
--- }
+
+--require('mason-lspconfig').setup_handlers( { 
+--    function(server)
+--      local opt = { capabilities = capabilities, },
+--      require('lspconfig')[server].setup(opt)
+--    end 
+--})
+
+-- LSP handlers
+--vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+--)
 
 -- diagnostic settings
 vim.diagnostic.config {

@@ -29,25 +29,23 @@ return {
     { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
-    { 'jeffkreeftmeijer/vim-numbertoggle', },
+    { 'jeffkreeftmeijer/vim-numbertoggle', event = { "BufReadPre", "BufNewFile" },},
     { 'nvim-lua/plenary.nvim', },
     { 'lewis6991/gitsigns.nvim', event = { "BufReadPre", "BufNewFile" }, },
     { -- leap
         'ggandor/leap.nvim',
         event = 'VeryLazy',
-        dependencies = { 
-            'tpope/vim-repeat', 
-        },
+        dependencies = { 'tpope/vim-repeat', },
     },
     { 'tpope/vim-surround', event = 'InsertEnter', },
     { 'psliwka/vim-smoothie', },
     { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
-    { -- mason
-        'williamboman/mason.nvim',
-        cmd = 'Mason',
+    { -- lsp
+        'neovim/nvim-lspconfig',
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
+            'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
-            'neovim/nvim-lspconfig',
         },
     },
     { 'petertriho/nvim-scrollbar', },
