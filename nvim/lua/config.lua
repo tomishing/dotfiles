@@ -19,12 +19,11 @@ cmd([[hi vertsplit guifg=grey]])
 --serch engine
 --setting for search over dictionary.com
 -- \saw is going to look for a word under the cursor
-g.browser_search_engines = { 
-    dictcom = 'https://www.dictionary.com/browse/%s', 
+g.browser_search_engines = {
+    dictcom = 'https://www.dictionary.com/browse/%s',
     cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
 }
 g.browser_search_default_engine = 'cambridge'
-            
 -- leap.nvim 
 --s with two words: search forward
 --S with two words: search backward
@@ -231,7 +230,7 @@ cmp.setup {
         -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
 
@@ -328,13 +327,6 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
-
---require('mason-lspconfig').setup_handlers( { 
---    function(server)
---      local opt = { capabilities = capabilities, },
---      require('lspconfig')[server].setup(opt)
---    end 
---})
 
 -- LSP handlers
 --vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
