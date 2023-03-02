@@ -4,7 +4,7 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('nordfox') 
+            vim.cmd.colorscheme('nordfox')
         end,
     },
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, },
@@ -13,14 +13,14 @@ return {
     { -- fzf
         'junegunn/fzf',
         event = 'VeryLazy',
-        dependencies = { 
+        dependencies = {
             'junegunn/fzf.vim',
             'dominickng/fzf-session.vim',
         },
     },
     { -- skk
         'vim-skk/skkeleton',
-        dependencies = { 
+        dependencies = {
             'vim-denops/denops.vim',
             'Shougo/ddc.vim',
         },
