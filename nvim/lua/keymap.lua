@@ -9,27 +9,27 @@ map('i', 'ｊｋ', '<esc>')
 map('n', 'い', 'i')
 map('i', '：ｗ', ':w')
 
---nvim-tree
+-- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 map('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
 
---search over dictionary.com
+-- search over dictionary.com
 map('n', '<Leader>s', '<Plug>SearchNormal', { silent = true} )
 map('v', '<Leader>s', '<Plug>SearchVisual', { silent = true} )
 
---fzf
+-- fzf
 map('n', '<leader>bz', ':Buffers<CR>', opts)
 map('n', '<leader>fz', ':Files<CR>', opts)
 
---automatic insert a matching brace
+-- automatic insert a matching brace
 map('i', '{', '{}<esc>ha')
 map('i', '[', '[]<esc>ha')
 map('i', '(', '()<esc>ha')
 map('i', '"', '""<esc>ha')
---map('i', '<', '<><esc>ha')
+-- map('i', '<', '<><esc>ha')
 
---settings for skkeleton
+-- settings for skkeleton
 map('i', 'jz', '<Plug>(skkeleton-toggle)', { silent = true} )
 map('c', 'jz', '<Plug>(skkeleton-toggle)', { silent = true} )
 
@@ -69,6 +69,9 @@ map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
 map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
 map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 
---highlight
+-- highlight
 map('n', '<Leader>l', ':noh<CR>', opts)
 
+-- session
+map('n', '<leader>se', ':Sessions<CR>', opts)
+map('n', '<leader>sq', ':SQuit<CR>', opts)
