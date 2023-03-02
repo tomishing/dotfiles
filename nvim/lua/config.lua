@@ -321,7 +321,7 @@ require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local nvim_lsp = require('lspconfig')
-local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', }
+local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', 'html', 'marksman', 'yamlls',}
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
@@ -343,7 +343,7 @@ end
 
 -- diagnostic settings
 vim.diagnostic.config {
-    virtual_text = false,
+    virtual_text = true,
     signs = true,
     underline = false,
     update_in_insert = true,
@@ -368,10 +368,19 @@ tabnine.setup({
 })
 
 -- indent-blankline settings
-require("indent_blankline").setup {
+require('indent_blankline').setup {
     -- for example, context is off by default, use this to turn it on
     show_current_context = true,
     show_current_context_start = true,
 }
 
+-- null-ls, formatter
+local null_ls = require('null-ls')
+local b = null_ls.builtins
 
+null_ls.setup({
+    sources = {
+        b.formatting.prettierd.with { filetype = { "html", "yaml", "markdown", "R" }},
+        b.formatting.stylua
+    }
+})
