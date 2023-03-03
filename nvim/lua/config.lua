@@ -4,15 +4,15 @@ local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
 
--- base 
+-- folding 
 g.markdown_folding = 1
+-- terminal
 api.nvim_create_autocmd(
     { 'TermOpen' },
     { pattern = '*', command = 'startinsert',}
     )
 
 -- theme
--- cmd.colorscheme('nordfox')
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
 cmd([[hi vertsplit guifg=grey]])
 
@@ -372,7 +372,7 @@ local b = null_ls.builtins
 
 null_ls.setup({
     sources = {
-        b.formatting.prettierd.with { filetype = { "html", "yaml", "markdown", "R" }},
-        b.formatting.stylua
+        b.formatting.prettierd.with { filetype = { "html", "yaml", "markdown", "css" }},
+        b.formatting.stylua,
     }
 })
