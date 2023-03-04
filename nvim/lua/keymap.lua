@@ -72,17 +72,41 @@ map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 -- highlight
 map("n", "<Leader>l", "<cmd>noh<CR>", opts)
 
+
 -- lsp
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-map("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-map("v", "gf", "<cmd>lua vim.lsp.buf.range.formatting()<CR>")
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-map("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-map("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>")
-map("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-map("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+local M = {} -- This is module in lua
+
+local lbuf = vim.lsp.buf
+local dia = vim.diagnostic
+
+function M.diagnostic_goto(next, severity)
+  local go = next and dia.goto_next or dia.goto_prev
+  severity = severity and dia.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
+end
+
+map("n", "K", lbuf.hover, opts)
+map("n", "gf", lbuf.formatting, opts)
+map("v", "gf", lbuf.formatting, opts)
+map("n", "gr", lbuf.references, opts)
+map("n", "gd", lbuf.definition, opts)
+map("n", "gD", lbuf.declaration, opts)
+map("n", "gi", lbuf.implementation, opts)
+map("n", "gt", lbuf.type_definition, opts)
+map("n", "gn", lbuf.rename, opts)
+map("n", "ga", lbuf.code_action, opts)
+map("n", "ge", dia.open_float, opts)
+map("n", "]d", M.diagnostic_goto(true), opts)
+map("n", "[d", M.diagnostic_goto(false), opts)
+map("n", "]e", M.diagnostic_goto(true, "ERROR"), opts)
+map("n", "[e", M.diagnostic_goto(false, "ERROR"), opts)
+map("n", "]w", M.diagnostic_goto(true, "WARN"), opts)
+map("n", "[w", M.diagnostic_goto(false, "WARN"), opts)
+map("n", "]i", M.diagnostic_goto(true, "INFO"), opts)
+map("n", "[i", M.diagnostic_goto(false, "INFO"), opts)
+map("n", "]h", M.diagnostic_goto(true, "HINT"), opts)
+map("n", "[h", M.diagnostic_goto(false, "HINH"), opts)
+
+return M
