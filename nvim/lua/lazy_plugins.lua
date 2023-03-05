@@ -9,7 +9,6 @@ return {
     },
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-tree/nvim-tree.lua',
-        keys = {"<c-n>", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree"},
         dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate' }, },
     { -- fzf
