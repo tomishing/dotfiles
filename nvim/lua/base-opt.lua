@@ -1,5 +1,6 @@
 -- Disable some builtin vim plugins
 local g = vim.g
+local o = vim.opt
 local disabled_built_ins = {
   "2html_plugin",
   "getscript",
@@ -60,11 +61,11 @@ local options = {
 }
 
 for k, v in pairs(options) do
-    vim.opt[k] = v
+    o[k] = v
 end
 
 -- vertical and horizontal line settings
-vim.opt.fillchars = {
+o.fillchars = {
   horiz = '━',
   horizup = '┻',
   horizdown = '┳',
@@ -75,6 +76,5 @@ vim.opt.fillchars = {
 }
 
 --append
-vim.opt.iskeyword:append({'-'})
-vim.opt.clipboard:append({'unnamedplus'})
-
+o.iskeyword:append({'-'})
+o.clipboard:append({'unnamedplus'})
