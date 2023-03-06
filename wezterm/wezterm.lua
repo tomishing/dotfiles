@@ -1,54 +1,53 @@
-
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local act = wezterm.action
 
 return {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
-        'Fira Code',
-        'Gen Shin Gothic',
+        "Fira Code",
+        "Gen Shin Gothic",
     },
     font_size = 11,
     keys = {
         {
-            key = "b", 
-            mods = "CTRL", 
-            action = wezterm.action.DisableDefaultAssignment
+            key = "b",
+            mods = "CTRL",
+            action = act.DisableDefaultAssignment
         },
         {
-            key = "d", 
-            mods = "CTRL|ALT", 
-            action = act.SplitVertical{domain = "CurrentPaneDomain"}
+            key = "d",
+            mods = "CTRL|ALT",
+            action = act.SplitVertical { domain = "CurrentPaneDomain" }
         },
         {
-            key="r", 
-            mods="CTRL|ALT", 
-            action=act.SplitHorizontal{domain="CurrentPaneDomain"}
+            key = "r",
+            mods = "CTRL|ALT",
+            action = act.SplitHorizontal { domain = "CurrentPaneDomain" }
         },
         {
-            key="b", 
-            mods="ALT", 
-            action=act.RotatePanes("CounterClockwise")
+            key = "b",
+            mods = "ALT",
+            action = act.RotatePanes("CounterClockwise")
         },
         {
-            key="n", 
-            mods="ALT", 
-            action=act.RotatePanes("Clockwise")
+            key = "n",
+            mods = "ALT",
+            action = act.RotatePanes("Clockwise")
         },
         {
-            key="t", 
-            mods="SHIFT|CTRL", 
-            action=act.SpawnTab("CurrentPaneDomain")
+            key = "t",
+            mods = "SHIFT|CTRL",
+            action = act.SpawnTab("CurrentPaneDomain")
         },
         {
-            key="PageUp",
-            mods="CTRL",
-            action=act.ActivateTabRelative(-1)
+            key = "PageUp",
+            mods = "CTRL",
+            action = act.ActivateTabRelative( -1)
         },
         {
-            key="PageDown", 
-            mods="CTRL",
-            action=act.ActivateTabRelative(1)
+            key = "PageDown",
+            mods = "CTRL",
+            action = act.ActivateTabRelative(1)
         },
         {
             key = 'h',
@@ -70,12 +69,11 @@ return {
             mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Down',
         },
-        },
+    },
     hide_tab_bar_if_only_one_tab = true,
     line_height = 1.1,
 --    window_background_opacity = 0.95,
-    use_ime = false,
-
+    use_ime = true,
     window_padding = {
         left = 10,
         right = 0,
