@@ -4,13 +4,13 @@ local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
 
--- folding 
+-- folding
 g.markdown_folding = 1
 -- terminal
 api.nvim_create_autocmd(
     { 'TermOpen' },
-    { pattern = '*', command = 'startinsert',}
-    )
+    { pattern = '*', command = 'startinsert', }
+)
 
 -- theme
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
@@ -24,7 +24,7 @@ g.browser_search_engines = {
     cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
 }
 g.browser_search_default_engine = 'cambridge'
--- leap.nvim 
+-- leap.nvim
 --s with two words: search forward
 --S with two words: search backward
 --use cl instead of s
@@ -57,7 +57,7 @@ g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
 g.UltiSnipsEditSplit = 'vertical'
 
 -- toggleterm setup
-require("toggleterm").setup{}
+require("toggleterm").setup {}
 
 --- lualineO
 -- theme: eg. papercolor_dark
@@ -86,10 +86,10 @@ require('nvim-treesitter.configs').setup {
         "lua",
         "html",
         "yaml",
---        "vim",
+        --        "vim",
     },
---    ignore_install = { "markdown"},
---    auto_install = true,
+    --    ignore_install = { "markdown"},
+    --    auto_install = true,
     highlight = { enable = true, },
 }
 
@@ -101,22 +101,22 @@ require('scrollbar').setup()
 
 --- nvim-tree
 require('nvim-tree').setup {
-  diagnostics = {
-    enable = true,
-    show_on_dirs = false,
-    show_on_open_dirs = true,
-    debounce_delay = 50,
-    severity = {
-        min = vim.diagnostic.severity.HINT,
-        max = vim.diagnostic.severity.ERROR,
+    diagnostics = {
+        enable = true,
+        show_on_dirs = false,
+        show_on_open_dirs = true,
+        debounce_delay = 50,
+        severity = {
+            min = vim.diagnostic.severity.HINT,
+            max = vim.diagnostic.severity.ERROR,
+        },
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        },
     },
-    icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
-    },
-  },
 }
 
 -- Setup nvim-cmp.
@@ -129,31 +129,31 @@ cmp.setup {
         format = function(entry, vim_item)
             -- fancy icons and a name of kind
             vim_item.kind = lspkind.presets.default[vim_item.kind] ..
-                                " " .. vim_item.kind
+                " " .. vim_item.kind
             -- set a name for each source
             vim_item.menu = ({
-                buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
-                ultisnips = "[UltiSnips]",
-                nvim_lua = "[Lua]",
-                look = "[Look]",
-                path = "[Path]",
-                spell = "[Spell]",
-                cmp_tabnine = "[TabNine]",
-                pandoc_references = "[Citation]",
---                skkeleton = "[Skk]"
---                cmp_pandoc = "[Pandoc]"
-            })[entry.source.name]
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    ultisnips = "[UltiSnips]",
+                    nvim_lua = "[Lua]",
+                    look = "[Look]",
+                    path = "[Path]",
+                    spell = "[Spell]",
+                    cmp_tabnine = "[TabNine]",
+                    pandoc_references = "[Citation]",
+                    --                skkeleton = "[Skk]"
+                    --                cmp_pandoc = "[Pandoc]"
+                })[entry.source.name]
             return vim_item
         end
     },
 
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
+        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
             fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
@@ -162,7 +162,7 @@ cmp.setup {
         -- Use Tab and shift-Tab to navigate autocomplete menu
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs( -4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
@@ -191,12 +191,12 @@ cmp.setup {
         },
         { name = 'path' },
         { name = 'spell' },
----        { name = 'cmp_pandoc' },
+        ---        { name = 'cmp_pandoc' },
         { name = 'cmp_tabnine' },
         {
             name = 'pandoc_references'
         },
---        { name = 'skkeleton' },
+        --        { name = 'skkeleton' },
     },
 
 }
@@ -236,7 +236,7 @@ require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local nvim_lsp = require('lspconfig')
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', 'html', 'marksman', 'yamlls',}
+local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', 'html', 'marksman', 'yamlls', }
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
@@ -264,15 +264,15 @@ vim.diagnostic.config {
 
 local tabnine = require('cmp_tabnine.config')
 tabnine.setup({
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = '..',
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	},
+    max_lines = 1000,
+    max_num_results = 20,
+    sort = true,
+    run_on_every_keystroke = true,
+    snippet_placeholder = '..',
+    ignored_file_types = { -- default is not to ignore
+        -- uncomment to ignore in lua:
+        -- lua = true
+    },
 })
 
 -- indent-blankline settings
@@ -288,7 +288,7 @@ local b = null_ls.builtins
 
 null_ls.setup({
     sources = {
-        b.formatting.prettierd.with { filetype = { "html", "yaml", "markdown", "css" }},
+        b.formatting.prettierd.with { filetype = { "html", "yaml", "markdown", "css" } },
         b.formatting.stylua,
     }
 })
