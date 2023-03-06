@@ -66,7 +66,7 @@ require('lualine').setup {
         theme = 'auto',
         globalstatus = true,
     },
-    }
+}
 
 --- gitsigns
 
@@ -87,7 +87,7 @@ require('nvim-treesitter.configs').setup {
         "html",
         "yaml",
 --        "vim",
-        },
+    },
 --    ignore_install = { "markdown"},
 --    auto_install = true,
     highlight = { enable = true, },
@@ -203,40 +203,31 @@ cmp.setup {
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
-sources = cmp.config.sources({
-  { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-}, {
-  { name = 'buffer' },
-})
+    sources = cmp.config.sources(
+        { { name = 'cmp_git' }, },
+        { { name = 'buffer' }, }
+    )
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-sources = {
-  { name = 'buffer' }
-}
-})
+cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-sources = cmp.config.sources({
-  { name = 'path' }
-}, {
-  { name = 'cmdline' }
-})
+    sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
 })
 
 
 -- lsp-server settings: mason, and mason-lspconfig
 -- So far, lint is working well without this packages, these are ommited.
 require("mason").setup({
-      ui = {
-            icons = {
-                package_installed = "✓",
-                package_pending = "➜",
-                package_uninstalled = "✗"
-            }
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
         }
+    }
 })
 require("mason-lspconfig").setup()
 
