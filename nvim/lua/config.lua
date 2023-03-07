@@ -193,9 +193,7 @@ cmp.setup {
         { name = 'spell' },
         ---        { name = 'cmp_pandoc' },
         { name = 'cmp_tabnine' },
-        {
-            name = 'pandoc_references'
-        },
+        { name = 'pandoc_references' },
         --        { name = 'skkeleton' },
     },
 
@@ -216,7 +214,6 @@ cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
 cmp.setup.cmdline(':', {
     sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
 })
-
 
 -- lsp-server settings: mason, and mason-lspconfig
 -- So far, lint is working well without this packages, these are ommited.

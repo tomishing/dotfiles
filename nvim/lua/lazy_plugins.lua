@@ -10,7 +10,10 @@ return {
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' }, },
-    { 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate' }, },
+    { 'nvim-treesitter/nvim-treesitter',
+        build = { ':TSUpdate' },
+        event = { "BufReadPost", "BufNewFile" },
+    },
     { -- fzf
         'junegunn/fzf',
         event = 'VeryLazy',
