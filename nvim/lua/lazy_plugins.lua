@@ -12,7 +12,7 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-treesitter/nvim-treesitter',
         build = { ':TSUpdate' },
-        event = { "BufReadPost", "BufNewFile" },
+        event = { 'BufReadPost', 'BufNewFile' },
     },
     { -- fzf
         'junegunn/fzf',
@@ -24,9 +24,17 @@ return {
     },
     { -- skk
         'vim-skk/skkeleton',
+--        event = 'InsertEnter',
         dependencies = {
             'vim-denops/denops.vim',
-            'Shougo/ddc.vim',
+            {
+                'Shougo/ddc.vim',
+                dependencies = {
+                    'Shougo/ddc-matcher_head',
+                    'Shougo/ddc-sorter_rank',
+                    'Shougo/ddc-ui-native',
+                },
+            },
         },
     },
     { 'SirVer/ultisnips',
@@ -35,9 +43,9 @@ return {
     { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
-    { 'jeffkreeftmeijer/vim-numbertoggle', event = { "BufReadPre", "BufNewFile" },},
+    { 'jeffkreeftmeijer/vim-numbertoggle', event = { 'BufReadPre', 'BufNewFile' },},
     { 'nvim-lua/plenary.nvim', },
-    { 'lewis6991/gitsigns.nvim', event = { "BufReadPre", "BufNewFile" }, },
+    { 'lewis6991/gitsigns.nvim', event = { 'BufReadPre', 'BufNewFile' }, },
     { -- leap
         'ggandor/leap.nvim',
         event = 'VeryLazy',
@@ -48,7 +56,7 @@ return {
     { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
     { -- lsp
         'neovim/nvim-lspconfig',
-        event = { "BufReadPre", "BufNewFile" },
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
@@ -56,9 +64,9 @@ return {
     },
     { 'petertriho/nvim-scrollbar', },
     { 'kevinhwang91/nvim-hlslens', },
-    { 'lambdalisue/readablefold.vim', event = { "BufReadPre", "BufNewFile" },},
+    { 'lambdalisue/readablefold.vim', event = { 'BufReadPre', 'BufNewFile' },},
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
-    { 'lukas-reineke/indent-blankline.nvim', event = { "BufReadPre", "BufNewFile" },},
+    { 'lukas-reineke/indent-blankline.nvim', event = { 'BufReadPre', 'BufNewFile' },},
     {
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
@@ -76,5 +84,8 @@ return {
             { 'tzachar/cmp-tabnine', build = { './install.sh' }, },
         },
     },
-    { 'jose-elias-alvarez/null-ls.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, },
+    { 'jose-elias-alvarez/null-ls.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
 }

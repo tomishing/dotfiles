@@ -46,11 +46,30 @@ fn['skkeleton#config']({
 })
 cmd([[call skkeleton#config({ 'eggLikeNewline':v:true })]])
 cmd([[
-call skkeleton#register_kanatable('rom', {
+    call skkeleton#register_kanatable('rom', {
       \ 'jj': 'escape',
       \ 'z,': ['―'],
       \ })
 ]])
+
+cmd([[call ddc#custom#patch_global('sources', ['skkeleton'])]])
+cmd([[
+    call ddc#custom#patch_global('sourceOptions', {
+        \   '_': {
+        \     'matchers': ['matcher_head'],
+        \     'sorters': ['sorter_rank']
+        \   },
+        \   'skkeleton': {
+        \     'mark': 'skkeleton',
+        \     'matchers': ['skkeleton'],
+        \     'sorters': [],
+        \     'minAutoCompleteLength': 4,
+        \   },
+        \ })
+]])
+cmd([[call ddc#enable()]])
+cmd([[call ddc#custom#patch_global('ui', 'native')]])
+
 
 --UltiSnips
 g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
