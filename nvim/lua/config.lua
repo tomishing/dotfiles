@@ -52,6 +52,7 @@ cmd([[
       \ })
 ]])
 
+-- skkeleton and ddc
 cmd([[call ddc#custom#patch_global('sources', ['skkeleton'])]])
 cmd([[
     call ddc#custom#patch_global('sourceOptions', {
@@ -69,7 +70,6 @@ cmd([[
 ]])
 cmd([[call ddc#enable()]])
 cmd([[call ddc#custom#patch_global('ui', 'native')]])
-
 
 --UltiSnips
 g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
