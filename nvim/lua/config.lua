@@ -72,8 +72,8 @@ cmd([[call ddc#enable()]])
 cmd([[call ddc#custom#patch_global('ui', 'native')]])
 
 --UltiSnips
-g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
-g.UltiSnipsEditSplit = 'vertical'
+-- g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
+-- g.UltiSnipsEditSplit = 'vertical'
 
 -- toggleterm setup
 require("toggleterm").setup {}
@@ -139,21 +139,30 @@ require('nvim-tree').setup {
 }
 
 -- Setup nvim-cmp.
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local luasnip = require("luasnip")
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/snippets" }
 
 cmp.setup {
 
     formatting = {
-        format = function(entry, vim_item)
-            -- fancy icons and a name of kind
-            vim_item.kind = lspkind.presets.default[vim_item.kind] ..
-                " " .. vim_item.kind
-            -- set a name for each source
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            before = function (entry, vim_item)
             vim_item.menu = ({
                     buffer = "[Buffer]",
                     nvim_lsp = "[LSP]",
                     ultisnips = "[UltiSnips]",
+                    luasnip= "[Luasnip]",
                     nvim_lua = "[Lua]",
                     look = "[Look]",
                     path = "[Path]",
@@ -163,17 +172,17 @@ cmp.setup {
                     --                skkeleton = "[Skk]"
                     --                cmp_pandoc = "[Pandoc]"
                 })[entry.source.name]
-            return vim_item
-        end
+                return vim_item
+            end
+        }),
     },
-
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
             -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+--            fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
 
@@ -186,19 +195,43 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<Tab>'] = function(fallback)
-            if cmp.visible() then
+        --['<Tab>'] = function(fallback)
+        --    if cmp.visible() then
+        --        cmp.select_next_item()
+        --    else
+        --        fallback()
+        --    end
+        --end,
+        ["<Tab>"] = cmp.mapping(function(fallback)
+             if cmp.visible() then
                 cmp.select_next_item()
-            else
+              -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+              -- they way you will only jump inside the snippet region
+             elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+             elseif has_words_before() then
+                cmp.complete()
+             else
                 fallback()
-            end
-        end,
-    },
+             end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+             if cmp.visible() then
+                cmp.select_prev_item()
+             elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+             else
+                fallback()
+             end
+        end, { "i", "s" })
+        },
 
     sources = {
         { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'ultisnips' },
+        { name = 'luasnip' },
         { name = 'nvim_lua' },
         {
             name = 'look',
