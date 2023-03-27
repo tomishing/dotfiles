@@ -40,7 +40,7 @@ return {
 --    { 'SirVer/ultisnips',
 --        event = 'InsertEnter',
 --        dependencies = { 'honza/vim-snippets' }, },
-    { 'L3MON4D3/LuaSnip', event = 'InsertEnter', }, 
+    { 'L3MON4D3/LuaSnip', event = 'InsertEnter', },
 --    version= '<CurrentMajor>.*', build = 'make install_jsregexp' },
     { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
@@ -90,5 +90,12 @@ return {
     { 'jose-elias-alvarez/null-ls.nvim',
         event = { 'BufReadPre', 'BufNewFile' },
         dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+    { 'folke/which-key.nvim',
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        require("which-key").setup()
+        end,
     },
 }

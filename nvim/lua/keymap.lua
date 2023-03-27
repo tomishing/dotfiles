@@ -54,7 +54,7 @@ map("n", "<A-l>", "<C-w>l", { noremap = true })
 
 -- toggleterm settings and R
 map("n", "<leader>tt", "<cmd>ToggleTerm size=75 direction=vertical<CR>", { noremap = true })
-map("n", " <leader>td", "<cmd>ToggleTerm size=25 direction=horizontal<CR>", { noremap = true })
+map("n", "<leader>td", "<cmd>ToggleTerm size=25 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>rr", '<cmd>TermExec size=75 direction=vertical cmd="R"<CR>', { noremap = true })
 map("n", "<leader>rd", '<cmd>TermExec size=25 direction=horizontal cmd="R"<CR>', { noremap = true })
 map("n", "<leader>ff", "<cmd>ToggleTermSendCurrentLine 1<CR>", { noremap = true })
