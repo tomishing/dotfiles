@@ -40,7 +40,7 @@ return {
 --    { 'SirVer/ultisnips',
 --        event = 'InsertEnter',
 --        dependencies = { 'honza/vim-snippets' }, },
-    { 'L3MON4D3/LuaSnip', event = 'InsertEnter', },
+    { 'L3MON4D3/LuaSnip', event = 'VeryLazy', },
 --    version= '<CurrentMajor>.*', build = 'make install_jsregexp' },
     { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
@@ -53,7 +53,16 @@ return {
         event = 'VeryLazy',
         dependencies = { 'tpope/vim-repeat', },
     },
-    { 'tpope/vim-surround', event = 'InsertEnter', },
+--    { 'tpope/vim-surround', event = 'InsertEnter', },
+    { 'kylechui/nvim-surround',
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
     { 'psliwka/vim-smoothie', },
     { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
     { -- lsp
@@ -92,6 +101,7 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     { 'folke/which-key.nvim',
+        event = "VeryLazy",
         config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300

@@ -161,7 +161,7 @@ cmp.setup {
             vim_item.menu = ({
                     buffer = "[Buffer]",
                     nvim_lsp = "[LSP]",
-                    ultisnips = "[UltiSnips]",
+--                    ultisnips = "[UltiSnips]",
                     luasnip= "[Luasnip]",
                     nvim_lua = "[Lua]",
                     look = "[Look]",
@@ -230,7 +230,7 @@ cmp.setup {
     sources = {
         { name = 'buffer' },
         { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
+ --       { name = 'ultisnips' },
         { name = 'luasnip' },
         { name = 'nvim_lua' },
         {
