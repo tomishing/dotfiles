@@ -350,7 +350,7 @@ wk.register({
     ["<leader>rr"] = 'Toggle R vertically',
     ["<leader>rd"] = 'Toggle R horizontally',
     ["<leader>ff"] = 'Send current line in R',
-    ["<leader>fd"] = 'Send visual lines in R',
+    ["<leader>fa"] = 'Send visual lines in R',
     ["<leader>se"] = 'Open the sessions list',
     ["<leader>sq"] = 'Save and close the session',
     ["<leader>bz"] = 'Fuzzy search buffers',
