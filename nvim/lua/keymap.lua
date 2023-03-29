@@ -58,7 +58,7 @@ map("n", "<leader>td", "<cmd>ToggleTerm size=25 direction=horizontal<CR>", { nor
 map("n", "<leader>rr", '<cmd>TermExec size=75 direction=vertical cmd="R"<CR>', { noremap = true })
 map("n", "<leader>rd", '<cmd>TermExec size=25 direction=horizontal cmd="R"<CR>', { noremap = true })
 map("n", "<leader>ff", "<cmd>ToggleTermSendCurrentLine 1<CR>", { noremap = true })
-map("v", "<leader>fa", "<cmd>ToggleTermSendVisualLines 1<CR>", { noremap = true })
+map("s", "<leader>fa", "<cmd>ToggleTermSendVisualLines 1<CR>", { noremap = true })
 
 -- hlsens
 
