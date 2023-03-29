@@ -20,11 +20,18 @@ local disabled_built_ins = {
   "vimballPlugin",
   "zip",
   "zipPlugin",
+  "syntax_completion",
+  "spellfile_plugin",
+  "sql_completion",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
+
+g.did_install_default_menus = 1
+g.did_install_syntax_menu = 1
+g.netrw_liststyle = 3
 
 -- option settings
 
