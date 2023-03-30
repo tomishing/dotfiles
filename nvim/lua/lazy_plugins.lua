@@ -119,4 +119,5 @@ return {
             'MunifTanjim/nui.nvim',
         },
     },
+    { 'dhruvasagar/vim-table-mode', },
 }
