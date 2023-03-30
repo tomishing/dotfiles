@@ -87,8 +87,10 @@ function M.diagnostic_goto(next, severity)
 end
 
 map("n", "K", lbuf.hover, opts)
-map("n", "gf", lbuf.formatting, opts)
-map("v", "gf", lbuf.formatting, opts)
+--map("n", "gf", lbuf.formatting, opts)
+--map("v", "gf", lbuf.formatting, opts)
+map("n", "gf", lbuf.format, opts)
+map("v", "gf", lbuf.format, opts)
 map("n", "gr", lbuf.references, opts)
 map("n", "gd", lbuf.definition, opts)
 map("n", "gD", lbuf.declaration, opts)

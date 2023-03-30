@@ -89,7 +89,6 @@ return {
             'hrsh7th/cmp-cmdline',
             'f3fora/cmp-spell',
             'octaltree/cmp-look',
-            'quangnguyen30192/cmp-nvim-ultisnips',
             'saadparwaiz1/cmp_luasnip',
             'onsails/lspkind-nvim',
             'hrsh7th/cmp-nvim-lua',
