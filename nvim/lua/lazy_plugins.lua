@@ -108,4 +108,15 @@ return {
         require("which-key").setup()
         end,
     },
+    { 'folke/noice.nvim',
+        event = 'VeryLazy',
+        config = function()
+            require("noice").setup({
+                -- add any options here
+            })
+        end,
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        },
+    },
 }
