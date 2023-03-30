@@ -56,7 +56,8 @@ return {
 --    { 'tpope/vim-surround', event = 'InsertEnter', },
     { 'kylechui/nvim-surround',
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
-        event = "VeryLazy",
+--        event = "VeryLazy",
+        event = { 'BufReadPost', 'BufNewFile' },
         config = function()
             require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
@@ -119,5 +120,5 @@ return {
             'MunifTanjim/nui.nvim',
         },
     },
-    { 'dhruvasagar/vim-table-mode', },
+    { 'dhruvasagar/vim-table-mode', ft = 'markdown', },
 }
