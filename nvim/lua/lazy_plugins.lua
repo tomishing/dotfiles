@@ -40,7 +40,7 @@ return {
 --    { 'SirVer/ultisnips',
 --        event = 'InsertEnter',
 --        dependencies = { 'honza/vim-snippets' }, },
-    { 'L3MON4D3/LuaSnip', event = 'VeryLazy', },
+--    { 'L3MON4D3/LuaSnip', event = 'VeryLazy', },
 --    version= '<CurrentMajor>.*', build = 'make install_jsregexp' },
     { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
@@ -81,7 +81,8 @@ return {
     { 'lukas-reineke/indent-blankline.nvim', event = { 'BufReadPre', 'BufNewFile' },},
     {
         'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
+--        event = 'InsertEnter',
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -89,7 +90,7 @@ return {
             'hrsh7th/cmp-cmdline',
             'f3fora/cmp-spell',
             'octaltree/cmp-look',
-            'saadparwaiz1/cmp_luasnip',
+            { 'saadparwaiz1/cmp_luasnip', dependencies = { 'L3MON4D3/LuaSnip'},},
             'onsails/lspkind-nvim',
             'hrsh7th/cmp-nvim-lua',
             'jc-doyle/cmp-pandoc-references',
@@ -117,6 +118,7 @@ return {
         end,
         dependencies = {
             'MunifTanjim/nui.nvim',
+            "rcarriga/nvim-notify",
         },
     },
     { 'dhruvasagar/vim-table-mode', ft = 'markdown', },
