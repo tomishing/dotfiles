@@ -83,7 +83,7 @@ require("toggleterm").setup {}
 require('lualine').setup {
     options = {
         theme = 'auto',
-        globalstatus = true,
+        -- globalstatus = true,
     },
 }
 
