@@ -14,7 +14,7 @@ map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opts)
 map("n", "<leader>r", "<cmd>NvimTreeRefresh<CR>", opts)
 map("n", "<leader>n", "<cmd>NvimTreeFindFile<CR>", opts)
 
--- search over dictionary.com
+-- search over dictionary on web
 map("n", "<Leader>s", "<Plug>SearchNormal", { silent = true })
 map("v", "<Leader>s", "<Plug>SearchVisual", { silent = true })
 
