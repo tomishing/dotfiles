@@ -5,8 +5,7 @@ return {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
         "Fira Code",
-        "Gen Shin Gothic",
-    },
+        "Gen Shin Gothic", },
     font_size = 11,
     keys = {
         {
