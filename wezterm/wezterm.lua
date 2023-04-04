@@ -77,7 +77,7 @@ return {
     use_ime = true,
     window_padding = {
         left = 10,
-        right = 5,
+        right = 0,
         top = 0,
         bottom = 0,
     },
