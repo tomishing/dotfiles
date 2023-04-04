@@ -1,13 +1,24 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-return {
+local config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
---        "Fira Code",
-        "JetBrains Mono",
+        "Fira Code",
+--        "JetBrains Mono",
         "Gen Shin Gothic", },
     font_size = 11,
+    hide_tab_bar_if_only_one_tab = true,
+    line_height = 1.25,
+--    window_background_opacity = 0.95,
+    use_ime = true,
+    window_padding = {
+        left = 10,
+        right = 0,
+        top = 0,
+        bottom = 0,
+    },
+    check_for_updates = false,
     keys = {
         {
             key = "b",
@@ -70,14 +81,5 @@ return {
             action = act.ActivatePaneDirection 'Down',
         },
     },
-    hide_tab_bar_if_only_one_tab = true,
-    line_height = 1.2,
---    window_background_opacity = 0.95,
-    use_ime = true,
-    window_padding = {
-        left = 10,
-        right = 0,
-        top = 0,
-        bottom = 0,
-    },
 }
+return config
