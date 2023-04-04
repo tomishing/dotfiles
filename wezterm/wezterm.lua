@@ -4,9 +4,8 @@ local act = wezterm.action
 return {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
-        "Fira Code",
---        "JetBrains Mono",
---        "Consolas",
+--        "Fira Code",
+        "JetBrains Mono",
         "Gen Shin Gothic", },
     font_size = 11,
     keys = {
@@ -72,7 +71,7 @@ return {
         },
     },
     hide_tab_bar_if_only_one_tab = true,
-    line_height = 1.25,
+    line_height = 1.2,
 --    window_background_opacity = 0.95,
     use_ime = true,
     window_padding = {
