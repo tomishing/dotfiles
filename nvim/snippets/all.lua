@@ -59,4 +59,14 @@ ls.add_snippets("all",
         t({"", "```", ""}),
         i(0)
     }),
+    s("yaml_paper", {
+        t({"---"}),
+        t({"", "title: "}), i(1),
+        t({"", "bibliography: "}),
+        t({"/home/tomishing/Dropbox/Workplace/bib/mylibrary.bib"}),
+        t({"", "csl: "}),
+        t({"/home/tomishing/Dropbox/Workplace/bib/ecology.csl"}),
+        t({"", "---", ""}),
+        i(0)
+    }),
 })

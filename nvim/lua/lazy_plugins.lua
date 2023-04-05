@@ -42,7 +42,6 @@ return {
 --        dependencies = { 'honza/vim-snippets' }, },
 --    { 'L3MON4D3/LuaSnip', event = 'VeryLazy', },
 --    version= '<CurrentMajor>.*', build = 'make install_jsregexp' },
-    { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
     { 'jeffkreeftmeijer/vim-numbertoggle', event = { 'BufReadPre', 'BufNewFile' },},
