@@ -94,7 +94,8 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     { 'folke/which-key.nvim',
-        event = "VeryLazy",
+        -- event = "VeryLazy",
+        event = { 'BufReadPre', 'BufNewFile' },
         config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
