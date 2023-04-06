@@ -37,11 +37,6 @@ return {
             },
         },
     },
---    { 'SirVer/ultisnips',
---        event = 'InsertEnter',
---        dependencies = { 'honza/vim-snippets' }, },
---    { 'L3MON4D3/LuaSnip', event = 'VeryLazy', },
---    version= '<CurrentMajor>.*', build = 'make install_jsregexp' },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
     { 'jeffkreeftmeijer/vim-numbertoggle', event = { 'BufReadPre', 'BufNewFile' },},
@@ -52,10 +47,8 @@ return {
         event = 'VeryLazy',
         dependencies = { 'tpope/vim-repeat', },
     },
---    { 'tpope/vim-surround', event = 'InsertEnter', },
     { 'kylechui/nvim-surround',
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
---        event = "VeryLazy",
         event = { 'BufReadPost', 'BufNewFile' },
         config = function()
             require("nvim-surround").setup({
