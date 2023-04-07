@@ -19,6 +19,7 @@ local config = {
         bottom = 0,
     },
     check_for_updates = false,
+    leader = { key = 'a', mods = 'CTRL' },
     keys = {
         {
             key = "b",
@@ -79,6 +80,26 @@ local config = {
             key = 'j',
             mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Down',
+        },
+        {
+            key = 'h',
+            mods = 'LEADER',
+            action = act.AdjustPaneSize { 'Left', 5 },
+        },
+        {
+            key = 'j',
+            mods = 'LEADER',
+            action = act.AdjustPaneSize { 'Down', 5 },
+        },
+        {
+            key = 'k',
+            mods = 'LEADER',
+            action = act.AdjustPaneSize { 'Up', 5 }
+        },
+        {
+            key = 'l',
+            mods = 'LEADER',
+            action = act.AdjustPaneSize { 'Right', 5 },
         },
     },
 }
