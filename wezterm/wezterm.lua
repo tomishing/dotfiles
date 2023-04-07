@@ -4,12 +4,14 @@ local act = wezterm.action
 local config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
-        "Fira Code",
+--        "Fira Code",
 --        "JetBrains Mono",
+          "Iosevka Term Extended",
+--        "Iosevka Term",
         "Gen Shin Gothic", },
     font_size = 12,
     hide_tab_bar_if_only_one_tab = true,
-    line_height = 1.25,
+    line_height = 1.2,
 --    window_background_opacity = 0.95,
     use_ime = true,
     window_padding = {
