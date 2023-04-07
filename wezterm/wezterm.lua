@@ -9,11 +9,11 @@ local config = {
         "Gen Shin Gothic", },
     font_size = 12,
     hide_tab_bar_if_only_one_tab = true,
-    line_height = 1.25,
+    line_height = 1.2,
 --    window_background_opacity = 0.95,
     use_ime = true,
     window_padding = {
-        left = 10,
+        left = 5,
         right = 0,
         top = 0,
         bottom = 0,

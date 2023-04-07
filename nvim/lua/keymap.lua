@@ -79,11 +79,11 @@ local lbuf = vim.lsp.buf
 local dia = vim.diagnostic
 
 function M.diagnostic_goto(next, severity)
-  local go = next and dia.goto_next or dia.goto_prev
-  severity = severity and dia.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
+    local go = next and dia.goto_next or dia.goto_prev
+    severity = severity and dia.severity[severity] or nil
+    return function()
+        go({ severity = severity })
+    end
 end
 
 map("n", "K", lbuf.hover, opts)
