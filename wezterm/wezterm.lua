@@ -6,7 +6,8 @@ local config = {
     font = wezterm.font_with_fallback {
 --        "Fira Code",
 --        "JetBrains Mono",
-          "Iosevka Term Extended",
+--        "JetBrains Mono NL",
+        "Iosevka Term Extended",
 --        "Iosevka Term",
         "Gen Shin Gothic", },
     font_size = 12,
