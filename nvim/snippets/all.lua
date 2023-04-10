@@ -42,6 +42,12 @@ ls.add_snippets("all",
         t({"Irinaka Jyutaku #1-33, Kawanayama-cho 128-4, Showa-ku,"}),
         t({"", "Nagoya, AICHI 4660827, Japan"}),
     }),
+    s("ad_work", {
+        t({"464-8601"}),
+        t({"", "名古屋市千種区不老町510 環境総合館"}),
+        t({"", "名古屋大学アジアサテライトキャンパス学院/環境学研究科"}),
+        t({"", "富田晋介"}),
+    }),
     s("yaml", {
         t({"---"}),
         t({"", "title: "}), i(1),
