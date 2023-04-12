@@ -3,6 +3,7 @@ local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
+local bo = vim.bo
 
 -- folding
 g.markdown_folding = 1
@@ -80,10 +81,23 @@ require("toggleterm").setup {}
 
 --- lualineO
 -- theme: eg. papercolor_dark
+
+local function getWords()
+    local words = fn.wordcount().words .. " words"
+    if bo.filetype == 'markdown' then
+        return words
+    else
+        return nil
+    end
+end
+
 require('lualine').setup {
     options = {
         theme = 'auto',
         -- globalstatus = true,
+    },
+    sections = {
+        lualine_x = {getWords, 'encoding', 'fileformat', 'filetype'},
     },
 }
 
