@@ -117,4 +117,7 @@ return {
         },
     },
     { 'dhruvasagar/vim-table-mode', ft = 'markdown', },
+    { 'RRethy/vim-illuminate',
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
 }
