@@ -7,7 +7,9 @@ return {
             vim.cmd.colorscheme('nordfox')
         end,
     },
-    { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, },
+    { 'nvim-lualine/lualine.nvim',
+        event = 'VeryLazy',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' }, },
     { 'nvim-treesitter/nvim-treesitter',
