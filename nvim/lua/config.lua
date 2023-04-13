@@ -14,11 +14,11 @@ api.nvim_create_autocmd(
 )
 
 -- auto write
-api.nvim_create_autocmd(
-    'CursorHold',
---    { buffer = 0, command = ':w' }
-    { buffer = bufnr, command = ':w' }
-)
+--api.nvim_create_autocmd(
+--    'CursorHold',
+----    { buffer = 0, command = ':w' }
+--    { buffer = bufnr, command = ':w' }
+--)
 
 -- cmd([[autocmd CursorHold <buffer> write]])
 
