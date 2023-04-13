@@ -40,7 +40,7 @@ g.netrw_liststyle = 3
 local options = {
    autochdir = true,
    autoindent = true,
-   autowrite = true,
+   autowriteall = true,
 --   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
@@ -76,7 +76,7 @@ end
 
 -- spellcheck
 
-if bo.filetype == 'markdown' or 'gitcommit' then
+if bo.filetype == 'markdown' then
    o.spell = true
 else
    o.spell = false
