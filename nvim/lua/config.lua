@@ -13,6 +13,15 @@ api.nvim_create_autocmd(
     { pattern = '*', command = 'startinsert', }
 )
 
+-- auto write
+api.nvim_create_autocmd(
+    'CursorHold',
+--    { buffer = 0, command = ':w' }
+    { buffer = bufnr, command = ':w' }
+)
+
+-- cmd([[autocmd CursorHold <buffer> write]])
+
 -- theme
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
 cmd([[hi vertsplit guifg=grey]])
