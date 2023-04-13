@@ -1,6 +1,8 @@
 -- Disable some builtin vim plugins
 local g = vim.g
 local o = vim.opt
+local bo = vim.bo
+
 local disabled_built_ins = {
   "2html_plugin",
   "getscript",
@@ -58,7 +60,7 @@ local options = {
    showmatch = true,
    smartcase = true,
    smartindent = true,
-   spell = false,
+--   spell = false,
    spelllang = { 'en_us', 'cjk' },
    splitbelow = true,
    splitright = true,
@@ -72,6 +74,18 @@ for k, v in pairs(options) do
     o[k] = v
 end
 
+-- spellcheck
+
+if bo.filetype == 'markdown' or 'gitcommit' then
+   o.spell = true
+else
+   o.spell = false
+end
+
+--append
+o.iskeyword:append({'-'})
+o.clipboard:append({'unnamedplus'})
+
 -- vertical and horizontal line settings
 o.fillchars = {
   horiz = '━',
@@ -83,6 +97,3 @@ o.fillchars = {
   verthoriz = '╋',
 }
 
---append
-o.iskeyword:append({'-'})
-o.clipboard:append({'unnamedplus'})

@@ -12,6 +12,8 @@ api.nvim_create_autocmd(
     { 'TermOpen' },
     { pattern = '*', command = 'startinsert', }
 )
+-- auto write
+cmd[[autocmd CursorHold <buffer> write]]
 
 -- theme
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })

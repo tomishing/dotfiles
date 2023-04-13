@@ -37,7 +37,7 @@ map("i", '"', '""<esc>ha')
 map("i", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 
--- terminal and panes
+-- switch to another terminal or panes
 map("t", "<esc>", [[ <C-\><C-n> ]], { noremap = true })
 map("t", "<A-h>", [[ <C-\><C-n><C-w>h ]], { noremap = true })
 map("t", "<A-j>", [[ <C-\><C-n><C-w>j  ]], { noremap = true })
@@ -51,6 +51,14 @@ map("n", "<A-h>", "<C-w>h", { noremap = true })
 map("n", "<A-j>", "<C-w>j", { noremap = true })
 map("n", "<A-k>", "<C-w>k", { noremap = true })
 map("n", "<A-l>", "<C-w>l", { noremap = true })
+
+-- tabpage: switch to another tab page 
+map("n", "<leader>ta", "<cmd>tabnew<CR>", opts)
+map("i", "<leader>ta", "<cmd>tabnew<CR>", opts)
+map("v", "<leader>ta", "<cmd>tabnew<CR>", opts)
+map("n", "<leader>tc", "<cmd>tabclose<CR>", opts)
+map("i", "<leader>tc", "<cmd>tabclose<CR>", opts)
+map("v", "<leader>tc", "<cmd>tabclose<CR>", opts)
 
 -- toggleterm settings and R
 map("n", "<leader>tt", "<cmd>ToggleTerm size=75 direction=vertical<CR>", { noremap = true })
@@ -95,7 +103,7 @@ map("n", "gr", lbuf.references, opts)
 map("n", "gd", lbuf.definition, opts)
 map("n", "gD", lbuf.declaration, opts)
 map("n", "gi", lbuf.implementation, opts)
-map("n", "gt", lbuf.type_definition, opts)
+-- map("n", "gt", lbuf.type_definition, opts)
 map("n", "gn", lbuf.rename, opts)
 map("n", "ga", lbuf.code_action, opts)
 map("n", "ge", dia.open_float, opts)
