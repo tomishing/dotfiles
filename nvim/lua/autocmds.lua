@@ -1,5 +1,7 @@
 local fn = vim.fn
 local bo = vim.bo
+local wo = vim.wo
+local api = vim.api
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -17,7 +19,7 @@ autocmd(
         group = 'AutoSave',
         callback = function()
             if bo.modified and not bo.readonly and fn.expand("%") ~= "" and bo.buftype == "" then
-                vim.api.nvim_command('silent update')
+                api.nvim_command('silent update')
             end
         end,
     }
@@ -32,7 +34,7 @@ autocmd(
         pattern = { 'markdown', 'html', 'gitcommit' },
 --        command = 'setlocal spell'
         callback = function()
-            vim.wo.spell = true
+            wo.spell = true
         end,
     }
 )
