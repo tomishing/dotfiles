@@ -17,16 +17,26 @@ autocmd(
 
 -- auto write
 augroup('AutoSave', { clear = true} )
+
+--if (bo.buftype ~= 'terminal' or bo.buftype ~= 'nofile' or bo.buftype ~= 'popup') then
+-- if bo.buftype == "" then
 autocmd(
---    'CursorHold',
---    'BufLeave', {
     { 'InsertLeave', 'TextChanged' },
     {
         group = 'AutoSave',
---        pattern = { 'markdown', 'lua', 'md' },
         buffer = bufnr,
---        buffer = 0,
         command = 'write'
+    }
+)
+
+-- spellcheck
+augroup('Spell', {clear = true} )
+autocmd(
+    'FileType',
+    {
+        group = 'Spell',
+        pattern = { 'markdown', 'html' },
+        command = 'setlocal spell'
     }
 )
 

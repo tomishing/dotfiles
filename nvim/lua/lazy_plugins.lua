@@ -59,7 +59,7 @@ return {
         end
     },
     { 'psliwka/vim-smoothie', },
-    { 'voldikss/vim-browser-search', keys = {'<Leader>saw'},},
+    { 'voldikss/vim-browser-search', ft = 'markdown', },
     { -- lsp
         'neovim/nvim-lspconfig',
         event = { 'BufReadPre', 'BufNewFile' },

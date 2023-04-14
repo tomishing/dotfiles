@@ -40,7 +40,7 @@ g.netrw_liststyle = 3
 local options = {
    autochdir = true,
    autoindent = true,
-   autowriteall = true,
+--   autowriteall = true,
 --   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
@@ -76,11 +76,11 @@ end
 
 -- spellcheck
 
-if bo.filetype == 'markdown' then
-   o.spell = true
-else
-   o.spell = false
-end
+--if bo.filetype == 'markdown' then
+--   o.spell = true
+--else
+--   o.spell = false
+--end
 
 --append
 o.iskeyword:append({'-'})
