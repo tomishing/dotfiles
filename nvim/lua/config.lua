@@ -3,44 +3,9 @@ local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
-local bo = vim.bo
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
 
 -- folding
 g.markdown_folding = 1
--- terminal
-autocmd(
-    { 'TermOpen' },
-    { pattern = '*', command = 'startinsert', }
-)
-
--- auto write
-augroup('AutoSave', { clear = true} )
-
---if (bo.buftype ~= 'terminal' or bo.buftype ~= 'nofile' or bo.buftype ~= 'popup') then
--- if bo.buftype == "" then
-autocmd(
-    { 'InsertLeave', 'TextChanged' },
-    {
-        group = 'AutoSave',
-        buffer = bufnr,
-        command = 'write'
-    }
-)
-
--- spellcheck
-augroup('Spell', {clear = true} )
-autocmd(
-    'FileType',
-    {
-        group = 'Spell',
-        pattern = { 'markdown', 'html' },
-        command = 'setlocal spell'
-    }
-)
-
--- cmd([[autocmd CursorHold <buffer> write]])
 
 -- theme
 --vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
