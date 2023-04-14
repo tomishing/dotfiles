@@ -4,21 +4,31 @@ local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
 local bo = vim.bo
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
 -- folding
 g.markdown_folding = 1
 -- terminal
-api.nvim_create_autocmd(
+autocmd(
     { 'TermOpen' },
     { pattern = '*', command = 'startinsert', }
 )
 
 -- auto write
---api.nvim_create_autocmd(
+augroup('AutoSave', { clear = true} )
+autocmd(
 --    'CursorHold',
-----    { buffer = 0, command = ':w' }
---    { buffer = bufnr, command = ':w' }
---)
+--    'BufLeave', {
+    { 'InsertLeave', 'TextChanged' },
+    {
+        group = 'AutoSave',
+--        pattern = { 'markdown', 'lua', 'md' },
+        buffer = bufnr,
+--        buffer = 0,
+        command = 'write'
+    }
+)
 
 -- cmd([[autocmd CursorHold <buffer> write]])
 
