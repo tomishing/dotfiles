@@ -8,8 +8,7 @@ local api = vim.api
 g.markdown_folding = 1
 
 -- theme
---vim.api.nvim_set_hl(0, 'VertSplit', { fg = black })
-cmd([[hi vertsplit guifg=grey]])
+api.nvim_set_hl(0, 'WinSeparator', { fg = 'grey', bg = 'None', default = true } )
 
 --serch engine
 --setting for search over dictionary.com
@@ -19,6 +18,7 @@ g.browser_search_engines = {
     cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
 }
 g.browser_search_default_engine = 'cambridge'
+
 -- leap.nvim
 --s with two words: search forward
 --S with two words: search backward
