@@ -3,6 +3,7 @@ local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
+local bo = vim.bo
 
 -- folding
 g.markdown_folding = 1
