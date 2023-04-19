@@ -88,12 +88,19 @@ o.clipboard:append({'unnamedplus'})
 
 -- vertical and horizontal line settings
 o.fillchars = {
-  horiz = '━',
-  horizup = '┻',
-  horizdown = '┳',
-  vert = '┃',
-  vertleft  = '┫',
-  vertright = '┣',
-  verthoriz = '╋',
+--  horiz = '━',
+--  horizup = '┻',
+--  horizdown = '┳',
+--  vert = '┃',
+--  vertleft  = '┫',
+--  vertright = '┣',
+--  verthoriz = '╋',
+  horiz = '─',
+  horizup = '┴',
+  horizdown = '┬',
+  vert = '│',
+  vertleft  = '┤',
+  vertright = '├',
+  verthoriz = '┼',
 }
 
