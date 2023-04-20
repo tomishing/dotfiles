@@ -359,7 +359,7 @@ null_ls.setup({
 -- Whichkey
 local wk = require('which-key')
 wk.register({
-    ["<leader>tt"] = 'Toggle vertical terminal',
+    ["<leader>tv"] = 'Toggle vertical terminal',
     ["<leader>td"] = 'Toggle horizontal terminal',
     ["<leader>rr"] = 'Toggle R vertically',
     ["<leader>rd"] = 'Toggle R horizontally',
@@ -369,6 +369,7 @@ wk.register({
     ["<leader>sq"] = 'Save and close the session',
     ["<leader>bz"] = 'Fuzzy search buffers',
     ["<leader>fz"] = 'Fuzzy search files',
+    ["<leader>tt"] = 'Markdown Table',
     ["K"] = 'lsp hover',
     ["gf"] = 'lsp formatting',
     ["]d"] = 'lsp diagnostic goto',
