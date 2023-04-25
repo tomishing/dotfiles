@@ -16,7 +16,8 @@ api.nvim_set_hl(0, 'WinSeparator', { fg = 'grey', bg = 'None', default = true } 
 -- \saw is going to look for a word under the cursor
 g.browser_search_engines = {
     dictcom = 'https://www.dictionary.com/browse/%s',
-    cambridge = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
+    cambridge_j = 'https://dictionary.cambridge.org/us/dictionary/english-japanese/%s',
+    cambridge = 'https://dictionary.cambridge.org/us/dictionary/english/%s',
 }
 g.browser_search_default_engine = 'cambridge'
 
