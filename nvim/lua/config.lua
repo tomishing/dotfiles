@@ -184,7 +184,7 @@ cmp.setup {
                         spell = "[Spell]",
                         cmp_tabnine = "[TabNine]",
                         pandoc_references = "[Citation]",
-                        --                skkeleton = "[Skk]"
+--                        skkeleton = "[SKK]"
                         --                cmp_pandoc = "[Pandoc]"
                     })[entry.source.name]
                 return vim_item
@@ -261,7 +261,7 @@ cmp.setup {
         ---        { name = 'cmp_pandoc' },
         { name = 'cmp_tabnine' },
         { name = 'pandoc_references' },
-        --        { name = 'skkeleton' },
+--        { name = 'skkeleton' },
     },
 
 }

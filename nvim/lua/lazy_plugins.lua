@@ -89,6 +89,7 @@ return {
             'hrsh7th/cmp-nvim-lua',
             'jc-doyle/cmp-pandoc-references',
             { 'tzachar/cmp-tabnine', build = { './install.sh' }, },
+--            'rinx/cmp-skkeleton',
         },
     },
     { 'jose-elias-alvarez/null-ls.nvim',

@@ -38,3 +38,21 @@ autocmd(
         end,
     }
 )
+
+--skkeleton and nvim-cmp
+--augroup('skkeleton', { clear = true })
+--autocmd(
+--    'skkeleton-enable-pre',
+--    {
+--        group = 'skkeleton',
+--        command = [[lua require('cmp').setup.buffer { enable = false }]]
+--    }
+--)
+--autocmd(
+--    'skkeleton-disable-pre',
+--    {
+--        group = 'skkeleton',
+--        command = [[lua require('cmp').setup.buffer { enable = true }]],
+--    }
+--)
+
