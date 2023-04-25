@@ -39,20 +39,24 @@ autocmd(
     }
 )
 
---skkeleton and nvim-cmp
---augroup('skkeleton', { clear = true })
---autocmd(
---    'skkeleton-enable-pre',
---    {
---        group = 'skkeleton',
---        command = [[lua require('cmp').setup.buffer { enable = false }]]
---    }
---)
---autocmd(
---    'skkeleton-disable-pre',
---    {
---        group = 'skkeleton',
---        command = [[lua require('cmp').setup.buffer { enable = true }]],
---    }
---)
+-- When skkeleton is enabled, disable nvim-cmp. 
+-- Somehow, nvim-cmp got to be unable to handle utf-8 as of Apr 25.
+-- Until yesterday, it worked smooth as silk. 
 
+augroup('skkeleton', { clear = true })
+autocmd(
+    'User',
+    {
+        group = 'skkeleton',
+        pattern = 'skkeleton-enable-pre',
+        command = [[lua require('cmp').setup.buffer({ enabled = false })]]
+    }
+)
+autocmd(
+    'User',
+    {
+        group = 'skkeleton',
+        pattern = 'skkeleton-disable-post',
+        command = [[lua require('cmp').setup.buffer({ enabled = true })]],
+    }
+)
