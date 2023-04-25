@@ -38,7 +38,6 @@ map("i", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 map("n", "<leader>jz", "<cmd>lua require('cmp').setup.buffer({ enabled = false })<CR>", { silent = true })
 map("n", "<leader>cm", "<cmd>lua require('cmp').setup.buffer({ enabled = true })<CR>", { silent = true })
-map("i", "<leader>cm", "<cmd>lua require('cmp').setup.buffer({ enabled = true })<CR>", { silent = true })
 
 -- switch to another terminal or panes
 map("t", "<esc>", [[ <C-\><C-n> ]], { noremap = true })
