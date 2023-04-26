@@ -26,9 +26,9 @@ return {
     },
     { -- skk
         'vim-skk/skkeleton',
---        event = 'InsertEnter',
         dependencies = {
             'vim-denops/denops.vim',
+            event = 'InsertEnter',
             {
                 'Shougo/ddc.vim',
                 dependencies = {

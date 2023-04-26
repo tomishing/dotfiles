@@ -36,41 +36,32 @@ g.fzf_session_path = '/home/tomishing/.config/nvim/session'
 
 -- skkeleton
 fn['skkeleton#config']({
-    globalJisyo = '~/.config/skk/SKK-JISYO.L'
+    globalJisyo = '~/.config/skk/SKK-JISYO.L',
+    userJisyo = '~/.config/skk/user.dic',
+    eggLikeNewline = true
 })
-fn['skkeleton#config']({
-    userJisyo = '~/.config/skk/user.dic'
+fn['skkeleton#register_kanatable']('rom', {
+    ['z,'] = { '―', '' },
+    ['/'] = { '・', ''},
+    ['('] = {'（', ''},
+    [')'] = {'）', ''},
+    ['jj'] = 'escape',
 })
-cmd([[call skkeleton#config({ 'eggLikeNewline':v:true })]])
-cmd([[
-    call skkeleton#register_kanatable('rom', {
-      \ 'jj': 'escape',
-      \ 'z,': ['―'],
-      \ })
-]])
 
 -- skkeleton and ddc
-cmd([[call ddc#custom#patch_global('sources', ['skkeleton'])]])
-cmd([[
-    call ddc#custom#patch_global('sourceOptions', {
-        \   '_': {
-        \     'matchers': ['matcher_head'],
-        \     'sorters': ['sorter_rank']
-        \   },
-        \   'skkeleton': {
-        \     'mark': 'skkeleton',
-        \     'matchers': ['skkeleton'],
-        \     'sorters': [],
-        \     'minAutoCompleteLength': 4,
-        \   },
-        \ })
-]])
-cmd([[call ddc#enable()]])
-cmd([[call ddc#custom#patch_global('ui', 'native')]])
-
---UltiSnips
--- g.UltiSnipsDirectories = '~/.config/nvim/UltiSnips'
--- g.UltiSnipsEditSplit = 'vertical'
+fn['ddc#custom#patch_global']{
+    sources = {'skkeleton'},
+    sourceOptions = {
+        skkeleton = {
+        mark = 'Skkeleton',
+        matchers = {'skkeleton'},
+        sorters = {},
+        minAutoCompleteLength = 4,
+        },
+        },
+    }
+fn['ddc#enable']()
+fn['ddc#custom#patch_global']('ui', 'native')
 
 -- toggleterm setup
 require("toggleterm").setup {}

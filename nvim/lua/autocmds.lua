@@ -18,7 +18,8 @@ autocmd(
     {
         group = 'AutoSave',
         callback = function()
-            if bo.modified and not bo.readonly and fn.expand("%") ~= "" and bo.buftype == "" then
+            if bo.modified and not bo.readonly and
+            fn.expand("%") ~= "" and bo.buftype == "" then
                 api.nvim_command('silent update')
             end
         end,
