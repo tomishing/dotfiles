@@ -50,6 +50,10 @@ autocmd(
     {
         group = 'skkeleton',
         pattern = 'skkeleton-enable-pre',
+--        callback = function()
+--            local cmp = require('cmp')
+--            cmp.setup.buffer({ enabled = false })
+--        end,
         command = [[lua require('cmp').setup.buffer({ enabled = false })]]
     }
 )
