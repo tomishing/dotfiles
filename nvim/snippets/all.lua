@@ -75,4 +75,8 @@ ls.add_snippets("all",
         t({"", "---", ""}),
         i(0)
     }),
+    s("signiture", {
+        t({"Shinsuke Tomita"}),
+        t({"", "ASCI/GSES, Nagoya University, Japan"}),
+        })
 })
