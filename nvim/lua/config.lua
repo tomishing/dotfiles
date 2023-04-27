@@ -172,7 +172,7 @@ cmp.setup {
                         look = "[Look]",
                         path = "[Path]",
                         spell = "[Spell]",
-                        cmp_tabnine = "[TabNine]",
+                        -- cmp_tabnine = "[TabNine]",
                         pandoc_references = "[Citation]",
 --                        skkeleton = "[SKK]"
                         --                cmp_pandoc = "[Pandoc]"
@@ -242,7 +242,7 @@ cmp.setup {
         { name = 'path' },
         { name = 'spell' },
         ---        { name = 'cmp_pandoc' },
-        { name = 'cmp_tabnine' },
+        -- { name = 'cmp_tabnine' },
         { name = 'pandoc_references' },
 --        { name = 'skkeleton' },
     },
@@ -308,18 +308,18 @@ vim.diagnostic.config {
 
 -- tabnine settings
 
-local tabnine = require('cmp_tabnine.config')
-tabnine.setup({
-    max_lines = 1000,
-    max_num_results = 20,
-    sort = true,
-    run_on_every_keystroke = true,
-    snippet_placeholder = '..',
-    ignored_file_types = { -- default is not to ignore
-        -- uncomment to ignore in lua:
-        -- lua = true
-    },
-})
+--local tabnine = require('cmp_tabnine.config')
+--tabnine.setup({
+--    max_lines = 1000,
+--    max_num_results = 20,
+--    sort = true,
+--    run_on_every_keystroke = true,
+--    snippet_placeholder = '..',
+--    ignored_file_types = { -- default is not to ignore
+--        -- uncomment to ignore in lua:
+--        -- lua = true
+--    },
+--})
 
 -- indent-blankline settings
 require('indent_blankline').setup {
