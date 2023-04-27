@@ -172,7 +172,7 @@ cmp.setup {
                         look = "[Look]",
                         path = "[Path]",
                         spell = "[Spell]",
-                        -- cmp_tabnine = "[TabNine]",
+                        --cmp_tabnine = "[TabNine]",
                         pandoc_references = "[Citation]",
 --                        skkeleton = "[SKK]"
                         --                cmp_pandoc = "[Pandoc]"
@@ -240,9 +240,16 @@ cmp.setup {
             }
         },
         { name = 'path' },
-        { name = 'spell' },
+        { name = 'spell',
+            option = {
+                keep_all_entries = false,
+                enable_in_context = function ()
+                    return true
+                end,
+            },
+        },
         ---        { name = 'cmp_pandoc' },
-        -- { name = 'cmp_tabnine' },
+        --{ name = 'cmp_tabnine' },
         { name = 'pandoc_references' },
 --        { name = 'skkeleton' },
     },
