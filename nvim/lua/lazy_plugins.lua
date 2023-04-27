@@ -77,6 +77,7 @@ return {
     {
         'hrsh7th/nvim-cmp',
 --        event = 'InsertEnter',
+        lazy = true,
         event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
