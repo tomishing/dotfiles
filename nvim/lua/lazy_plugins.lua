@@ -31,6 +31,7 @@ return {
             event = 'InsertEnter',
             {
                 'Shougo/ddc.vim',
+                event = 'InsertEnter',
                 dependencies = {
                     'Shougo/ddc-matcher_head',
                     'Shougo/ddc-sorter_rank',
