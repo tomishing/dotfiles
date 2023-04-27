@@ -63,6 +63,7 @@ return {
     { 'voldikss/vim-browser-search', ft = 'markdown', },
     { -- lsp
         'neovim/nvim-lspconfig',
+        lazy = true,
         event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'williamboman/mason.nvim',

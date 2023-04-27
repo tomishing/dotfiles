@@ -157,7 +157,6 @@ local lspkind = require('lspkind')
 require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/snippets" }
 
 cmp.setup {
-
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol',
@@ -183,15 +182,10 @@ cmp.setup {
         }),
     },
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            --            fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
-
     mapping = {
         -- Use Tab and shift-Tab to navigate autocomplete menu
         ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -201,13 +195,13 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        --['<Tab>'] = function(fallback)
-        --    if cmp.visible() then
-        --        cmp.select_next_item()
-        --    else
-        --        fallback()
-        --    end
-        --end,
+--        ['<Tab>'] = function(fallback)
+--            if cmp.visible() then
+--                cmp.select_next_item()
+--            else
+--                fallback()
+--            end
+--        end,
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -221,7 +215,6 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -232,7 +225,6 @@ cmp.setup {
             end
         end, { "i", "s" })
     },
-
     sources = {
         { name = 'buffer' },
         { name = 'nvim_lsp' },
@@ -254,7 +246,6 @@ cmp.setup {
         { name = 'pandoc_references' },
 --        { name = 'skkeleton' },
     },
-
 }
 
 -- Set configuration for specific filetype.

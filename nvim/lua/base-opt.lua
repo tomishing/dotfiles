@@ -40,8 +40,6 @@ g.netrw_liststyle = 3
 local options = {
    autochdir = true,
    autoindent = true,
---   autowriteall = true,
---   clipboard = 'unnamedplus',
    completeopt = { 'menu', 'menuone', 'noselect' },
    cursorline = true,
    expandtab = true,
@@ -68,19 +66,13 @@ local options = {
    termguicolors = true,
    wrap = true,
    laststatus = 3,
+--   encoding = 'utf-8',
+--   fileencoding = 'utf-8',
 }
 
 for k, v in pairs(options) do
     o[k] = v
 end
-
--- spellcheck
-
---if bo.filetype == 'markdown' then
---   o.spell = true
---else
---   o.spell = false
---end
 
 --append
 o.iskeyword:append({'-'})

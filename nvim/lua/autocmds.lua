@@ -59,8 +59,8 @@ autocmd(
     'User',
     {
         group = 'skkeleton',
-        -- pattern = 'skkeleton-disable-post',
-        pattern = 'skkeleton-disable-pre',
+        pattern = 'skkeleton-disable-post',
+--        pattern = 'skkeleton-disable-pre',
         callback = function()
             require('cmp').setup.buffer { enabled = true }
         end,
