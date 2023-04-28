@@ -34,12 +34,12 @@ cmp.setup {
     },
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+            require("luasnip").lsp_expand(args.body)
         end,
     },
     mapping = {
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), 
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -96,3 +96,51 @@ cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
 cmp.setup.cmdline(':', {
     sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
 })
+
+--Disable all sources but skkeleton when writing Japanese.
+local def_sources = cmp.config.sources({
+    { name = 'buffer' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'nvim_lua' },
+    {
+        name = 'look',
+        keyword_length = 2,
+        option = {
+            convert_case = true,
+            loud = true
+        }
+    },
+    { name = 'path' },
+    { name = 'spell' },
+    { name = 'pandoc_references' },
+})
+local jpn_sources = cmp.config.sources({
+    { name = 'skkeleton' },
+})
+
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+augroup('skkeleton', { clear = true })
+autocmd(
+    'User',
+    {
+        group = 'skkeleton',
+        pattern = 'skkeleton-enable-pre',
+        callback = function()
+            cmp.setup.buffer { sources = jpn_sources }
+        end,
+    }
+)
+autocmd(
+    'User',
+    {
+        group = 'skkeleton',
+--        pattern = 'skkeleton-disable-post',
+        pattern = 'skkeleton-disable-pre',
+        callback = function()
+            cmp.setup.buffer { sources = def_sources }
+        end,
+    }
+)
