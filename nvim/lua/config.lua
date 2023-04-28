@@ -60,8 +60,8 @@ fn['skkeleton#register_kanatable']('rom', {
 --        },
 --        },
 --    }
---fn['ddc#enable']()
---fn['ddc#custom#patch_global']('ui', 'native')
+-- fn['ddc#enable']()
+-- fn['ddc#custom#patch_global']('ui', '')
 
 -- toggleterm setup
 require("toggleterm").setup {}
@@ -154,6 +154,7 @@ end
 local luasnip = require("luasnip")
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+
 require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/snippets" }
 
 cmp.setup {
