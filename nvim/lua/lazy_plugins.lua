@@ -29,15 +29,15 @@ return {
         dependencies = {
             'vim-denops/denops.vim',
             event = 'InsertEnter',
-            {
-                'Shougo/ddc.vim',
-                event = 'InsertEnter',
-                dependencies = {
-                    'Shougo/ddc-matcher_head',
-                    'Shougo/ddc-sorter_rank',
-                    'Shougo/ddc-ui-native',
-                },
-            },
+--            {
+--                'shougo/ddc.vim',
+--                event = 'insertenter',
+--                dependencies = {
+--                    'shougo/ddc-matcher_head',
+--                    'shougo/ddc-sorter_rank',
+--                    'shougo/ddc-ui-native',
+--                },
+--            },
         },
     },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
@@ -92,7 +92,8 @@ return {
             'hrsh7th/cmp-nvim-lua',
             'jc-doyle/cmp-pandoc-references',
            --{ 'tzachar/cmp-tabnine', build = { './install.sh' }, },
---            'rinx/cmp-skkeleton',
+            'rinx/cmp-skkeleton',
+--            'uga-rosa/cmp-dictionary',
         },
     },
     { 'jose-elias-alvarez/null-ls.nvim',

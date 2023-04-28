@@ -49,19 +49,19 @@ fn['skkeleton#register_kanatable']('rom', {
 })
 
 -- skkeleton and ddc
-fn['ddc#custom#patch_global']{
-    sources = {'skkeleton'},
-    sourceOptions = {
-        skkeleton = {
-        mark = 'Skkeleton',
-        matchers = {'skkeleton'},
-        sorters = {},
-        minAutoCompleteLength = 4,
-        },
-        },
-    }
-fn['ddc#enable']()
-fn['ddc#custom#patch_global']('ui', 'native')
+--fn['ddc#custom#patch_global']{
+--    sources = {'skkeleton'},
+--    sourceOptions = {
+--        skkeleton = {
+--        mark = 'Skkeleton',
+--        matchers = {'skkeleton'},
+--        sorters = {},
+--        minAutoCompleteLength = 4,
+--        },
+--        },
+--    }
+--fn['ddc#enable']()
+--fn['ddc#custom#patch_global']('ui', 'native')
 
 -- toggleterm setup
 require("toggleterm").setup {}
@@ -166,16 +166,17 @@ cmp.setup {
                 vim_item.menu = ({
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
-                        --                    ultisnips = "[UltiSnips]",
                         luasnip = "[Luasnip]",
                         nvim_lua = "[Lua]",
                         look = "[Look]",
                         path = "[Path]",
                         spell = "[Spell]",
-                        --cmp_tabnine = "[TabNine]",
                         pandoc_references = "[Citation]",
---                        skkeleton = "[SKK]"
-                        --                cmp_pandoc = "[Pandoc]"
+                        skkeleton = "[SKK]",
+--                      ultisnips = "[UltiSnips]",
+--                        dictionary = "[Dict]",
+                        --cmp_tabnine = "[TabNine]",
+--                cmp_pandoc = "[Pandoc]"
                     })[entry.source.name]
                 return vim_item
             end
@@ -188,13 +189,11 @@ cmp.setup {
     },
     mapping = {
         -- Use Tab and shift-Tab to navigate autocomplete menu
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs( -4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+--        ['<C-p>'] = cmp.mapping.select_prev_item(),
+--        ['<C-n>'] = cmp.mapping.select_next_item(),
+--        ['<C-d>'] = cmp.mapping.scroll_docs( -4),
+--        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--        ['<C-Space>'] = cmp.mapping.complete(),
 --        ['<Tab>'] = function(fallback)
 --            if cmp.visible() then
 --                cmp.select_next_item()
@@ -202,11 +201,11 @@ cmp.setup {
 --                fallback()
 --            end
 --        end,
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), 
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                -- they way you will only jump inside the snippet region
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             elseif has_words_before() then
@@ -240,20 +239,26 @@ cmp.setup {
             }
         },
         { name = 'path' },
-        { name = 'spell',
-            option = {
-                keep_all_entries = false,
-                enable_in_context = function ()
-                    return true
-                end,
-            },
-        },
+        { name = 'spell' },
         ---        { name = 'cmp_pandoc' },
         --{ name = 'cmp_tabnine' },
         { name = 'pandoc_references' },
---        { name = 'skkeleton' },
+        { name = 'skkeleton' },
+--        {
+--            name = 'dictionary',
+--            keyword_length = 2,
+--            priority = 1
+--        },
     },
 }
+
+-- cmp-dictionary
+--local dict = require("cmp_dictionary")
+--dict.switcher({
+--  spelllang = {
+--      en = "~/.config/nvim/dic/aspell.dic",
+--  },
+--})
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {

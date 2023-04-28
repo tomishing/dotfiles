@@ -44,25 +44,25 @@ autocmd(
 -- Somehow, nvim-cmp got to be unable to handle utf-8 as of Apr 25.
 -- Until yesterday, it worked smooth as silk. 
 
-augroup('skkeleton', { clear = true })
-autocmd(
-    'User',
-    {
-        group = 'skkeleton',
-        pattern = 'skkeleton-enable-pre',
-        callback = function()
-            require('cmp').setup.buffer { enabled = false }
-        end,
-    }
-)
-autocmd(
-    'User',
-    {
-        group = 'skkeleton',
-        pattern = 'skkeleton-disable-post',
---        pattern = 'skkeleton-disable-pre',
-        callback = function()
-            require('cmp').setup.buffer { enabled = true }
-        end,
-    }
-)
+--augroup('skkeleton', { clear = true })
+--autocmd(
+--    'User',
+--    {
+--        group = 'skkeleton',
+--        pattern = 'skkeleton-enable-pre',
+--        callback = function()
+--            require('cmp').setup.buffer { enabled = false }
+--        end,
+--    }
+--)
+--autocmd(
+--    'User',
+--    {
+--        group = 'skkeleton',
+--        pattern = 'skkeleton-disable-post',
+----        pattern = 'skkeleton-disable-pre',
+--        callback = function()
+--            require('cmp').setup.buffer { enabled = true }
+--        end,
+--    }
+--)
