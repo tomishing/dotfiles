@@ -48,21 +48,6 @@ fn['skkeleton#register_kanatable']('rom', {
     ['jj'] = 'escape',
 })
 
--- skkeleton and ddc
---fn['ddc#custom#patch_global']{
---    sources = {'skkeleton'},
---    sourceOptions = {
---        skkeleton = {
---        mark = 'Skkeleton',
---        matchers = {'skkeleton'},
---        sorters = {},
---        minAutoCompleteLength = 4,
---        },
---        },
---    }
--- fn['ddc#enable']()
--- fn['ddc#custom#patch_global']('ui', '')
-
 -- toggleterm setup
 require("toggleterm").setup {}
 
@@ -94,8 +79,7 @@ require('lualine').setup {
 require('gitsigns').setup()
 
 --- plenary settings
-
-local async = require('plenary.async')
+--local async = require('plenary.async')
 
 --- treesitter
 
@@ -182,24 +166,6 @@ vim.diagnostic.config {
     underline = false,
     update_in_insert = true,
 }
-
--- cmp_pandoc settings
--- require('cmp_pandoc').setup()
-
--- tabnine settings
-
---local tabnine = require('cmp_tabnine.config')
---tabnine.setup({
---    max_lines = 1000,
---    max_num_results = 20,
---    sort = true,
---    run_on_every_keystroke = true,
---    snippet_placeholder = '..',
---    ignored_file_types = { -- default is not to ignore
---        -- uncomment to ignore in lua:
---        -- lua = true
---    },
---})
 
 -- indent-blankline settings
 require('indent_blankline').setup {
