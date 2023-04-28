@@ -1,4 +1,3 @@
-
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -81,3 +80,19 @@ cmp.setup {
         { name = 'skkeleton' },
     },
 }
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources(
+        { { name = 'cmp_git' }, },
+        { { name = 'buffer' }, }
+    )
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
+})
