@@ -4,12 +4,18 @@ local wo = vim.wo
 local api = vim.api
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-
+local opt = { clear = true }
+local toggleterm_pattern = { "term://*#toggleterm#*", "term://*::toggleterm::*" }
+local cmd = vim.cmd
 -- terminal
 autocmd(
     { 'TermOpen' },
-    { pattern = '*', command = 'startinsert', }
+    {
+        pattern = '*',
+        command = 'startinsert',
+    }
 )
+cmd([[autocmd TermOpen * setlocal nocursorline | set nocursorcolumn]])
 
 -- auto write
 augroup('AutoSave', { clear = true } )
@@ -33,36 +39,7 @@ autocmd(
     {
         group = 'Spell',
         pattern = { 'markdown', 'html', 'gitcommit' },
---        command = 'setlocal spell'
-        callback = function()
-            wo.spell = true
-        end,
+        command = 'setlocal spell'
     }
 )
 
--- When skkeleton is enabled, disable nvim-cmp. 
--- Somehow, nvim-cmp got to be unable to handle utf-8 as of Apr 25.
--- Until yesterday, it worked smooth as silk. 
-
---augroup('skkeleton', { clear = true })
---autocmd(
---    'User',
---    {
---        group = 'skkeleton',
---        pattern = 'skkeleton-enable-pre',
---        callback = function()
---            require('cmp').setup.buffer { enabled = false }
---        end,
---    }
---)
---autocmd(
---    'User',
---    {
---        group = 'skkeleton',
---        pattern = 'skkeleton-disable-post',
-----        pattern = 'skkeleton-disable-pre',
---        callback = function()
---            require('cmp').setup.buffer { enabled = true }
---        end,
---    }
---)

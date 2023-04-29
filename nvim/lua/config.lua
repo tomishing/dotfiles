@@ -69,7 +69,6 @@ require('lualine').setup {
         -- globalstatus = true,
     },
     sections = {
---        lualine_x = {getWords, 'encoding', 'fileformat', 'filetype'},
         lualine_x = {getWords, 'encoding', 'filetype'},
     },
 }
