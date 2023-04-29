@@ -42,15 +42,16 @@ map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 --map("n", "<leader>cm", "<cmd>lua require('cmp').setup.buffer({ enabled = true })<CR>", opts)
 
 -- switch to another terminal or panes
-map("t", "<esc>", [[ <C-\><C-n> ]], { noremap = true })
-map("t", "<A-h>", [[ <C-\><C-n><C-w>h ]], { noremap = true })
-map("t", "<A-j>", [[ <C-\><C-n><C-w>j  ]], { noremap = true })
-map("t", "<A-k>", [[ <C-\><C-n><C-w>k  ]], { noremap = true })
-map("t", "<A-l>", [[ <C-\><C-n><C-w>l  ]], { noremap = true })
+local topts = {noremap = true}
+map("t", "<esc>", [[ <C-\><C-n> ]], topts)
+map("t", "<A-h>", [[ <C-\><C-n><C-w>h ]], topts)
+map("t", "<A-j>", [[ <C-\><C-n><C-w>j ]], topts)
+map("t", "<A-k>", [[ <C-\><C-n><C-w>k ]], topts)
+map("t", "<A-l>", [[ <C-\><C-n><C-w>l ]], topts)
 map("i", "<A-h>", [[ <C-\><C-n><C-w>h ]], { noremap = true })
-map("i", "<A-j>", [[ <C-\><C-n><C-w>j  ]], { noremap = true })
-map("i", "<A-k>", [[ <C-\><C-n><C-w>k  ]], { noremap = true })
-map("i", "<A-l>", [[ <C-\><C-n><C-w>l  ]], { noremap = true })
+map("i", "<A-j>", [[ <C-\><C-n><C-w>j ]], { noremap = true })
+map("i", "<A-k>", [[ <C-\><C-n><C-w>k ]], { noremap = true })
+map("i", "<A-l>", [[ <C-\><C-n><C-w>l ]], { noremap = true })
 map("n", "<A-h>", "<C-w>h", { noremap = true })
 map("n", "<A-j>", "<C-w>j", { noremap = true })
 map("n", "<A-k>", "<C-w>k", { noremap = true })
@@ -72,6 +73,7 @@ map("n", "<leader>rr", '<cmd>TermExec size=75 direction=vertical cmd="R"<CR>', {
 map("n", "<leader>rd", '<cmd>TermExec size=25 direction=horizontal cmd="R"<CR>', { noremap = true })
 map("n", "<leader>ff", "<cmd>ToggleTermSendCurrentLine<CR>", opts)
 map("v", "<leader>fa", ":ToggleTermSendVisualLines<CR>", opts)
+map({"n", "t"}, "<leader>tc", "<cmd>ToggleTermToggleAll!<CR>", opts)
 
 -- hlsens
 

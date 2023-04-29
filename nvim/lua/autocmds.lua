@@ -5,20 +5,47 @@ local api = vim.api
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local opt = { clear = true }
-local toggleterm_pattern = { "term://*#toggleterm#*", "term://*::toggleterm::*" }
-local cmd = vim.cmd
--- terminal
-autocmd(
-    { 'TermOpen' },
-    {
-        pattern = '*',
-        command = 'startinsert',
-    }
-)
-cmd([[autocmd TermOpen * setlocal nocursorline | set nocursorcolumn]])
+
+-- terminal and toggleterm settings
+
+-- local cmd = vim.cmd
+--local toggleterm_pattern = { "term://*#toggleterm#*", "term://*::toggleterm::*" }
+--augroup('terminal', opt)
+--autocmd(
+--    'BufEnter',
+--    {
+--        group = 'terminal',
+--        pattern = toggleterm_pattern,
+--        command = 'startinsert',
+--    }
+--)
+
+-- settings for terminal, and it is not needed for toggleterm.
+--autocmd(
+--    { 'TermOpen' },
+--    {
+--        pattern = '*',
+--        command = 'startinsert',
+--    }
+--)
+
+-- settings proposed by the author
+--autocmd(
+--    'BufEnter',
+--    {
+--        group = 'terminal',
+--        pattern = '*',
+--        callback = function()
+--            if bo.buftype == 'terminal' then
+--                api.nvim_command('startinsert')
+--            end
+--        end,
+--    }
+--)
+
 
 -- auto write
-augroup('AutoSave', { clear = true } )
+augroup('AutoSave', opt )
 autocmd(
     { 'BufLeave', 'FocusLost' },
     {
@@ -33,7 +60,7 @@ autocmd(
 )
 
 -- spellcheck
-augroup('Spell', { clear = true } )
+augroup('Spell', opt )
 autocmd(
     'FileType',
     {
@@ -42,4 +69,3 @@ autocmd(
         command = 'setlocal spell'
     }
 )
-

@@ -49,7 +49,10 @@ fn['skkeleton#register_kanatable']('rom', {
 })
 
 -- toggleterm setup
-require("toggleterm").setup {}
+require("toggleterm").setup{
+    start_in_insert = true,
+    persist_mode = false,
+}
 
 --- lualineO
 -- theme: eg. papercolor_dark
