@@ -60,7 +60,7 @@ require("toggleterm").setup{
 local function getWords()
     local words = fn.wordcount().words .. " words"
     if bo.filetype == 'markdown' then
-        return words
+       return words
     else
        return nil
     end
