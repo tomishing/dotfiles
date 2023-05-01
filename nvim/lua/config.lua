@@ -62,8 +62,17 @@ local function getWords()
     if bo.filetype == 'markdown' then
         return words
     else
-        return nil
+       return nil
     end
+end
+local function luax(wordc)
+    local a
+    if wordc ~= nil then
+        a = {wordc, 'encoding', 'filetype'}
+    else
+        a = {'encoding', 'filetype', 'fileformat'}
+    end
+    return a
 end
 
 require('lualine').setup {
@@ -72,7 +81,8 @@ require('lualine').setup {
         -- globalstatus = true,
     },
     sections = {
-        lualine_x = {getWords, 'encoding', 'filetype'},
+--        lualine_x = {getWords, 'encoding', 'filetype'},
+        lualine_x = luax(getWords)
     },
 }
 
