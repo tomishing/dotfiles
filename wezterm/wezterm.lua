@@ -16,6 +16,7 @@ local config = {
     line_height = 1.1,
 --    window_background_opacity = 0.95,
     use_ime = false,
+    front_end = "OpenGL",
     window_padding = {
         left = 10,
         right = 0,
