@@ -15,14 +15,15 @@ local config = {
 --    line_height = 1.2,
     line_height = 1.1,
 --    window_background_opacity = 0.95,
-    use_ime = true,
+    use_ime = false,
     window_padding = {
         left = 10,
         right = 0,
         top = 0,
         bottom = 0,
     },
-    check_for_updates = false,
+    check_for_updates = true,
+    warn_about_missing_glyphs = false,
     leader = { key = 'a', mods = 'CTRL' },
     keys = {
         {

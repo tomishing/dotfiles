@@ -65,7 +65,8 @@ autocmd(
     'FileType',
     {
         group = 'Spell',
-        pattern = { 'markdown', 'html', 'gitcommit' },
+        pattern = { 'markdown', 'html', 'gitcommit', 'mail' },
         command = 'setlocal spell'
     }
 )
+
