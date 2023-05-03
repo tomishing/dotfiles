@@ -22,7 +22,7 @@ autocmd(
     }
 )
 
--- spellcheck
+-- spellcheck and soft wrapping for text files
 augroup('Spell', opt )
 autocmd(
     'FileType',
