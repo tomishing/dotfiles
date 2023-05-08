@@ -1,6 +1,6 @@
 local fn = vim.fn
 local bo = vim.bo
-local wo = vim.wo
+-- local wo = vim.wo
 local api = vim.api
 local ol = vim.opt_local
 local augroup = vim.api.nvim_create_augroup
