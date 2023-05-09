@@ -22,7 +22,7 @@ macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><c
 source "~/.config/mutt/imap"
 
 # Needed to get and display mail (imap-fetch-mail)
- set editor = "nvim" 
+set editor = "nvim" 
 # set editor='nvim + -c "setlocal wrapmargin=0 textwidth=0 wrap nocp linebreak nohlsearch" -c "?^$"'
 # set editor="nvim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
 set charset = "utf-8"
