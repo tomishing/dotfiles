@@ -1,0 +1,218 @@
+set envelope_from
+set sleep_time = 0
+set edit_headers
+set use_from
+set fast_reply
+set include
+set forward_quote
+
+# fzf for attachments
+macro compose ,a '<enter-command>source ~/.config/mutt/scripts/fzfattach.sh|<enter>'
+
+# SMTP
+source "~/.config/mutt/nagoya"
+folder-hook $folder 'source ~/.config/mutt/nagoya'
+source "~/.config/mutt/gmail"
+folder-hook $folder 'source ~/.config/mutt/gmail'
+
+macro index N '<sync-mailbox><enter-command>source ~/.config/mutt/nagoya<enter><change-folder>!<enter>'
+macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
+
+# IMAP
+# Protocol: smtp for TLS (587), smtps for SSL (465)
+##set smtp_url = "smtp://tomishing@gmail.com@smtp.gmail.com:587/"
+##set smtp_pass = "gcoelhuarcwlttkt"
+source "~/.config/mutt/imap"
+#set imap_user = "tomishing@gmail.com"
+#set imap_pass = "ojdtwjevkdbufmgw"
+#set imap_keepalive = 900
+#set folder = "imaps://imap.gmail.com:993"
+#set spoolfile = "+INBOX"
+#set postponed = "+[Gmail]/Drafts"
+## set record = "+[Gmail]/Sent"
+#set trash = "+[Gmail]/Trash"
+#set header_cache = "~/.config/mutt/cache/headers"
+#set message_cachedir = "~/.config/mutt/cache/bodies"
+#set certificate_file = "~/.config/mutt/certificates"
+#set move = no
+
+# Needed to get and display mail (imap-fetch-mail)
+ set editor = "nvim" 
+# set editor='nvim + -c "setlocal wrapmargin=0 textwidth=0 wrap nocp linebreak nohlsearch" -c "?^$"'
+# set editor="nvim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
+set charset = "utf-8"
+set record = ""
+
+set sort = threads
+set sort_browser = date
+set sort_aux = reverse-last-date-received
+
+# printing
+# set print_command = "lpr -P Canon_MF8500C_Series -o orientation-requested=3"
+set print_command = "muttprint %s -P A4 -p Canon_MF8500C_Series"
+
+# view html
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+
+# alternative_order text/plain text/html
+
+# aliases
+set alias_file = ~/.config/mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+# macro
+bind editor <space> noop
+#macro index y "<tag-pattern>~R !~D !~F<enter><tag-prefix><save-message>+[Gmail]/All Mail<enter>" "Archive"
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+#macro index,pager y "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+macro index I "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index A "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+#macro index S "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index S "<change-folder>=[Gmail]/Sent<enter>" "Go to record"
+
+# reply-all
+bind index,pager R group-reply
+
+# index key bindings
+bind index gg first-entry
+bind index G last-entry
+
+# pager key bindings
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+
+# color scheme
+# source ~/.mutt/colors-default.mutt
+source ~/.config/mutt/colors-default-01.mutt
+# source ~/.mutt/colors-nord.mutt
+
+# This is a complete list of sidebar-related configuration.
+
+# --------------------------------------------------------------------------
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+
+# Should the Sidebar be shown?
+set sidebar_visible = no
+
+# How wide should the Sidebar be in screen columns?
+# Note: Some characters, e.g. Chinese, take up two columns each.
+set sidebar_width = 30
+
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = yes
+
+# When abbreviating mailbox path names, use any of these characters as path
+# separators.  Only the part after the last separators will be shown.
+# For file folders '/' is good.  For IMAP folders, often '.' is useful.
+set sidebar_delim_chars = '/.'
+
+# If the mailbox path is abbreviated, should it be indented?
+set sidebar_folder_indent = yes
+
+# Indent mailbox paths with this string.
+set sidebar_indent_string = '  '
+
+# Make the Sidebar only display mailboxes that contain new, or flagged,
+# mail.
+set sidebar_new_mail_only = no
+
+# Any mailboxes that are whitelisted will always be visible, even if the
+# sidebar_new_mail_only option is enabled.
+mailboxes =INBOX
+mailboxes =[Gmail]/All\ Mail =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash 
+mailboxes = "~/.config/mutt/sent_nagoya"
+
+# When searching for mailboxes containing new mail, should the search wrap
+# around when it reaches the end of the list?
+set sidebar_next_new_wrap = no
+
+# The character to use as the divider between the Sidebar and the other Mutt
+# panels.
+# Note: Only the first character of this string is used.
+set sidebar_divider_char = '|'
+
+# Enable extended buffy mode to calculate total, new, and flagged
+# message counts for each mailbox.
+set mail_check_stats
+
+# Display the Sidebar mailboxes using this format string.
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+
+# set sidebar_short_path                  # Shorten mailbox names
+# set sidebar_delim_chars="/"             # Delete everything up to the last / character
+# set sidebar_folder_indent               # Indent folders whose names we've shortened
+# set sidebar_indent_string="  "
+
+# Sort the mailboxes in the Sidebar using this method:
+#       count    - total number of messages
+#       flagged  - number of flagged messages
+#       new      - number of new messages
+#       path     - mailbox path
+#       unsorted - do not sort the mailboxes
+set sidebar_sort_method = 'unsorted'
+
+# --------------------------------------------------------------------------
+# FUNCTIONS - shown with an example mapping
+# --------------------------------------------------------------------------
+
+# Move the highlight to the previous mailbox
+# bind index,pager \Cp sidebar-prev
+bind index,pager <C-Up> sidebar-prev
+
+# Move the highlight to the next mailbox
+# bind index,pager \Cn sidebar-next
+bind index,pager <C-Down> sidebar-next
+
+# Open the highlighted mailbox
+bind index,pager \Co sidebar-open
+
+# Move the highlight to the previous page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F3> sidebar-page-up
+
+# Move the highlight to the next page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F4> sidebar-page-down
+
+# Move the highlight to the previous mailbox containing new, or flagged,
+# mail.
+bind index,pager <F5> sidebar-prev-new
+
+# Move the highlight to the next mailbox containing new, or flagged, mail.
+bind index,pager <F6> sidebar-next-new
+
+# Toggle the visibility of the Sidebar.
+bind index,pager B sidebar-toggle-visible
+
+# --------------------------------------------------------------------------
+# COLORS - some unpleasant examples are given
+# --------------------------------------------------------------------------
+# Note: All color operations are of the form:
+#       color OBJECT FOREGROUND BACKGROUND
+
+# Color of the current, open, mailbox
+# Note: This is a general Mutt option which colors all selected items.
+# color indicator cyan black
+
+# Color of the highlighted, but not open, mailbox.
+color sidebar_highlight brightwhite cyan
+
+# Color of the divider separating the Sidebar from Mutt panels
+color sidebar_divider color8 black
+
+# Color to give mailboxes containing flagged mail
+color sidebar_flagged red black
+
+# Color to give mailboxes containing new mail
+color sidebar_new brightgreen default
+
+# --------------------------------------------------------------------------
+
+# vim: syntax=muttrc
+
