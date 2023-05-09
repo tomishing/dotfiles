@@ -19,22 +19,7 @@ macro index N '<sync-mailbox><enter-command>source ~/.config/mutt/nagoya<enter><
 macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
 
 # IMAP
-# Protocol: smtp for TLS (587), smtps for SSL (465)
-##set smtp_url = "smtp://tomishing@gmail.com@smtp.gmail.com:587/"
-##set smtp_pass = "gcoelhuarcwlttkt"
 source "~/.config/mutt/imap"
-#set imap_user = "tomishing@gmail.com"
-#set imap_pass = "ojdtwjevkdbufmgw"
-#set imap_keepalive = 900
-#set folder = "imaps://imap.gmail.com:993"
-#set spoolfile = "+INBOX"
-#set postponed = "+[Gmail]/Drafts"
-## set record = "+[Gmail]/Sent"
-#set trash = "+[Gmail]/Trash"
-#set header_cache = "~/.config/mutt/cache/headers"
-#set message_cachedir = "~/.config/mutt/cache/bodies"
-#set certificate_file = "~/.config/mutt/certificates"
-#set move = no
 
 # Needed to get and display mail (imap-fetch-mail)
  set editor = "nvim" 
