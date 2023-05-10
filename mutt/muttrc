@@ -111,6 +111,7 @@ set sidebar_new_mail_only = no
 # sidebar_new_mail_only option is enabled.
 mailboxes =INBOX
 mailboxes =[Gmail]/All\ Mail =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash 
+# mailboxes "+------"
 mailboxes = "~/.config/mutt/sent_nagoya"
 
 # When searching for mailboxes containing new mail, should the search wrap
@@ -120,7 +121,7 @@ set sidebar_next_new_wrap = no
 # The character to use as the divider between the Sidebar and the other Mutt
 # panels.
 # Note: Only the first character of this string is used.
-set sidebar_divider_char = '|'
+set sidebar_divider_char = '│'
 
 # Enable extended buffy mode to calculate total, new, and flagged
 # message counts for each mailbox.
