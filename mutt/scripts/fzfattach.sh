@@ -19,7 +19,7 @@ export FZF_DEFAULT_COMMAND='fdfind -t f -e pdf -e png -e jpg -e zip -e tar -e gz
 #  echo "echo 'No attachment selected'"
 #fi
 
-fzf -m --prompt='Choose one/multiple file(s) to attach >' | \
+fzf -m --prompt='Choose file(s) to attach >' | \
 while IFS=$'\n' read -r attachment; do
   echo "push 'a$attachment<enter>'"
 done
