@@ -24,7 +24,7 @@ macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><c
 source "~/.config/mutt/isynced_gmail"
 # update through mbsync
 #macro index O "!mbsync -a^M" "Update through mbsync"
-macro index,pager O "<shell-escape>mbsync -a -V<enter>" "run mbsync to sync all mail"
+#macro index,pager O "<shell-escape>mbsync -a -V<enter>" "run mbsync to sync all mail"
 
 folder-hook ~A bind index $ sync-mailbox
 folder-hook =Inbox 'macro index $ "<sync-mailbox>!mbsync gmail-inbox\n"'
