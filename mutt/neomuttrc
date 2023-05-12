@@ -20,7 +20,10 @@ macro index N '<sync-mailbox><enter-command>source ~/.config/mutt/nagoya<enter><
 macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
 
 # IMAP
-source "~/.config/mutt/imap"
+# source "~/.config/mutt/imap"
+source "~/.config/mutt/isynced_gmail"
+macro index O "!mbsync -a^M" "Update through mbsync"
+# macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
 # Needed to get and display mail (imap-fetch-mail)
 set editor = "nvim" 
@@ -52,31 +55,35 @@ source $alias_file
 # macro
 bind editor <space> noop
 #macro index y "<tag-pattern>~R !~D !~F<enter><tag-prefix><save-message>+[Gmail]/All Mail<enter>" "Archive"
-macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+# macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+macro index,pager y "<save-message>=Archives<enter><enter>" "Archive"
 #macro index,pager y "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
-macro index I "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index A "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+#macro index I "<change-folder>=INBOX<enter>" "Go to inbox"
+#macro index A "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 #macro index S "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
-macro index S "<change-folder>=[Gmail]/Sent<enter>" "Go to record"
+#macro index S "<change-folder>=[Gmail]/Sent<enter>" "Go to record"
 
 # reply-all
 bind index,pager R group-reply
 
 # index key bindings
+bind index g noop
 bind index gg first-entry
 bind index G last-entry
 
 # pager key bindings
-bind pager k previous-line
-bind pager j next-line
+bind pager g noop
+bind pager,attach k previous-line
+bind pager,attach j next-line
 bind pager gg top
 bind pager G bottom
 
 # color scheme
-# source ~/.mutt/colors-default.mutt
+# source ~/.config/mutt/colors-default.mutt
 source ~/.config/mutt/colors-default-01.mutt
-# source ~/.mutt/colors-nord.mutt
-
+# source ~/.config/mutt/colors-nord.mutt
+# source ~/.config/mutt/dracula.mutt
+# source ~/.config/mutt/nord.theme
 # This is a complete list of sidebar-related configuration.
 
 # --------------------------------------------------------------------------
@@ -110,10 +117,17 @@ set sidebar_new_mail_only = no
 
 # Any mailboxes that are whitelisted will always be visible, even if the
 # sidebar_new_mail_only option is enabled.
-mailboxes =INBOX
-mailboxes =[Gmail]/All\ Mail =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash 
+#mailboxes =INBOX
+#mailboxes =[Gmail]/All\ Mail =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash 
 # mailboxes "+------"
-mailboxes = "~/.config/mutt/sent_nagoya"
+#mailboxes = "~/.config/mutt/sent_nagoya"
+
+mailboxes =Inbox
+mailboxes ="==================="
+mailboxes =Archives =Sent =Drafts =Spam =Trash
+#mailboxes =gmail/[Gmail] =gmail/Sent =gmail/Drafts =gmail/Spam =gmail/Trash
+# mailboxes =viu
+# mailboxes =viu/archive =viu/sent =viu/drafts =viu/junk =viu/trash
 
 # When searching for mailboxes containing new mail, should the search wrap
 # around when it reaches the end of the list?
