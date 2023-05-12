@@ -1,4 +1,3 @@
-# #!/bin/bash
 #!/bin/zsh
 
 # cd to the root folder of attachments
