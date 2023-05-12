@@ -22,8 +22,9 @@ macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><c
 # IMAP
 # source "~/.config/mutt/imap"
 source "~/.config/mutt/isynced_gmail"
-macro index O "!mbsync -a^M" "Update through mbsync"
-# macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
+# update through mbsync
+#macro index O "!mbsync -a^M" "Update through mbsync"
+macro index,pager O "<shell-escape>mbsync -a -V<enter>" "run mbsync to sync all mail"
 
 # Needed to get and display mail (imap-fetch-mail)
 set editor = "nvim" 
@@ -123,11 +124,7 @@ set sidebar_new_mail_only = no
 #mailboxes = "~/.config/mutt/sent_nagoya"
 
 mailboxes =Inbox
-mailboxes ="==================="
 mailboxes =Archives =Sent =Drafts =Spam =Trash
-#mailboxes =gmail/[Gmail] =gmail/Sent =gmail/Drafts =gmail/Spam =gmail/Trash
-# mailboxes =viu
-# mailboxes =viu/archive =viu/sent =viu/drafts =viu/junk =viu/trash
 
 # When searching for mailboxes containing new mail, should the search wrap
 # around when it reaches the end of the list?
