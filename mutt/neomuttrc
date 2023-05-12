@@ -26,6 +26,14 @@ source "~/.config/mutt/isynced_gmail"
 #macro index O "!mbsync -a^M" "Update through mbsync"
 macro index,pager O "<shell-escape>mbsync -a -V<enter>" "run mbsync to sync all mail"
 
+folder-hook ~A bind index $ sync-mailbox
+folder-hook =Inbox 'macro index $ "<sync-mailbox>!mbsync gmail-inbox\n"'
+folder-hook =Sent 'macro index $ "<sync-mailbox>!mbsync gmail-sent\n"'
+folder-hook =Trash 'macro index $ "<sync-mailbox>!mbsync gmail-trash\n"'
+folder-hook =Spam 'macro index $ "<sync-mailbox>!mbsync gmail-spam\n"'
+folder-hook =Archives 'macro index $ "<sync-mailbox>!mbsync gmail-all\n"'
+folder-hook =Drafts 'macro index $ "<sync-mailbox>!mbsync gmail-draft\n"'
+
 # Needed to get and display mail (imap-fetch-mail)
 set editor = "nvim" 
 # set editor='nvim + -c "setlocal wrapmargin=0 textwidth=0 wrap nocp linebreak nohlsearch" -c "?^$"'
