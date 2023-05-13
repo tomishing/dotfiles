@@ -18,6 +18,7 @@ set alias_file = ~/.config/mutt/aliases
 set sort_alias = alias
 set reverse_alias = yes
 unset move
+unset mark_old
 
 # fzf for attachments
 macro compose ,a '<enter-command>source ~/.config/mutt/scripts/fzfattach.sh|<enter>'
@@ -54,10 +55,10 @@ source $alias_file
 
 # keybindings and macro
 bind editor <space> noop
-# macro index,pager y "<save-message>=Archives<enter><enter>" "Archive"
+# macro index,pager y "<save-message>=Archives<enter><enter>" "Archived"
 bind index y purge-message
 macro index A \
-    "<tag-pattern>~O<enter><tag-prefix><clear-flag>O<untag-pattern>.<enter>" \
+    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
     "mark all new as read"
 # reply-all
 bind index,pager R group-reply
