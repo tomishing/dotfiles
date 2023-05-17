@@ -49,6 +49,22 @@ autocmd(
     }
 )
 
+-- strip tailing white space
+-- The "e" flag tells ":substitute" that not finding a match is not an error.
+-- % apply to entire file
+-- s search and replace
+-- /\s\+$/ regex for one or more whitespace characters followed by the end of a line
+-- // replacement value of an empty string
+augroup('space', opt)
+autocmd(
+    "BufWritePre",
+    {
+        group = 'space',
+        pattern = { "*" },
+        command = [[%s/\s\+$//e]],
+    }
+)
+
 -- terminal and toggleterm settings
 -- local cmd = vim.cmd
 -- local toggleterm_pattern = { "term://*#toggleterm#*", "term://*::toggleterm::*" }
