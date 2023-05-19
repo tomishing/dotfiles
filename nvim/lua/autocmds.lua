@@ -55,11 +55,12 @@ autocmd(
 -- s search and replace
 -- /\s\+$/ regex for one or more whitespace characters followed by the end of a line
 -- // replacement value of an empty string
-augroup('space', opt)
+augroup('format', opt)
 autocmd(
-    "BufWritePre",
+--    "BufWritePre",
+    {"BufLeave", "FocusLost"},
     {
-        group = 'space',
+        group = 'format',
         pattern = { "*" },
         command = [[%s/\s\+$//e]],
     }
