@@ -57,8 +57,7 @@ autocmd(
 -- // replacement value of an empty string
 augroup('format', opt)
 autocmd(
---    "BufWritePre",
-    {"BufLeave", "FocusLost"},
+    "BufWritePre",
     {
         group = 'format',
         pattern = { "*" },
