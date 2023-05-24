@@ -1,7 +1,10 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-
-local config = {
+local config = {}
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
 --        "Fira Code",
@@ -54,17 +57,20 @@ local config = {
         },
         {
             key = "t",
-            mods = "SHIFT|CTRL",
+--            mods = "SHIFT|CTRL",
+          mods = "LEADER",
             action = act.SpawnTab("CurrentPaneDomain")
         },
         {
-            key = "PageUp",
-            mods = "CTRL",
+            key = "LeftArrow",
+            --mods = "CTRL",
+            mods = "LEADER",
             action = act.ActivateTabRelative( -1)
         },
         {
-            key = "PageDown",
-            mods = "CTRL",
+            key = "RightArrow",
+            --mods = "CTRL",
+            mods = "LEADER",
             action = act.ActivateTabRelative(1)
         },
         {
