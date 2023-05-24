@@ -6,7 +6,7 @@ set fast_reply
 set include
 set forward_quote
 set timeout = 15
-set editor = "nvim" 
+set editor = "nvim"
 set charset = "utf-8"
 set record = ""
 set sort = threads
@@ -29,8 +29,8 @@ folder-hook $folder 'source ~/.config/mutt/nagoya'
 source "~/.config/mutt/gmail"
 folder-hook $folder 'source ~/.config/mutt/gmail'
 
-macro index N '<sync-mailbox><enter-command>source ~/.config/mutt/nagoya<enter><change-folder>!<enter>'
-macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
+# macro index N '<sync-mailbox><enter-command>source ~/.config/mutt/nagoya<enter><change-folder>!<enter>'
+# macro index G '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
 
 # IMAP
 # source "~/.config/mutt/imap"
