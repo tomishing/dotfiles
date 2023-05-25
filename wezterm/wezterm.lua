@@ -74,6 +74,11 @@ config = {
             action = act.ActivateTabRelative(1)
         },
         {
+            key = 'RightArrow',
+            mods = 'ALT',
+            action = act.ActivatePaneDirection 'Next',
+        },
+        {
             key = 'h',
             mods = 'CTRL|ALT',
             action = act.ActivatePaneDirection 'Left',
