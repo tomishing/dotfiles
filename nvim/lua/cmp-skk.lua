@@ -37,7 +37,7 @@ cmp.setup {
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -60,8 +60,8 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" })
-    },
-    sources = {
+    }),
+    sources = cmp.config.sources({
         { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
@@ -75,10 +75,17 @@ cmp.setup {
             }
         },
         { name = 'path' },
-        { name = 'spell' },
+        { name = 'spell',
+            option = {
+                keep_all_entries = false,
+                enable_in_context = function()
+                    return true
+                end,
+            },
+        },
         { name = 'pandoc_references' },
         { name = 'skkeleton' },
-    },
+    }),
 }
 
 -- Set configuration for specific filetype.
@@ -90,12 +97,25 @@ cmp.setup.filetype('gitcommit', {
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
-
+-- cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
-})
+--cmp.setup.cmdline(':', {
+--    sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
+--})
+ cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
 
 --Disable all sources but skkeleton when writing Japanese.
 local def_sources = cmp.config.sources({
