@@ -67,7 +67,7 @@ return {
     { 'kevinhwang91/nvim-hlslens', lazy = true },
     { 'lambdalisue/readablefold.vim', event = { 'BufReadPre', 'BufNewFile' },},
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
-    { 'lukas-reineke/indent-blankline.nvim', event = { 'BufReadPre', 'BufNewFile' },},
+    { 'lukas-reineke/indent-blankline.nvim', main = "ibl", opts = {}, event = { 'BufReadPre', 'BufNewFile' },},
     {
         'hrsh7th/nvim-cmp',
 --        event = 'InsertEnter',
