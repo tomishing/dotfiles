@@ -27,10 +27,10 @@ return {
         },
     },
     { 'vim-skk/skkeleton',
-        dependencies = {
-            'vim-denops/denops.vim',
-            event = 'InsertEnter',
-        },
+       dependencies = {
+           'vim-denops/denops.vim',
+           event = 'InsertEnter',
+       },
     },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
