@@ -26,7 +26,7 @@ cmp.setup {
                         path = "[Path]",
                         spell = "[Spell]",
                         pandoc_references = "[Citation]",
-                        skkeleton = "[SKK]",
+--                        skkeleton = "[SKK]",
                     })[entry.source.name]
                 return vim_item
             end
@@ -84,7 +84,7 @@ cmp.setup {
             },
         },
         { name = 'pandoc_references' },
-        { name = 'skkeleton' },
+--        { name = 'skkeleton' },
     }),
 }
 
@@ -118,49 +118,49 @@ cmp.setup.cmdline({ '/', '?' }, {
   })
 
 --Disable all sources but skkeleton when writing Japanese.
-local def_sources = cmp.config.sources({
-    { name = 'buffer' },
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'nvim_lua' },
-    {
-        name = 'look',
-        keyword_length = 2,
-        option = {
-            convert_case = true,
-            loud = true
-        }
-    },
-    { name = 'path' },
-    { name = 'spell' },
-    { name = 'pandoc_references' },
-})
-local jpn_sources = cmp.config.sources({
-    { name = 'skkeleton' },
-})
-
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-
-augroup('skkeleton', { clear = true })
-autocmd(
-    'User',
-    {
-        group = 'skkeleton',
-        pattern = 'skkeleton-enable-pre',
-        callback = function()
-            cmp.setup.buffer { sources = jpn_sources }
-        end,
-    }
-)
-autocmd(
-    'User',
-    {
-        group = 'skkeleton',
---        pattern = 'skkeleton-disable-post',
-        pattern = 'skkeleton-disable-pre',
-        callback = function()
-            cmp.setup.buffer { sources = def_sources }
-        end,
-    }
-)
+--local def_sources = cmp.config.sources({
+--    { name = 'buffer' },
+--    { name = 'nvim_lsp' },
+--    { name = 'luasnip' },
+--    { name = 'nvim_lua' },
+--    {
+--        name = 'look',
+--        keyword_length = 2,
+--        option = {
+--            convert_case = true,
+--            loud = true
+--        }
+--    },
+--    { name = 'path' },
+--    { name = 'spell' },
+--    { name = 'pandoc_references' },
+--})
+--local jpn_sources = cmp.config.sources({
+--    { name = 'skkeleton' },
+--})
+--
+--local augroup = vim.api.nvim_create_augroup
+--local autocmd = vim.api.nvim_create_autocmd
+--
+--augroup('skkeleton', { clear = true })
+--autocmd(
+--    'User',
+--    {
+--        group = 'skkeleton',
+--        pattern = 'skkeleton-enable-pre',
+--        callback = function()
+--            cmp.setup.buffer { sources = jpn_sources }
+--        end,
+--    }
+--)
+--autocmd(
+--    'User',
+--    {
+--        group = 'skkeleton',
+----        pattern = 'skkeleton-disable-post',
+--        pattern = 'skkeleton-disable-pre',
+--        callback = function()
+--            cmp.setup.buffer { sources = def_sources }
+--        end,
+--    }
+--)

@@ -26,12 +26,12 @@ return {
             'dominickng/fzf-session.vim',
         },
     },
-    { 'vim-skk/skkeleton',
-       dependencies = {
-           'vim-denops/denops.vim',
-           event = 'InsertEnter',
-       },
-    },
+--    { 'vim-skk/skkeleton',
+--       dependencies = {
+--           'vim-denops/denops.vim',
+--           event = 'InsertEnter',
+--       },
+--    },
     { 'rhysd/vim-grammarous', ft = 'markdown' },
     { 'preservim/vim-wordy', ft = 'markdown' },
     { 'jeffkreeftmeijer/vim-numbertoggle', event = { 'BufReadPre', 'BufNewFile' },},
