@@ -1,0 +1,9 @@
+set smtp_url = "smtp://tomishing@gmail.com@smtp.gmail.com:587/"
+set realname = "Shinsuke Tomita"
+set from = "tomishing@gmail.com"
+set use_from = yes
+set smtp_pass = "dgtavryuwrmmqymz"
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set record = "+[Gmail]/Sent"
+
