@@ -11,14 +11,12 @@ return {
         lazy = true,
         dependencies = {
             'nvim-tree/nvim-web-devicons',
-            commit = "313d9e7193354c5de7cdb1724f9e2d3f442780b0",
         },
     },
     { 'nvim-tree/nvim-tree.lua',
         lazy = true,
-        dependencies = { 
+        dependencies = {
             'nvim-tree/nvim-web-devicons',
-            commit = "313d9e7193354c5de7cdb1724f9e2d3f442780b0",
         },
     },
     { 'nvim-treesitter/nvim-treesitter',
