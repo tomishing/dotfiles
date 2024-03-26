@@ -90,7 +90,7 @@ return {
             'onsails/lspkind-nvim',
             'hrsh7th/cmp-nvim-lua',
             'jc-doyle/cmp-pandoc-references',
-            'rinx/cmp-skkeleton',
+--            'rinx/cmp-skkeleton',
         },
     },
     { 'jose-elias-alvarez/null-ls.nvim',
