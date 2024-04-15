@@ -118,6 +118,26 @@ config = {
             mods = 'LEADER',
             action = act.AdjustPaneSize { 'Right', 5 },
         },
+        {
+            key = '9',
+            mods = "ALT",
+            action = act.ShowLauncherArgs { flags = 'WORKSPACES',
+            title = 'Select workspace' },
+        },
+        {
+            key = '8',
+            mods = 'ALT',
+            action = act.PromptInputLine {
+                description = '(wezterm) Set workspace title:',
+                action = wezterm.action_callback(function(win, pane, line)
+                    if line then
+                        wezterm.mux.rename_workspace(
+                        wezterm.mux.get_active_workspace(),
+                        line)
+                    end
+                end),
+            },
+        },
     },
 }
 return config
