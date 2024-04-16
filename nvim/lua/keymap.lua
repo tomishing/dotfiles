@@ -34,8 +34,8 @@ map("i", '"', '""<esc>ha')
 -- map('i', '<', '<><esc>ha')
 
 -- settings for skkeleton
-map("i", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
-map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
+--map("i", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
+--map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
 
 -- in case you want to disable/enable nvim-cmp by keymap.
 --map("n", "<leader>jz", "<cmd>lua require('cmp').setup.buffer({ enabled = false })<CR>", opts)
@@ -57,7 +57,7 @@ map("n", "<A-j>", "<C-w>j", { noremap = true })
 map("n", "<A-k>", "<C-w>k", { noremap = true })
 map("n", "<A-l>", "<C-w>l", { noremap = true })
 
--- tabpage: switch to another tab page 
+-- tabpage: switch to another tab page
 map("n", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("i", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("v", "<leader>ta", "<cmd>tabnew<CR>", opts)
@@ -68,6 +68,7 @@ map("v", "<leader>tc", "<cmd>tabclose<CR>", opts)
 -- toggleterm settings and R
 map("n", "<leader>tv", "<cmd>ToggleTerm size=75 direction=vertical<CR>", { noremap = true })
 map("n", "<leader>td", "<cmd>ToggleTerm size=25 direction=horizontal<CR>", { noremap = true })
+map("n", "<leader>2td", "<cmd>2ToggleTerm size=25 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { noremap = true })
 map("n", "<leader>rr", '<cmd>TermExec size=75 direction=vertical cmd="R"<CR>', { noremap = true })
 map("n", "<leader>rd", '<cmd>TermExec size=25 direction=horizontal cmd="R"<CR>', { noremap = true })
