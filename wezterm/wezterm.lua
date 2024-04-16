@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
+
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
@@ -128,8 +129,8 @@ config = {
             key = '8',
             mods = 'ALT',
             action = act.PromptInputLine {
-                description = '(wezterm) Set workspace title:',
-                action = wezterm.action_callback(function(win, pane, line)
+                description = "Enter name for new workspace",
+                action = wezterm.action_callback(function(line)
                     if line then
                         wezterm.mux.rename_workspace(
                         wezterm.mux.get_active_workspace(),
