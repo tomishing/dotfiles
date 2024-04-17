@@ -192,7 +192,7 @@ null_ls.setup({
             "html", "yaml", "markdown", "css" }
         },
         b.formatting.stylua,
-        b.diagnostic.ruff,
+        b.diagnostics.ruff,
         b.formatting.black,
     }
 })
