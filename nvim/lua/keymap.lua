@@ -15,8 +15,8 @@ map("n", "<leader>r", "<cmd>NvimTreeRefresh<CR>", opts)
 map("n", "<leader>n", "<cmd>NvimTreeFindFile<CR>", opts)
 
 -- search over dictionary on web
-map("n", "<Leader>s", "<Plug>SearchNormal", { silent = true })
-map("v", "<Leader>s", "<Plug>SearchVisual", { silent = true })
+map("n", "<Leader>sn", "<Plug>SearchNormal", { silent = true })
+map("v", "<Leader>sn", "<Plug>SearchVisual", { silent = true })
 
 -- fzf
 map("n", "<leader>bz", "<cmd>Buffers<CR>", opts)
@@ -74,7 +74,7 @@ map("n", "<leader>ff", "<cmd>ToggleTermSendCurrentLine<CR>", opts)
 map("v", "<leader>fa", ":ToggleTermSendVisualLines<CR>", opts)
 map("n", "<leader>2ff", "<cmd>ToggleTermSendCurrentLine 2<CR>", opts)
 map("v", "<leader>2fa", ":ToggleTermSendVisualLines 2<CR>", opts)
-map({"n", "t"}, "<leader>tc", "<cmd>ToggleTermToggleAll!<CR>", opts)
+--map({"n", "t"}, "<leader>tc", "<cmd>ToggleTermToggleAll!<CR>", opts)
 
 -- hlsens
 
