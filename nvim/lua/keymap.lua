@@ -15,8 +15,8 @@ map("n", "<leader>r", "<cmd>NvimTreeRefresh<CR>", opts)
 map("n", "<leader>n", "<cmd>NvimTreeFindFile<CR>", opts)
 
 -- search over dictionary on web
-map("n", "<Leader>sn", "<Plug>SearchNormal", { silent = true })
-map("v", "<Leader>sn", "<Plug>SearchVisual", { silent = true })
+map("n", "<Leader>s", "<Plug>SearchNormal", { silent = true })
+map("v", "<Leader>s", "<Plug>SearchVisual", { silent = true })
 
 -- fzf
 map("n", "<leader>bz", "<cmd>Buffers<CR>", opts)
