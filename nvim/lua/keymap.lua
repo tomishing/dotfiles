@@ -59,10 +59,8 @@ map("n", "<A-l>", "<C-w>l", { noremap = true })
 
 -- tabpage: switch to another tab page
 map("n", "<leader>ta", "<cmd>tabnew<CR>", opts)
-map("i", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("v", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("n", "<leader>tc", "<cmd>tabclose<CR>", opts)
-map("i", "<leader>tc", "<cmd>tabclose<CR>", opts)
 map("v", "<leader>tc", "<cmd>tabclose<CR>", opts)
 
 -- toggleterm settings and R
