@@ -27,7 +27,7 @@ config = {
         top = 0,
         bottom = 0,
     },
-    check_for_updates = true,
+    check_for_updates = false,
     warn_about_missing_glyphs = false,
     leader = { key = 'a', mods = 'CTRL' },
     keys = {
