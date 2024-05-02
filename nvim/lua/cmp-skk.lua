@@ -84,6 +84,9 @@ cmp.setup {
             },
         },
         { name = 'pandoc_references' },
+        { name = 'otter' },
+        { name = 'emoji' },
+        { name = 'treesitter', keyword_length = 5, max_item_count = 3 },
 --        { name = 'skkeleton' },
     }),
 }

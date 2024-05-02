@@ -88,6 +88,9 @@ map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 -- highlight
 map("n", "<Leader>l", "<cmd>noh<CR>", opts)
 
+-- Quarto
+-- map('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
+
 -- lsp
 local M = {} -- This is module in lua
 
