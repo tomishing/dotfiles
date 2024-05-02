@@ -126,8 +126,4 @@ return {
     { 'RRethy/vim-illuminate',
         event = { 'BufReadPre', 'BufNewFile' },
     },
-    { 
---      'quarto-dev/quarto-nvim',
-      {'jmbuhr/otter.nvim'},
-    },
 }
