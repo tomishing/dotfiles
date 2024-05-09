@@ -62,6 +62,10 @@ map("n", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("v", "<leader>ta", "<cmd>tabnew<CR>", opts)
 map("n", "<leader>tc", "<cmd>tabclose<CR>", opts)
 map("v", "<leader>tc", "<cmd>tabclose<CR>", opts)
+map("n", "]t", "<cmd>+tabnext<CR>", opts)
+map("v", "]t", "<cmd>+tabnext<CR>", opts)
+map("n", "[t", "<cmd>-tabnext<CR>", opts)
+map("v", "[t", "<cmd>-tabnext<CR>", opts)
 
 -- toggleterm settings and R
 map("n", "<leader>tv", "<cmd>ToggleTerm size=75 direction=vertical<CR>", { noremap = true })
