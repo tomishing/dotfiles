@@ -28,7 +28,7 @@ autocmd(
     'FileType',
     {
         group = 'Spell',
-        pattern = { 'markdown', 'html', 'gitcommit', 'mail' },
+        pattern = { 'markdown', 'html', 'gitcommit', 'mail', 'quarto', 'rmd' },
 --        command = 'setlocal spell'
         callback = function()
             ol.wrap = true
