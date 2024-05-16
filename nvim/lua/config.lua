@@ -188,12 +188,10 @@ local b = null_ls.builtins
 
 null_ls.setup({
     sources = {
-        b.diagnostics.ruff,
         b.formatting.black,
         b.formatting.prettierd.with { filetype = {
-            "html", "yaml", "markdown", "css" }
+            "html", "yaml", "markdown", "css", }
         },
-        b.formatting.stylua,
     }
 })
 
