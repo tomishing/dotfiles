@@ -103,13 +103,22 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     { 'folke/which-key.nvim',
-        -- event = "VeryLazy",
-        event = { 'BufReadPre', 'BufNewFile' },
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        require("which-key").setup()
-        end,
+        event = "VeryLazy",
+      --  event = { 'BufReadPre', 'BufNewFile' },
+--        config = function()
+--            vim.o.timeout = true
+--            vim.o.timeoutlen = 300
+--        require("which-key").setup()
+--        end,
+        keys = {
+           {
+            "<leader>?",
+            function()
+              require("which-key").show({ global = false })
+      end,
+            desc = "Buffer Local Keymaps (which-key)",
+           },
+        },
     },
     { 'folke/noice.nvim',
         lazy = true,
