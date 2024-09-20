@@ -26,6 +26,7 @@ return {
     },
     { -- fzf
         'junegunn/fzf',
+--        build = "./install --bin",
         event = 'VeryLazy',
         dependencies = {
             'junegunn/fzf.vim',
