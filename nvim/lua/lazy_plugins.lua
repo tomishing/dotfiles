@@ -139,6 +139,9 @@ return {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-    'quarto-dev/quarto-nvim',
+        'quarto-dev/quarto-nvim',
+    },
+    {
+        'brianhuster/live-preview.nvim',
     },
 }
