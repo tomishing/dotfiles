@@ -179,9 +179,6 @@ vim.diagnostic.config {
     update_in_insert = true,
 }
 
--- indent-blankline settings
-require('ibl').setup()
-
 -- null-ls, formatter
 local null_ls = require('null-ls')
 local b = null_ls.builtins

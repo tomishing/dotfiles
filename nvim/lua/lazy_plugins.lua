@@ -74,7 +74,28 @@ return {
     { 'kevinhwang91/nvim-hlslens', lazy = true },
     { 'lambdalisue/readablefold.vim', event = { 'BufReadPre', 'BufNewFile' },},
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
-    { 'lukas-reineke/indent-blankline.nvim', main = "ibl", opts = {}, event = { 'BufReadPre', 'BufNewFile' },},
+--    { 'lukas-reineke/indent-blankline.nvim',
+--        main = "ibl",
+--        opts = {},
+--        event = { 'BufReadPre', 'BufNewFile' },
+--        config = function()
+--            require('ibl').setup()
+--        end
+--    },
+    {
+      "shellRaining/hlchunk.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+        require("hlchunk").setup({
+            chunk = {
+                enable = true
+            },
+            indent = {
+                enable = true
+            }
+      })
+      end
+    },
     {
         'hrsh7th/nvim-cmp',
 --        event = 'InsertEnter',
@@ -143,5 +164,12 @@ return {
     },
     {
         'brianhuster/live-preview.nvim',
+    },
+    {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
     },
 }
