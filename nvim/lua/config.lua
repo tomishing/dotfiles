@@ -192,33 +192,6 @@ null_ls.setup({
     }
 })
 
--- Whichkey
-local wk = require('which-key')
-wk.register({
-    ["<leader>tv"] = 'Toggle vertical terminal',
-    ["<leader>td"] = 'Toggle horizontal terminal',
-    ["<leader>rr"] = 'Toggle R vertically',
-    ["<leader>rd"] = 'Toggle R horizontally',
-    ["<leader>ff"] = 'Send current line in R',
-    ["<leader>fa"] = 'Send visual lines in R',
-    ["<leader>se"] = 'Open the sessions list',
-    ["<leader>sq"] = 'Save and close the session',
-    ["<leader>bz"] = 'Fuzzy search buffers',
-    ["<leader>fz"] = 'Fuzzy search files',
-    ["<leader>tt"] = 'Markdown Table',
-    ["K"] = 'lsp hover',
-    ["gf"] = 'lsp formatting',
-    ["]d"] = 'lsp diagnostic goto',
-    ["[d"] = 'lsp diagnostic goto',
-    ["]e"] = 'lsp goto ERROR',
-    ["[e"] = 'lsp goto ERROR',
-    ["]w"] = 'lsp goto WARN',
-    ["[w"] = 'lsp goto WARN',
-    ["]i"] = 'lsp goto INFO',
-    ["[i"] = 'lsp goto INFO ',
-    ["]h"] = 'lsp goto HINT ',
-    ["[h"] = 'lsp goto HINT',
-})
 
 --notice
 require("noice").setup({

@@ -11,12 +11,9 @@ map("i", "：ｗ", ":w")
 
 -- nvim-tree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", opts)
-map("n", "<leader>r", "<cmd>NvimTreeRefresh<CR>", opts)
+-- map("n", "<leader>r", "<cmd>NvimTreeRefresh<CR>", opts)
+-- due to key map conflict
 map("n", "<leader>n", "<cmd>NvimTreeFindFile<CR>", opts)
-
--- search over dictionary on web
-map("n", "<Leader>s", "<Plug>SearchNormal", { silent = true })
-map("v", "<Leader>s", "<Plug>SearchVisual", { silent = true })
 
 -- fzf
 map("n", "<leader>bz", "<cmd>Buffers<CR>", opts)

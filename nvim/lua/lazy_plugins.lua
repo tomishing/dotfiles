@@ -60,7 +60,6 @@ return {
         end
     },
     { 'psliwka/vim-smoothie', },
-    { 'voldikss/vim-browser-search', ft = 'markdown', },
     { -- lsp
         'neovim/nvim-lspconfig',
         lazy = true,
@@ -126,18 +125,12 @@ return {
     },
     { 'folke/which-key.nvim',
         event = "VeryLazy",
-      --  event = { 'BufReadPre', 'BufNewFile' },
---        config = function()
---            vim.o.timeout = true
---            vim.o.timeoutlen = 300
---        require("which-key").setup()
---        end,
         keys = {
            {
             "<leader>?",
             function()
               require("which-key").show({ global = false })
-      end,
+            end,
             desc = "Buffer Local Keymaps (which-key)",
            },
         },
@@ -178,4 +171,5 @@ return {
             require("nvim-ts-autotag").setup()
         end,
     },
+    { 'echasnovski/mini.nvim', version = '*' },
 }
