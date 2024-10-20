@@ -102,6 +102,7 @@ require('nvim-treesitter.configs').setup {
         "python",
         "lua",
         "html",
+        "css",
         "yaml",
         "vim",
         "regex",
@@ -187,7 +188,7 @@ null_ls.setup({
     sources = {
         b.formatting.black,
         b.formatting.prettierd.with { filetype = {
-            "html", "yaml", "markdown", "css", }
+            "html", "yaml", "markdown", "css", "scss" }
         },
     }
 })
