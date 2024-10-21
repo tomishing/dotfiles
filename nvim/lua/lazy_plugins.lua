@@ -160,9 +160,8 @@ return {
     },
     {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
+    dependencies = { 'nvim-treesitter/nvim-treesitter',
+                    'nvim-tree/nvim-web-devicons' },
     opts = {},
     },
     {
@@ -172,4 +171,13 @@ return {
         end,
     },
     { 'echasnovski/mini.nvim', version = '*' },
+    { 'norcalli/nvim-colorizer.lua',
+        config = function()
+            require("colorizer").setup({
+              '*';
+              css = { rgb_fn = true; };
+              html = { names = false; };
+            })
+        end,
+    },
 }
