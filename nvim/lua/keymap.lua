@@ -20,8 +20,8 @@ map("n", "<leader>bz", "<cmd>Buffers<CR>", opts)
 map("n", "<leader>fz", "<cmd>Files<CR>", opts)
 
 -- session
-map("n", "<leader>se", "<cmd>Sessions<CR>", opts)
-map("n", "<leader>sq", "<cmd>SQuit<CR>", opts)
+map("n", "<leader>de", "<cmd>Sessions<CR>", opts)
+map("n", "<leader>dq", "<cmd>SQuit<CR>", opts)
 
 -- automatic insert a matching brace
 map("i", "{", "{}<esc>ha")
