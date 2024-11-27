@@ -109,6 +109,7 @@ require('nvim-treesitter.configs').setup {
         "bash",
         "markdown",
         "markdown_inline",
+        "javascript",
     },
     --    ignore_install = { "markdown"},
     --    auto_install = true,
