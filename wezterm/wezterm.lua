@@ -6,7 +6,7 @@ local config = {}
 config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
---        "Fira Code",
+       -- "Fira Code",
         "JetBrains Mono",
 --        "JetBrains Mono NL",
 --        "Iosevka Term Extended",
