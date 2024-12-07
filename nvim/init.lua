@@ -1,8 +1,0 @@
-vim.loader.enable()
-require('base-opt')
-require('lazy_bootstrap')
-require('autocmds')
-require('config')
-require('keymap')
-require('which_key')
-require('cmp-skk')
