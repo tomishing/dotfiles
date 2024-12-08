@@ -9,16 +9,17 @@ body {
     line-height: 1.5em;
 }
 h1 {
-    font-family: Cambria, YuGothic;
-    font-size: 30pt;
+    /*font-family: Cambria, YuGothic;*/
+    font-size: 36pt;
+    line-height: 1.2em;
 }
 h2 {
-    font-family: Cambria, YuGothic;
+    /*font-family: Cambria, YuGothic;*/
     font-size: 20pt;
 }
 h3 {
-    font-family: Cambria, YuGothic;
-    font-size: 18pt;
+    /*font-family: Cambria, YuGothic;*/
+    font-size: 16pt;
 }
 header, footer{
     position: fixed;
@@ -31,5 +32,4 @@ code {
     background-color: rgb(230,230,230);
     padding: 10px;
     width: 90%;
-
 }
