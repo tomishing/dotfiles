@@ -1,0 +1,3 @@
+pandoc $1 --from markdown --to html5 --template ~/.config/md2pdf/template.html --css ~/.config/md2pdf/styles.css -o output.html
+node ~/.config/md2pdf/generate-pdf.js output.html ${1%.*}.pdf
+rm output.html
