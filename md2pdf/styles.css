@@ -10,16 +10,21 @@ body {
 }
 h1 {
     /*font-family: Cambria, YuGothic;*/
-    font-size: 36pt;
+    font-size: 28pt;
     line-height: 1.2em;
 }
 h2 {
     /*font-family: Cambria, YuGothic;*/
-    font-size: 20pt;
+    font-size: 18pt;
 }
 h3 {
     /*font-family: Cambria, YuGothic;*/
-    font-size: 16pt;
+    font-size: 15pt;
+}
+h4 {
+    /*font-family: Cambria, YuGothic;*/
+    font-size: 13pt;
+    font-weight: bold;
 }
 header, footer{
     position: fixed;
