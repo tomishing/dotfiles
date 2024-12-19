@@ -1,4 +1,0 @@
-# dotfiles
-- neovim
-- wezterm
-- muttrc
