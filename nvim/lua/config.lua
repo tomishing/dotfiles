@@ -216,4 +216,4 @@ require("noice").setup({
 require('quarto').setup(),
 })
 
-require('live-preview').setup()
+-- require('live-preview').setup()

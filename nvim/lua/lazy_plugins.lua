@@ -155,9 +155,9 @@ return {
     {
         'quarto-dev/quarto-nvim',
     },
-    {
-        'brianhuster/live-preview.nvim',
-    },
+--    {
+--        'brianhuster/live-preview.nvim',
+--    },
     {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter',
