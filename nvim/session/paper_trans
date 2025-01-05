@@ -1,0 +1,179 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Dropbox/Workplace/ay/inter_transfer
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +1 ~/Dropbox/talk/221224_shizen_to_nogyo/221223.md
+badd +1 ~/Dropbox/Workplace/ay/inter_transfer/intro_n.md
+badd +1431 ~/Dropbox/notes/words/writing.md
+badd +97 ~/Dropbox/Workplace/ay/inter_transfer/intro.md
+badd +87 ~/Dropbox/Workplace/ay/inter_transfer/methods.md
+argglobal
+%argdel
+edit ~/Dropbox/talk/221224_shizen_to_nogyo/221223.md
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 28 + 29) / 59)
+exe 'vert 1resize ' . ((&columns * 89 + 134) / 268)
+exe '2resize ' . ((&lines * 29 + 29) / 59)
+exe 'vert 2resize ' . ((&columns * 89 + 134) / 268)
+exe 'vert 3resize ' . ((&columns * 89 + 134) / 268)
+exe 'vert 4resize ' . ((&columns * 88 + 134) / 268)
+argglobal
+balt ~/Dropbox/notes/words/writing.md
+setlocal fdm=expr
+setlocal fde=MarkdownFold()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=2
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+6
+normal! zo
+let s:l = 437 - ((0 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 437
+normal! 0
+lcd ~/Dropbox/talk/221224_shizen_to_nogyo
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/Dropbox/notes/words/writing.md", ":p")) | buffer ~/Dropbox/notes/words/writing.md | else | edit ~/Dropbox/notes/words/writing.md | endif
+if &buftype ==# 'terminal'
+  silent file ~/Dropbox/notes/words/writing.md
+endif
+balt ~/Dropbox/talk/221224_shizen_to_nogyo/221223.md
+setlocal fdm=expr
+setlocal fde=MarkdownFold()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+3
+normal! zo
+let s:l = 1431 - ((15 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1431
+normal! 0120|
+lcd ~
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/Dropbox/Workplace/ay/inter_transfer/intro.md", ":p")) | buffer ~/Dropbox/Workplace/ay/inter_transfer/intro.md | else | edit ~/Dropbox/Workplace/ay/inter_transfer/intro.md | endif
+if &buftype ==# 'terminal'
+  silent file ~/Dropbox/Workplace/ay/inter_transfer/intro.md
+endif
+balt ~/Dropbox/Workplace/ay/inter_transfer/methods.md
+setlocal fdm=expr
+setlocal fde=MarkdownFold()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=3
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+4
+normal! zo
+7
+normal! zo
+let s:l = 90 - ((24 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 90
+normal! 070|
+lcd ~/Dropbox/Workplace/ay/inter_transfer
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/Dropbox/Workplace/ay/inter_transfer/methods.md", ":p")) | buffer ~/Dropbox/Workplace/ay/inter_transfer/methods.md | else | edit ~/Dropbox/Workplace/ay/inter_transfer/methods.md | endif
+if &buftype ==# 'terminal'
+  silent file ~/Dropbox/Workplace/ay/inter_transfer/methods.md
+endif
+balt ~/Dropbox/Workplace/ay/inter_transfer/intro.md
+setlocal fdm=expr
+setlocal fde=MarkdownFold()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=4
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+4
+normal! zo
+4
+normal! zo
+27
+normal! zo
+89
+normal! zo
+let s:l = 100 - ((30 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 100
+normal! 0
+lcd ~/Dropbox/Workplace/ay/inter_transfer
+wincmd w
+4wincmd w
+exe '1resize ' . ((&lines * 28 + 29) / 59)
+exe 'vert 1resize ' . ((&columns * 89 + 134) / 268)
+exe '2resize ' . ((&lines * 29 + 29) / 59)
+exe 'vert 2resize ' . ((&columns * 89 + 134) / 268)
+exe 'vert 3resize ' . ((&columns * 89 + 134) / 268)
+exe 'vert 4resize ' . ((&columns * 88 + 134) / 268)
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+let g:this_fzf_session =v:this_session
+unlet SessionLoad
+" vim: set ft=vim :

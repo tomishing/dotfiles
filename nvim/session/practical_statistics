@@ -1,0 +1,120 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Dropbox/training/practical_statistics
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +21 ~/Dropbox/training/practical_statistics/test.py
+badd +1 ~/Dropbox/training/practical_statistics/test.R
+badd +218 ~/Dropbox/training/practical_statistics/r.qmd
+badd +27 ~/Dropbox/R/ay/R_ay_bootstrap.R
+badd +1 term://~/Dropbox/training/practical_statistics//348811:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//360634:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//372485:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//372530:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//385118:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//397443:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//468310:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//492051:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//503855:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//552889:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//564775:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +1 term://~/Dropbox/training/practical_statistics//577886:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+badd +0 term://~/Dropbox/training/practical_statistics//776687:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+argglobal
+%argdel
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit ~/Dropbox/training/practical_statistics/r.qmd
+argglobal
+balt ~/Dropbox/R/ay/R_ay_bootstrap.R
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 219 - ((40 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 219
+normal! 05|
+lcd ~
+tabnext
+argglobal
+if bufexists(fnamemodify("term://~/Dropbox/training/practical_statistics//776687:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'", ":p")) | buffer term://~/Dropbox/training/practical_statistics//776687:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\' | else | edit term://~/Dropbox/training/practical_statistics//776687:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\' | endif
+if &buftype ==# 'terminal'
+  silent file term://~/Dropbox/training/practical_statistics//776687:quarto\ preview\ \'/home/tomishing/Dropbox/training/practical_statistics/r.qmd\'
+endif
+balt ~/Dropbox/training/practical_statistics/r.qmd
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 191 - ((46 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 191
+normal! 0
+lcd ~
+tabnext
+edit ~/Dropbox/training/practical_statistics/test.py
+argglobal
+balt ~/Dropbox/training/practical_statistics/r.qmd
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 38 - ((37 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 38
+normal! 022|
+lcd ~/Dropbox/training/practical_statistics
+tabnext 1
+set stal=1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=1
+let &shortmess = s:shortmess_save
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+let g:this_fzf_session =v:this_session
+unlet SessionLoad
+" vim: set ft=vim :

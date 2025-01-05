@@ -1,0 +1,120 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Dropbox/DC/classes/CSIS1280_html/project
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +30 ~/Dropbox/DC/classes/CSIS1280_html/project/index.html
+badd +60 ~/Dropbox/DC/classes/CSIS1280_html/project/style.css
+badd +113 ~/Dropbox/DC/classes/CSIS1280_html/project/home.html
+badd +36 ~/Dropbox/DC/classes/CSIS1280_html/project/home_test.html
+badd +137 ~/Dropbox/DC/classes/CSIS1280_html/project/styles_home.css
+badd +57 ~/Dropbox/DC/classes/CSIS1280_html/project/styles_form.css
+badd +141 ~/Dropbox/DC/classes/CSIS1280_html/project/program.html
+badd +5 ~/Dropbox/DC/classes/CSIS1280_html/project/scripts.js
+badd +369 ~/Dropbox/DC/classes/CSIS1280_html/project/text.md
+badd +2 ~/Dropbox/DC/classes/CSIS1280_html/project/test.txt
+badd +46 ~/Dropbox/DC/classes/CSIS1280_html/project/test.js
+badd +121 ~/Dropbox/DC/classes/CSIS1280_html/project/retistration.html
+badd +14 ~/Dropbox/DC/classes/CSIS1280_html/project/validate.js
+badd +126 ~/Dropbox/DC/classes/CSIS1280_html/project/funding.html
+badd +24 ~/Dropbox/DC/classes/CSIS1280_html/project/venue.html
+badd +39 ~/Dropbox/DC/classes/CSIS1280_html/project/symp.html
+badd +8 ~/Dropbox/DC/classes/CSIS1280_html/project/pics.js
+argglobal
+%argdel
+edit ~/Dropbox/DC/classes/CSIS1280_html/project/home.html
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+balt ~/Dropbox/DC/classes/CSIS1280_html/project/funding.html
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 113 - ((17 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 113
+normal! 0
+lcd ~/Dropbox/DC/classes/CSIS1280_html/project
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/Dropbox/DC/classes/CSIS1280_html/project/styles_home.css", ":p")) | buffer ~/Dropbox/DC/classes/CSIS1280_html/project/styles_home.css | else | edit ~/Dropbox/DC/classes/CSIS1280_html/project/styles_home.css | endif
+if &buftype ==# 'terminal'
+  silent file ~/Dropbox/DC/classes/CSIS1280_html/project/styles_home.css
+endif
+balt ~/Dropbox/DC/classes/CSIS1280_html/project/styles_form.css
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 308 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 308
+normal! 014|
+lcd ~/Dropbox/DC/classes/CSIS1280_html/project
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+let g:this_fzf_session =v:this_session
+unlet SessionLoad
+" vim: set ft=vim :

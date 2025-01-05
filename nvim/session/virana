@@ -1,0 +1,109 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Dropbox/R/virana
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +97 ~/Dropbox/R/matsuda/spatial_analysis_memo.R
+badd +1 ~/Dropbox/R/virana/virana_gis.R
+badd +56 ~/Dropbox/R/matsuda/trop_ag.R
+badd +148 ~/Dropbox/R/bayberry.R
+badd +84 ~/Dropbox/R/map/mapping_n_laos.R
+badd +1 ~/Dropbox/Workplace/bayberry/dem_extract.R
+argglobal
+%argdel
+edit ~/Dropbox/Workplace/bayberry/dem_extract.R
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 51 + 51) / 103)
+exe 'vert 2resize ' . ((&columns * 51 + 51) / 103)
+argglobal
+balt ~/Dropbox/R/map/mapping_n_laos.R
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+lcd ~
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/Dropbox/R/virana/virana_gis.R", ":p")) | buffer ~/Dropbox/R/virana/virana_gis.R | else | edit ~/Dropbox/R/virana/virana_gis.R | endif
+if &buftype ==# 'terminal'
+  silent file ~/Dropbox/R/virana/virana_gis.R
+endif
+balt ~/Dropbox/R/matsuda/spatial_analysis_memo.R
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+lcd ~
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 51 + 51) / 103)
+exe 'vert 2resize ' . ((&columns * 51 + 51) / 103)
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+let g:this_fzf_session =v:this_session
+unlet SessionLoad
+" vim: set ft=vim :
