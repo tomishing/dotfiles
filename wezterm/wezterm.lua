@@ -137,6 +137,16 @@ config = {
                 end),
             },
         },
+        {
+            key = 'UpArrow',
+            mods = 'SHIFT',
+            action = act.ScrollToPrompt(-1)
+        },
+        {
+            key = 'DownArrow',
+            mods = 'SHIFT',
+            action = act.ScrollToPrompt(1)
+        },
     },
 }
 return config
