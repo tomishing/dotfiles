@@ -12,7 +12,7 @@ set record = ""
 set sort = threads
 set sort_browser = date
 set sort_aux = reverse-last-date-received
-set print_command = "muttprint %s -P A4 -p Canon_MF8500C_Series"
+# set print_command = "muttprint %s -P A4 -p Canon_MF8500C_Series"
 set mailcap_path = ~/.config/mutt/mailcap
 set alias_file = ~/.config/mutt/aliases
 set sort_alias = alias
@@ -24,8 +24,6 @@ unset mark_old
 macro compose ,a '<enter-command>source ~/.config/mutt/scripts/fzfattach.sh|<enter>'
 
 # SMTP
-source "~/.config/mutt/nagoya"
-folder-hook $folder 'source ~/.config/mutt/nagoya'
 source "~/.config/mutt/gmail"
 folder-hook $folder 'source ~/.config/mutt/gmail'
 
