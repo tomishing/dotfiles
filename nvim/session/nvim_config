@@ -21,7 +21,7 @@ badd +9 ~/.config/nvim/lua/autocmds.lua
 badd +1 ~/test.md
 badd +1 ~/.config/nvim/init.vim
 badd +30 ~/.config/nvim/lua/keymap.lua
-badd +114 ~/.config/nvim/lua/lazy_plugins.lua
+badd +1 ~/.config/nvim/lua/lazy_plugins.lua
 badd +1 ~/.config/nvim/init.lua
 badd +4 ~/.config/nvim/lua/which_key.lua
 argglobal
@@ -57,11 +57,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 111 - ((21 * winheight(0) + 25) / 50)
+let s:l = 2 - ((1 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 111
+keepjumps 2
 normal! 0
 lcd ~/.config/nvim/lua
 wincmd w
@@ -81,12 +81,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 28 - ((22 * winheight(0) + 25) / 50)
+let s:l = 29 - ((23 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 28
-normal! 025|
+keepjumps 29
+normal! 043|
 lcd ~/.config/nvim
 wincmd w
 exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)

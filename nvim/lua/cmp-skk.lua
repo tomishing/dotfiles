@@ -26,7 +26,7 @@ cmp.setup {
                         path = "[Path]",
                         spell = "[Spell]",
                         -- pandoc_references = "[Citation]",
-                        cmp_pandoc = "[References]",
+                        cmp_pandoc = "[Ref]",
 --                        skkeleton = "[SKK]",
                     })[entry.source.name]
                 return vim_item
