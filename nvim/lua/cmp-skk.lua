@@ -25,7 +25,8 @@ cmp.setup {
                         look = "[Look]",
                         path = "[Path]",
                         spell = "[Spell]",
-                        pandoc_references = "[Citation]",
+                        -- pandoc_references = "[Citation]",
+                        cmp_pandoc = "[References]",
 --                        skkeleton = "[SKK]",
                     })[entry.source.name]
                 return vim_item
@@ -87,9 +88,12 @@ cmp.setup {
         { name = 'otter' },
         { name = 'emoji' },
         { name = 'treesitter', keyword_length = 5, max_item_count = 3 },
+        { name = 'cmp_pandoc'},
 --        { name = 'skkeleton' },
     }),
 }
+
+require 'cmp_pandoc'.setup({filetypes = {"qmd", "pandoc", "markdown", "rmd", "quarto"},})
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {

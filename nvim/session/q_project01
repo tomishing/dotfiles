@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config/nvim/lua
+cd ~/Dropbox/R/matsuda
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,20 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +45 health://
-badd +7 ~/.config/nvim/lua/config.lua
-badd +26 ~/.config/nvim/lua/base-opt.lua
-badd +28 ~/.config/nvim/lua/cmp-skk.lua
-badd +9 ~/.config/nvim/lua/autocmds.lua
-badd +1 ~/test.md
-badd +1 ~/.config/nvim/init.vim
-badd +30 ~/.config/nvim/lua/keymap.lua
-badd +114 ~/.config/nvim/lua/lazy_plugins.lua
-badd +1 ~/.config/nvim/init.lua
-badd +4 ~/.config/nvim/lua/which_key.lua
+badd +1 ~/Dropbox/Workplace/quarto_project01/east_asia_monsoon.qmd
+badd +14 ~/Dropbox/R/matsuda/rgeo.qmd
+badd +1 ~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R
+badd +7 ~/Dropbox/Workplace/quarto_project01/test.md
 argglobal
 %argdel
-edit ~/.config/nvim/lua/lazy_plugins.lua
+edit ~/Dropbox/Workplace/quarto_project01/east_asia_monsoon.qmd
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -43,10 +36,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
-balt ~/.config/nvim/lua/which_key.lua
+balt ~/Dropbox/R/matsuda/rgeo.qmd
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -57,20 +50,20 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 111 - ((21 * winheight(0) + 25) / 50)
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 111
-normal! 0
-lcd ~/.config/nvim/lua
+keepjumps 1
+normal! 03|
+lcd ~/Dropbox/Workplace/quarto_project01
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/.config/nvim/lua/cmp-skk.lua", ":p")) | buffer ~/.config/nvim/lua/cmp-skk.lua | else | edit ~/.config/nvim/lua/cmp-skk.lua | endif
+if bufexists(fnamemodify("~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R", ":p")) | buffer ~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R | else | edit ~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R | endif
 if &buftype ==# 'terminal'
-  silent file ~/.config/nvim/lua/cmp-skk.lua
+  silent file ~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R
 endif
-balt ~/.config/nvim/init.vim
+balt ~/Dropbox/Workplace/quarto_project01/east_asia_monsoon.qmd
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -81,16 +74,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 28 - ((22 * winheight(0) + 25) / 50)
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 28
-normal! 025|
-lcd ~/.config/nvim
+keepjumps 1
+normal! 0
+lcd ~/Dropbox/Workplace/quarto_project01
 wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
