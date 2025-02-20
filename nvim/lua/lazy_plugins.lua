@@ -155,6 +155,9 @@ return {
     },
     {
         'quarto-dev/quarto-nvim',
+        config = function()
+            require("quarto").setup({})
+        end,
     },
 --    {
 --        'brianhuster/live-preview.nvim',

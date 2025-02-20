@@ -16,12 +16,12 @@ endif
 badd +45 health://
 badd +7 ~/.config/nvim/lua/config.lua
 badd +26 ~/.config/nvim/lua/base-opt.lua
-badd +28 ~/.config/nvim/lua/cmp-skk.lua
+badd +126 ~/.config/nvim/lua/cmp-skk.lua
 badd +9 ~/.config/nvim/lua/autocmds.lua
 badd +1 ~/test.md
 badd +1 ~/.config/nvim/init.vim
 badd +30 ~/.config/nvim/lua/keymap.lua
-badd +1 ~/.config/nvim/lua/lazy_plugins.lua
+badd +28 ~/.config/nvim/lua/lazy_plugins.lua
 badd +1 ~/.config/nvim/init.lua
 badd +4 ~/.config/nvim/lua/which_key.lua
 argglobal
@@ -43,8 +43,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+wincmd =
 argglobal
 balt ~/.config/nvim/lua/which_key.lua
 setlocal fdm=manual
@@ -57,12 +56,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 25) / 50)
+let s:l = 57 - ((44 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 57
+normal! 038|
 lcd ~/.config/nvim/lua
 wincmd w
 argglobal
@@ -70,7 +69,7 @@ if bufexists(fnamemodify("~/.config/nvim/lua/cmp-skk.lua", ":p")) | buffer ~/.co
 if &buftype ==# 'terminal'
   silent file ~/.config/nvim/lua/cmp-skk.lua
 endif
-balt ~/.config/nvim/init.vim
+balt ~/.config/nvim/lua/lazy_plugins.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -81,16 +80,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 29 - ((23 * winheight(0) + 25) / 50)
+let s:l = 126 - ((49 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 29
-normal! 043|
-lcd ~/.config/nvim
+keepjumps 126
+normal! 0
+lcd ~/.config/nvim/lua
 wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
