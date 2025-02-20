@@ -217,3 +217,4 @@ require('quarto').setup(),
 })
 
 -- require('live-preview').setup()
+require('telescope').load_extension('possession')

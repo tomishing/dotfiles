@@ -16,12 +16,12 @@ endif
 badd +45 health://
 badd +7 ~/.config/nvim/lua/config.lua
 badd +26 ~/.config/nvim/lua/base-opt.lua
-badd +126 ~/.config/nvim/lua/cmp-skk.lua
+badd +28 ~/.config/nvim/lua/cmp-skk.lua
 badd +9 ~/.config/nvim/lua/autocmds.lua
 badd +1 ~/test.md
 badd +1 ~/.config/nvim/init.vim
-badd +30 ~/.config/nvim/lua/keymap.lua
-badd +28 ~/.config/nvim/lua/lazy_plugins.lua
+badd +102 ~/.config/nvim/lua/keymap.lua
+badd +3 ~/.config/nvim/lua/lazy_plugins.lua
 badd +1 ~/.config/nvim/init.lua
 badd +4 ~/.config/nvim/lua/which_key.lua
 argglobal
@@ -43,7 +43,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 balt ~/.config/nvim/lua/which_key.lua
 setlocal fdm=manual
@@ -56,12 +57,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 57 - ((44 * winheight(0) + 25) / 51)
+let s:l = 14 - ((13 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 57
-normal! 038|
+keepjumps 14
+normal! 0
 lcd ~/.config/nvim/lua
 wincmd w
 argglobal
@@ -69,7 +70,7 @@ if bufexists(fnamemodify("~/.config/nvim/lua/cmp-skk.lua", ":p")) | buffer ~/.co
 if &buftype ==# 'terminal'
   silent file ~/.config/nvim/lua/cmp-skk.lua
 endif
-balt ~/.config/nvim/lua/lazy_plugins.lua
+balt ~/.config/nvim/lua/keymap.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -80,15 +81,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 126 - ((49 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 126
+keepjumps 1
 normal! 0
 lcd ~/.config/nvim/lua
 wincmd w
-wincmd =
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

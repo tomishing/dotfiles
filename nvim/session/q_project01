@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/Dropbox/Workplace/quarto_project01/east_asia_monsoon.qmd
+badd +21 ~/Dropbox/Workplace/quarto_project01/east_asia_monsoon.qmd
 badd +14 ~/Dropbox/R/matsuda/rgeo.qmd
 badd +1 ~/Dropbox/R/matsuda/spatial_analysis_pop_GHSL.R
 badd +7 ~/Dropbox/Workplace/quarto_project01/test.md
@@ -36,8 +36,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+wincmd =
 argglobal
 balt ~/Dropbox/R/matsuda/rgeo.qmd
 setlocal fdm=manual
@@ -50,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+let s:l = 21 - ((20 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 03|
+keepjumps 21
+normal! 0
 lcd ~/Dropbox/Workplace/quarto_project01
 wincmd w
 argglobal
@@ -82,9 +81,7 @@ keepjumps 1
 normal! 0
 lcd ~/Dropbox/Workplace/quarto_project01
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

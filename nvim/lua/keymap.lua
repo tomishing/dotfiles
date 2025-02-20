@@ -89,6 +89,17 @@ map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 -- highlight
 map("n", "<Leader>l", "<cmd>noh<CR>", opts)
 
+-- telescope
+
+local builtin = require('telescope.builtin')
+map('n', '<leader>ft', builtin.find_files, { desc = 'Telescope find files' })
+map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- possession
+map('n', '<leader>dp', '<cmd>Telescope possession list<CR>', { desc = 'Telescope possession list' })
+
 -- Quarto
 -- map('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
 

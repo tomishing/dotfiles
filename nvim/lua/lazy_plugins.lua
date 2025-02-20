@@ -184,4 +184,21 @@ return {
             })
         end,
     },
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    },
+    {
+        'jedrzejboczar/possession.nvim',
+            config = function()
+                require('possession').setup{
+                commands = {
+                    save = 'PSave',
+                    load = 'PLoad',
+                    delete = 'PDelete',
+                    list = 'PList',
+                    close = 'PClose',
+                }
+            }
+        end,
+    },
 }
