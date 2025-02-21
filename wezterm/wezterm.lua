@@ -19,6 +19,7 @@ config = {
 --    window_background_opacity = 0.95,
     use_ime = true,
     front_end = "OpenGL",
+    enable_wayland = false,
     window_padding = {
         left = 10,
         right = 0,
