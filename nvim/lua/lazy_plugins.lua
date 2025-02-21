@@ -153,12 +153,12 @@ return {
     { 'RRethy/vim-illuminate',
         event = { 'BufReadPre', 'BufNewFile' },
     },
-    {
-        'quarto-dev/quarto-nvim',
-        config = function()
-            require("quarto").setup({})
-        end,
-    },
+    -- {
+    --     'quarto-dev/quarto-nvim',
+    --     config = function()
+    --         require("quarto").setup({})
+    --     end,
+    -- },
 --    {
 --        'brianhuster/live-preview.nvim',
 --    },

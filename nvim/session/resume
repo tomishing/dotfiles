@@ -13,8 +13,8 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/Dropbox/app_jobs/cv/resume/resume.html
-badd +1 ~/Dropbox/app_jobs/cv/resume/resume_style.css
+badd +29 ~/Dropbox/app_jobs/cv/resume/resume.html
+badd +23 ~/Dropbox/app_jobs/cv/resume/resume_style.css
 badd +1 ~/Dropbox/app_jobs/cv/resume/resume.js
 argglobal
 %argdel
@@ -35,8 +35,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+exe 'vert 1resize ' . ((&columns * 98 + 98) / 196)
+exe 'vert 2resize ' . ((&columns * 97 + 98) / 196)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -48,7 +48,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 30 - ((29 * winheight(0) + 24) / 48)
+let s:l = 30 - ((28 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -57,11 +57,11 @@ normal! 0
 lcd ~/Dropbox/app_jobs/cv/resume
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/Dropbox/app_jobs/cv/resume/resume_style.css", ":p")) | buffer ~/Dropbox/app_jobs/cv/resume/resume_style.css | else | edit ~/Dropbox/app_jobs/cv/resume/resume_style.css | endif
+if bufexists(fnamemodify("~/Dropbox/app_jobs/cv/resume/resume.html", ":p")) | buffer ~/Dropbox/app_jobs/cv/resume/resume.html | else | edit ~/Dropbox/app_jobs/cv/resume/resume.html | endif
 if &buftype ==# 'terminal'
-  silent file ~/Dropbox/app_jobs/cv/resume/resume_style.css
+  silent file ~/Dropbox/app_jobs/cv/resume/resume.html
 endif
-balt ~/Dropbox/app_jobs/cv/resume/resume.js
+balt ~/Dropbox/app_jobs/cv/resume/resume_style.css
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -72,7 +72,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -81,8 +81,8 @@ normal! 0
 lcd ~/Dropbox/app_jobs/cv/resume
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 102 + 103) / 207)
+exe 'vert 1resize ' . ((&columns * 98 + 98) / 196)
+exe 'vert 2resize ' . ((&columns * 97 + 98) / 196)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
