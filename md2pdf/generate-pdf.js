@@ -19,19 +19,21 @@ const [inputFile, outputFile] = args;
     // Generate the PDF with custom headers and footers
     await page.pdf({
         path: outputFile,
-        format: 'A4',
+        format: 'Letter',
         margin: {
             top: '20mm',
             bottom: '20mm',
+            right: '20mm',
+            left: '20mm',
         },
         displayHeaderFooter: true,
         headerTemplate: `
-            <div style="font-size: 10px; text-align: center; width: 100%; margin-top: 10px;">
-                Custom Header: Your Information Here
+            <div style="width: 100%; font-size: 10px; text-align: center; padding: 5px 0;">
+                My Custom Header - Document Title
             </div>
         `,
         footerTemplate: `
-            <div style="font-size: 10px; text-align: center; width: 100%; margin-bottom: 10px;">
+             <div style="width: 100%; font-size: 10px; text-align: center; padding: 5px 0;">
                 Page <span class="pageNumber"></span> of <span class="totalPages"></span>
             </div>
         `,
