@@ -2,6 +2,8 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 local config = {}
+-- if you want to use session or workplace in wezterm, uncomment below.
+-- local sessions = wezterm.plugin.require("https://github.com/abidibo/wezterm-sessions")
 
 config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
@@ -118,26 +120,26 @@ config = {
             mods = 'LEADER',
             action = act.AdjustPaneSize { 'Right', 5 },
         },
-        {
-            key = '9',
-            mods = "ALT",
-            action = act.ShowLauncherArgs { flags = 'WORKSPACES',
-            title = 'Select workspace' },
-        },
-        {
-            key = '8',
-            mods = 'ALT',
-            action = act.PromptInputLine {
-                description = "Enter name for new workspace",
-                action = wezterm.action_callback(function(line)
-                    if line then
-                        wezterm.mux.rename_workspace(
-                        wezterm.mux.get_active_workspace(),
-                        line)
-                    end
-                end),
-            },
-        },
+        -- {
+        --     key = '9',
+        --     mods = "ALT",
+        --     action = act.ShowLauncherArgs { flags = 'WORKSPACES',
+        --     title = 'Select workspace' },
+        -- },
+        -- {
+        --     key = '8',
+        --     mods = 'ALT',
+        --     action = act.PromptInputLine {
+        --         description = "Enter name for new workspace",
+        --         action = wezterm.action_callback(function(line)
+        --             if line then
+        --                 wezterm.mux.rename_workspace(
+        --                 wezterm.mux.get_active_workspace(),
+        --                 line)
+        --             end
+        --         end),
+        --     },
+        -- },
         {
             key = 'UpArrow',
             mods = 'SHIFT',
@@ -148,6 +150,73 @@ config = {
             mods = 'SHIFT',
             action = act.ScrollToPrompt(1)
         },
+        -- If you would like to use session or workplace in wezterm, uncomment below.
+        -- session
+        -- {
+        --     key = 's',
+        --     mods = 'ALT',
+        --     action = act({ EmitEvent = "save_session" }),
+        -- },
+        -- {
+        --     key = 'l',
+        --     mods = 'ALT',
+        --     action = act({ EmitEvent = "load_session" }),
+        -- },
+        -- {
+        --     key = 'r',
+        --     mods = 'ALT',
+        --     action = act({ EmitEvent = "restore_session" }),
+        -- },
+        -- {
+        --     key = 'd',
+        --     mods = 'CTRL|SHIFT',
+        --     action = act({ EmitEvent = "delete_session" }),
+        -- },
+        -- {
+        --     key = 'e',
+        --     mods = 'CTRL|SHIFT',
+        --     action = act({ EmitEvent = "edit_session" }),
+        -- },
+        -- -- Rename current workspace
+        -- {
+        --     key = '$',
+        --     mods = 'CTRL|SHIFT',
+        --     action = act.PromptInputLine {
+        --         description = 'Enter new workspace name',
+        --         action = wezterm.action_callback(
+        --             function(window, pane, line)
+        --                 if line then
+        --                     wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+        --                 end
+        --             end
+        --         ),
+        --     },
+        -- },
+        -- -- Prompt for a name to use for a new workspace and switch to it.
+        -- {
+        --     key = 'w',
+        --     mods = 'CTRL|SHIFT',
+        --     action = act.PromptInputLine {
+        --         description = wezterm.format {
+        --             { Attribute = { Intensity = 'Bold' } },
+        --             { Foreground = { AnsiColor = 'Fuchsia' } },
+        --             { Text = 'Enter name for new workspace' },
+        --         },
+        --         action = wezterm.action_callback(function(window, pane, line)
+        --             -- line will be `nil` if they hit escape without entering anything
+        --             -- An empty string if they just hit enter
+        --             -- Or the actual line of text they wrote
+        --             if line then
+        --                 window:perform_action(
+        --                     act.SwitchToWorkspace {
+        --                         name = line,
+        --                     },
+        --                     pane
+        --                 )
+        --             end
+        --         end),
+        --     },
+        -- },
     },
 }
 return config
