@@ -16,12 +16,12 @@ endif
 badd +45 health://
 badd +7 ~/.config/nvim/lua/config.lua
 badd +26 ~/.config/nvim/lua/base-opt.lua
-badd +28 ~/.config/nvim/lua/cmp-skk.lua
+badd +61 ~/.config/nvim/lua/cmp-skk.lua
 badd +9 ~/.config/nvim/lua/autocmds.lua
 badd +1 ~/test.md
 badd +1 ~/.config/nvim/init.vim
-badd +102 ~/.config/nvim/lua/keymap.lua
-badd +3 ~/.config/nvim/lua/lazy_plugins.lua
+badd +101 ~/.config/nvim/lua/keymap.lua
+badd +198 ~/.config/nvim/lua/lazy_plugins.lua
 badd +1 ~/.config/nvim/init.lua
 badd +4 ~/.config/nvim/lua/which_key.lua
 argglobal
@@ -57,20 +57,20 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 25) / 50)
+let s:l = 198 - ((42 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 0
+keepjumps 198
+normal! 029|
 lcd ~/.config/nvim/lua
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/.config/nvim/lua/cmp-skk.lua", ":p")) | buffer ~/.config/nvim/lua/cmp-skk.lua | else | edit ~/.config/nvim/lua/cmp-skk.lua | endif
+if bufexists(fnamemodify("~/.config/nvim/lua/keymap.lua", ":p")) | buffer ~/.config/nvim/lua/keymap.lua | else | edit ~/.config/nvim/lua/keymap.lua | endif
 if &buftype ==# 'terminal'
-  silent file ~/.config/nvim/lua/cmp-skk.lua
+  silent file ~/.config/nvim/lua/keymap.lua
 endif
-balt ~/.config/nvim/lua/keymap.lua
+balt ~/.config/nvim/lua/cmp-skk.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -81,11 +81,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+let s:l = 101 - ((22 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 101
 normal! 0
 lcd ~/.config/nvim/lua
 wincmd w
