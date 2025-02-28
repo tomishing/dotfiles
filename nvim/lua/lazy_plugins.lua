@@ -191,6 +191,7 @@ return {
         'jedrzejboczar/possession.nvim',
             config = function()
                 require('possession').setup{
+                    session_dir = '/home/tomishing/Dropbox/neovim/possession',
                 commands = {
                     save = 'PSave',
                     load = 'PLoad',
