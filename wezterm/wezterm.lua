@@ -9,11 +9,7 @@ local config = wezterm.config_builder()
 config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
     font = wezterm.font_with_fallback {
-       -- "Fira Code",
         "JetBrains Mono",
---        "JetBrains Mono NL",
---        "Iosevka Term Extended",
---        "Iosevka Term",
         "Gen Shin Gothic", },
     font_size = 11.5,
     default_cursor_style = "SteadyUnderline",
