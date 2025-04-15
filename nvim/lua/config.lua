@@ -160,7 +160,7 @@ require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local nvim_lsp = require('lspconfig')
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', 'html', 'marksman', 'yamlls', }
+local servers = { 'r_language_server', 'pyright', 'lua_ls', 'sqlls', 'vimls', 'html', 'marksman', 'yamlls',}
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
