@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local mux =wezterm.mux
+-- local mux =wezterm.mux
 local config = wezterm.config_builder()
 --local config = {}
 -- if you want to use session or workplace in wezterm, uncomment below.
@@ -14,7 +14,7 @@ config = {
     font_size = 11.5,
     default_cursor_style = "SteadyUnderline",
     hide_tab_bar_if_only_one_tab = true,
-    line_height = 1.1,
+    line_height = 1.05,
 --    window_background_opacity = 0.95,
     use_ime = true,
     front_end = "OpenGL",
