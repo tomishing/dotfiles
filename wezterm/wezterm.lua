@@ -1,10 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
--- local mux =wezterm.mux
 local config = wezterm.config_builder()
---local config = {}
--- if you want to use session or workplace in wezterm, uncomment below.
--- local sessions = wezterm.plugin.require("https://github.com/abidibo/wezterm-sessions")
 
 config = {
     color_scheme = "Afterglow", -- Afterglow, Ayu Mirage, MaterialDarker,
