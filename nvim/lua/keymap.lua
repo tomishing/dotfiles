@@ -66,7 +66,7 @@ map("v", "[t", "<cmd>-tabnext<CR>", opts)
 
 -- toggleterm settings and R
 map("n", "<leader>tv", "<cmd>ToggleTerm size=60 direction=vertical<CR>", { noremap = true })
-map("n", "<leader>td", "<cmd>ToggleTerm size=15 direction=horizontal<CR>", { noremap = true })
+map("n", "<leader>td", "<cmd>ToggleTerm size=30 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>2td", "<cmd>2ToggleTerm size=15 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { noremap = true })
 map("n", "<leader>rr", '<cmd>TermExec size=60 direction=vertical cmd="R"<CR>', { noremap = true })
