@@ -218,3 +218,11 @@ require("noice").setup({
 
 -- require('live-preview').setup()
 require('telescope').load_extension('possession')
+
+-- outline: toc, table of contents
+
+require("outline").setup({
+    outline_window = {
+        width=15,
+    },
+} )
