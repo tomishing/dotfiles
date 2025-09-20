@@ -3,6 +3,6 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 font-family = "JetBrains Mono"
-font-size = 11.5
+font-size = 13
 
-theme = "zenbones_dark"
+theme = Nightfox

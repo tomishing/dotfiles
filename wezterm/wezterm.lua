@@ -7,7 +7,7 @@ config = {
     font = wezterm.font_with_fallback {
         "JetBrains Mono",
         "Gen Shin Gothic", },
-    font_size = 11.5,
+    font_size = 12,
     default_cursor_style = "SteadyUnderline",
     hide_tab_bar_if_only_one_tab = true,
     line_height = 1.05,
