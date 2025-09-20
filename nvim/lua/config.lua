@@ -223,6 +223,6 @@ require('telescope').load_extension('possession')
 
 require("outline").setup({
     outline_window = {
-        width=15,
+        width=30,
     },
 } )
