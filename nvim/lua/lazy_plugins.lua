@@ -44,7 +44,8 @@ return {
     { 'jeffkreeftmeijer/vim-numbertoggle', event = { 'BufReadPre', 'BufNewFile' },},
     { 'lewis6991/gitsigns.nvim', event = { 'BufReadPre', 'BufNewFile' }, },
     { -- leap
-        'ggandor/leap.nvim',
+        url = "https://codeberg.org/andyg/leap.nvim",
+        --'ggandor/leap.nvim',
         lazy = true,
         event = 'VeryLazy',
         dependencies = { 'tpope/vim-repeat', },
@@ -119,11 +120,6 @@ return {
 --            'rinx/cmp-skkeleton',
         },
     },
---    { 'jose-elias-alvarez/null-ls.nvim',
-    { 'nvimtools/none-ls.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = { 'nvim-lua/plenary.nvim' },
-    },
     { 'folke/which-key.nvim',
         event = "VeryLazy",
         keys = {
@@ -146,7 +142,11 @@ return {
         end,
         dependencies = {
             'MunifTanjim/nui.nvim',
-            "rcarriga/nvim-notify",
+            {"rcarriga/nvim-notify",
+                opts = {
+                    timeout = 3000,
+                }
+            },
         },
     },
     { 'dhruvasagar/vim-table-mode', ft = 'markdown', },
@@ -212,4 +212,8 @@ return {
             opts = {
             },
 },
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    }
 }
