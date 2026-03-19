@@ -39,7 +39,7 @@ map("i", '"', '""<esc>ha')
 --map("n", "<leader>cm", "<cmd>lua require('cmp').setup.buffer({ enabled = true })<CR>", opts)
 
 -- switch to another terminal or panes
-local topts = {noremap = true}
+local topts = { noremap = true }
 map("t", "<esc>", [[<C-\><C-n>]], topts)
 map("t", "<A-h>", [[<C-\><C-n><C-w>h]], topts)
 map("t", "<A-j>", [[<C-\><C-n><C-w>j]], topts)
@@ -65,7 +65,7 @@ map("n", "[t", "<cmd>tabprevious<CR>", opts)
 map("v", "[t", "<cmd>tabprevious<CR>", opts)
 
 -- toggleterm settings and R
-map("n", "<leader>tv", "<cmd>ToggleTerm size=85 direction=vertical<CR>", { noremap = true })
+map("n", "<leader>tv", "<cmd>ToggleTerm size=70 direction=vertical<CR>", { noremap = true })
 map("n", "<leader>td", "<cmd>ToggleTerm size=20 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>2td", "<cmd>2ToggleTerm size=15 direction=horizontal<CR>", { noremap = true })
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { noremap = true })
@@ -91,14 +91,14 @@ map("n", "<Leader>l", "<cmd>noh<CR>", opts)
 
 -- telescope
 
-local builtin = require('telescope.builtin')
-map('n', '<leader>ft', builtin.find_files, { desc = 'Telescope find files' })
-map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+local builtin = require("telescope.builtin")
+map("n", "<leader>ft", builtin.find_files, { desc = "Telescope find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 
 -- possession
-map('n', '<leader>dp', '<cmd>Telescope possession list<CR>', { desc = 'Telescope possession list' })
+map("n", "<leader>dp", "<cmd>Telescope possession list<CR>", { desc = "Telescope possession list" })
 
 -- Quarto
 -- map('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
@@ -110,11 +110,11 @@ local lbuf = vim.lsp.buf
 local dia = vim.diagnostic
 
 function M.diagnostic_goto(next, severity)
-    local go = next and dia.goto_next or dia.goto_prev
-    severity = severity and dia.severity[severity] or nil
-    return function()
-        go({ severity = severity })
-    end
+	local go = next and dia.goto_next or dia.goto_prev
+	severity = severity and dia.severity[severity] or nil
+	return function()
+		go({ severity = severity })
+	end
 end
 
 map("n", "K", lbuf.hover, opts)

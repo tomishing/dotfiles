@@ -231,7 +231,7 @@ require("conform").setup({
 		-- Python
 		python = { "ruff" },
 		-- SQL
-		sql = { "pgformatter", "sqlls" },
+		sql = { "sqlfluff", "sqlfmt" },
 	},
 	format_on_save = {
 		timeout_ms = 1000,
