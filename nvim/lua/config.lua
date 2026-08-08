@@ -140,6 +140,9 @@ require("nvim-tree").setup({
 			error = "",
 		},
 	},
+	filters = {
+		dotfiles = false,
+	},
 })
 
 -- lsp-server settings: mason, and mason-lspconfig
