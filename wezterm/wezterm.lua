@@ -223,4 +223,23 @@ config = {
         -- },
     },
 }
+-- >>> wezterm-theme >>>
+do
+  local _wt_wz = require 'wezterm'
+  local _wt_p = (_wt_wz.config_dir or '') .. '/wezterm_theme.lua'
+  local _wt_f = io.open(_wt_p, 'r')
+  if not _wt_f and _wt_wz.home_dir then
+    _wt_p = _wt_wz.home_dir .. '/.config/wezterm/wezterm_theme.lua'
+    _wt_f = io.open(_wt_p, 'r')
+  end
+  if _wt_f then
+    _wt_f:close()
+    local _wt_ok, _wt_m = pcall(dofile, _wt_p)
+    if _wt_ok and type(_wt_m) == 'table' and type(_wt_m.apply) == 'function' then
+      _wt_m.apply(config, _wt_wz)
+    end
+  end
+end
+-- <<< wezterm-theme <<<
+
 return config

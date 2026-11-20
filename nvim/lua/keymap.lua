@@ -30,10 +30,6 @@ map("i", "(", "()<esc>ha")
 map("i", '"', '""<esc>ha')
 -- map('i', '<', '<><esc>ha')
 
--- settings for skkeleton
---map("i", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
---map("c", "jz", "<Plug>(skkeleton-toggle)", { silent = true })
-
 -- in case you want to disable/enable nvim-cmp by keymap.
 --map("n", "<leader>jz", "<cmd>lua require('cmp').setup.buffer({ enabled = false })<CR>", opts)
 --map("n", "<leader>cm", "<cmd>lua require('cmp').setup.buffer({ enabled = true })<CR>", opts)

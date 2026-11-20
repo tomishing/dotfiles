@@ -34,19 +34,6 @@ fn["repeat#set"](api.nvim_replace_termcodes("<Plug>MyWonderfulMap", true, false,
 -- fzf_session setting
 g.fzf_session_path = "/home/tomishing/.config/nvim/session"
 
--- skkeleton
---fn['skkeleton#config']({
---    globalJisyo = '~/.config/skk/SKK-JISYO.L',
---    userJisyo = '~/.config/skk/user.dic',
---    eggLikeNewline = true
---})
---fn['skkeleton#register_kanatable']('rom', {
---    ['z,'] = { '―', '' },
---    ['/'] = { '・', ''},
---    ['('] = {'（', ''},
---    [')'] = {'）', ''},
---    ['jj'] = 'escape',
---})
 
 -- toggleterm setup
 require("toggleterm").setup({
